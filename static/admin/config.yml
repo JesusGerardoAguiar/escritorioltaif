@@ -1,0 +1,122 @@
+backend:
+  name: github
+  repo: JesusGerardoAguiar/decorart
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: butaca
+    label: Butacas
+    folder: content/butaca
+    create: true
+    fields:
+      - { name: path, label: Path, value: butacas }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "butacas" }
+  - name: esquinero
+    label: Esquinero
+    folder: content/esquinero
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "esquineros" }
+  - name: comedor
+    label: comedor
+    folder: content/comedor
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "comedor" }
+  - name: fundas
+    label: fundas
+    folder: content/fundas
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "fundas" }
+  - name: banquetas
+    label: banquetas
+    folder: content/banquetas
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "banquetas" }
+  - name: almohadones
+    label: almohadones
+    folder: content/almohadones
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "almohadones" }
+  - name: sofas
+    label: sofas
+    folder: content/sofas
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "sofas" }
+  - name: sofacama
+    label: sofacama
+    folder: content/sofacama
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "sofacama" }
+  - name: respaldos
+    label: respaldos
+    folder: content/respaldos
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "respaldos" }
+  - name: sale
+    label: Sale
+    folder: content/sale
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { label: identifier, name: identifier, widget: "hidden", default: "sale" }
+  - name: proyectos
+    label: Proyectos
+    folder: content/proyectos
+    create: true
+    identifier_field: identifier
+    fields:
+      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
+      - { name: description, label: Description }
+      - { label: identifier, name: identifier, widget: "hidden", default: "proyectos" }
+
+
+      
+
+
