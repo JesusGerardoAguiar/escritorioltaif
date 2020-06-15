@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import {
   MainDiv,
   LinksContainerDiv,
@@ -10,7 +10,7 @@ import Facebook from "../../../content/assets/icons/facebook.svg"
 import Instagram from "../../../content/assets/icons/instagram.svg"
 import { Link } from "gatsby"
 import Drawer from "@material-ui/core/Drawer"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import IconButton from "@material-ui/core/IconButton"
 import Hamburguer from '../../../content/assets/icons/hamburguer.svg'
 import Close from '../../../content/assets/icons/close.svg'
@@ -83,15 +83,6 @@ const Header = ({ location }) => {
   console.log(location)
   const [open, setOpen] = useState(false)
   const [anchorEl, setAnchorEl] = React.useState(null)
-
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-
   const classes = useStyles()
 
   const renderHeader = matches => {
@@ -99,9 +90,9 @@ const Header = ({ location }) => {
       return (
         <div>
           <MainDiv>
-            <div onClick={() => setOpen(true)}><img src={Hamburguer} style={{width: '3rem'}}/></div>
+            <div onClick={() => setOpen(true)}><img alt="a" src={Hamburguer} style={{width: '3rem'}}/></div>
 
-            <div><img src={DecorartLogo} style={{ width: '3rem' }}/></div>
+            <div><img alt="a" src={DecorartLogo} style={{ width: '3rem' }}/></div>
           </MainDiv>
           <Drawer
             className={classes.drawer}
@@ -115,7 +106,7 @@ const Header = ({ location }) => {
           >
             <div className={classes.drawerHeader}>
               <IconButton onClick={() => setOpen(false)}>
-                <div><img src={Close}  style={{width: '1rem'}}/></div>
+                <div><img alt="a" src={Close}  style={{width: '1rem'}}/></div>
               </IconButton>
             </div>
             <LinkDiv onClick={() => setOpen(false)}>
@@ -180,10 +171,12 @@ const Header = ({ location }) => {
             </LinkDiv>
             <IconDiv>
               <img
+               alt="a"
                 src={Facebook}
                 style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
               />
               <img
+               alt="a"
                 src={Instagram}
                 style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
               />
@@ -240,7 +233,7 @@ const Header = ({ location }) => {
                 href="https://www.facebook.com/decorartamoblamientos/"
                 target="_blank"
               >
-                <img
+                <img alt="a"
                   src={Facebook}
                   style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
                 />
@@ -250,6 +243,7 @@ const Header = ({ location }) => {
                 target="_blank"
               >
                 <img
+                alt="a"
                   src={Instagram}
                   style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
                 />
