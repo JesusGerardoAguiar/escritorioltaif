@@ -105,9 +105,11 @@ const SearchContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  .MuiSelect-root {
-    width: 10rem;
+  width: 30rem;
+  .MuiButton-containedPrimary{
+    background-color: #2f358f;
   }
+  
   #maxprice {
     width: 100%;
     height: 4.5rem;
@@ -117,7 +119,7 @@ const SearchContainer = styled.div`
 const SelectRow = styled.div`
   display: flex;
   flex-direction: row;
-
+  width: inherit;
   
 `
 

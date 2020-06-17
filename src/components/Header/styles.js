@@ -23,13 +23,12 @@ width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
   display: flex;
-  text-transform: uppercase;
   a {
     text-decoration: none !important;
     color: white;
     box-shadow: none;
     margin-right: 2rem;
-    text-transform: uppercase;
+    color: #2f358f;
   }
 
   a:hover{

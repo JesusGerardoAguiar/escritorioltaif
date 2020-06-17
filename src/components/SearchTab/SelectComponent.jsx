@@ -4,6 +4,8 @@ import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
 import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
+import styled from "styled-components";
+
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -32,7 +34,7 @@ const SelectComponent = ({ menuItems, label, property, setPropertyValue, style }
   }
 
   return (
-      <FormControl style={style} variant="filled" className={classes.formControl}>
+      <FormControlStyled style={style} variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-filled-label" style={{ color: 'white'}}>
           {label}
         </InputLabel>
@@ -44,8 +46,18 @@ const SelectComponent = ({ menuItems, label, property, setPropertyValue, style }
         >
           {renderMenuItems()}
         </Select>
-      </FormControl>
+      </FormControlStyled>
   )
 }
+
+const FormControlStyled = styled(FormControl)`
+width: inherit;
+  .MuiSvgIcon-root{
+    color: #2f358f;
+  }
+  .MuiFilledInput-underline:before{
+    border-bottom: 1px solid #2f358f;
+  }
+`
 
 export default SelectComponent

@@ -212,8 +212,8 @@ const Header = ({ location }) => {
                     Terrenos
                   </Link>
                 </LinkScroll>
-                <Submenu submenu={"Campos y chacras"} submenuChilds={["venta", "alquiler"]} />
-                <Submenu submenu={"GALPONES Y LOCALES COMERCIALES"} submenuChilds={["venta", "alquiler"]} />
+                <Submenu submenu={"Campos y Chacras"} submenuChilds={["venta", "alquiler"]} />
+                <Submenu submenu={"Galpones y Locales Comerciales"} submenuChilds={["venta", "alquiler"]} />
                 <LinkScroll
                   activeClass="active"
                   to="Contact"

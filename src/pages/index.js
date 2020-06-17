@@ -2,16 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import Carousel from "../components/Carousel"
 import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
-import styled, { keyframes }  from "styled-components"
+import styled, { keyframes } from "styled-components"
 import Layout from "../components/layout"
 import BuildingEx03 from "../../content/assets/img/building-ex03-01.jpg"
 import { createGlobalStyle } from "styled-components"
-import SearchTab from '../components/SearchTab';
-import { fadeInLeft, fadeInRight } from 'react-animations';
- 
-const fadeInLeftAnimation = keyframes`${fadeInLeft}`;
-const fadeInRightAnimation = keyframes`${fadeInRight}`;
+import SearchTab from "../components/SearchTab"
+import { fadeInLeft, fadeInRight } from "react-animations"
 
+const fadeInLeftAnimation = keyframes`${fadeInLeft}`
+const fadeInRightAnimation = keyframes`${fadeInRight}`
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -30,8 +29,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: RobotoR;
     src: url(${require("../../content/assets/fonts/Roboto-Regular.ttf")});
   }
+  @font-face {
+    font-family: RobotoBlack;
+    src: url(${require("../../content/assets/fonts/Roboto-Black.ttf")});
+  }
 `
-
 
 class Blog extends React.Component {
   render() {
@@ -42,13 +44,23 @@ class Blog extends React.Component {
       return (
         <LogoContainer backgroundImg={bg}>
           <SearchContainer>
-            <LtaifText>Escritorio Ltaif - Venta de Inmuebles</LtaifText>
-            <LtaifText>¡Comienza tu busqueda!</LtaifText>
+            <PresentationColumn>
+              <PresentationTextBox>
+                <PresentationText
+                  id="deskltaif"
+                  style={{ borderBotttom: "2px solid white" }}
+                >
+                  Escritorio Ltaif{" "}
+                </PresentationText>
+                <PresentationText style={{ paddingTop: "0.2rem" }}>
+                  Venta de Inmuebles
+                </PresentationText>
+              </PresentationTextBox>
+              <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
+            </PresentationColumn>
             <SearchTab />
           </SearchContainer>
-          <ImageHouse backgroundImg={bg}>
-
-          </ImageHouse>
+          <ImageHouse backgroundImg={bg}></ImageHouse>
         </LogoContainer>
       )
     }
@@ -68,18 +80,51 @@ class Blog extends React.Component {
   }
 }
 
+const PresentationTextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border: 4px solid white;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
 
+  #deskltaif {
+    border-bottom: 4px solid white;
+    padding-top: 0px;
+    width: 19rem;
+  }
+`
 
-const LtaifText = styled.h3`
-  font-family: RobotoB;
+const LtaifText = styled.h2`
+  font-family: RobotoBlack;
   work-break: break-all;
   margin: 1rem;
-  color: white;
+  color: #2f358f;
+  font-size: 2em;
+  margin-left: 0px;
+`
+
+const PresentationText = styled.h2`
+  font-size: 2em;
+  margin: 0px;
+  font-family: RobotoB;
+  work-break: break-all;
+  color: #2f358f;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 0.5rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
+`
+
+const PresentationColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 `
 
 const SearchContainer = styled.div`
-  top: 4rem;
-  left: 10rem;
   color: white;
   display: flex;
   flex-direction: column;
@@ -87,6 +132,7 @@ const SearchContainer = styled.div`
   align-items: center;
   animation: 2s ${fadeInLeftAnimation};
   width: 100%;
+  margin-bottom: 2rem;
 `
 
 const LogoContainer = styled.div`
@@ -100,20 +146,20 @@ const LogoContainer = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  
-  background-color: #94CED5;
 
-  img{
+  background-color: #94ced5;
+
+  img {
     animation: 2s ${fadeInRightAnimation};
   }
 `
 
 const ImageHouse = styled.div`
-background-position: center center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${props => props.backgroundImg});
-  background-color: #94CED5;
+  background-color: #94ced5;
   animation: 2s ${fadeInRightAnimation};
   width: 100%;
   height: inherit;
