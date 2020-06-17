@@ -33,11 +33,11 @@ class Layout extends React.Component {
           <header>{header}</header>
           <main>{children}</main>
         </div>
-        <Footer backgroundImg={Lograf}>
+        {/* <Footer backgroundImg={Lograf}>
           © {new Date().getFullYear()}, powered by
           {` `}
           <a href="https://www.lografdesign.com"><img src={Lograf} alt="f" style={{width: '5rem'}} /></a>
-        </Footer>
+        </Footer> */}
       </Wrapper>
     )
   }

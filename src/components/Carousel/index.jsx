@@ -15,7 +15,7 @@ const Carousel = ({
     totalSlides={totalSlides}
     touchEnabled={false}
     dragEnabled={false}
-    interval={2500}
+    interval={4500}
     isPlaying
   >
     <StyledSlider>

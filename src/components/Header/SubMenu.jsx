@@ -11,6 +11,7 @@ import { Link } from "gatsby"
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    zIndex: 2,
   },
   paper: {
     marginRight: theme.spacing(2),
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuListComposition() {
+export default function MenuListComposition({ submenuChilds, submenu }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -42,6 +43,10 @@ export default function MenuListComposition() {
     }
   }
 
+  const renderLinks = () => {
+  return submenuChilds && submenuChilds.map((subMenuChild) =>  <MenuItem onClick={handleClose}><Link style={{ textTransform: "initial", color: 'black' }} to={`/${subMenuChild}`}>{subMenuChild[0].toUpperCase() + subMenuChild.slice(1)}</Link></MenuItem>)
+  }
+
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
@@ -53,14 +58,15 @@ export default function MenuListComposition() {
   }, [open]);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root}  onMouseEnter={handleToggle}
+    onMouseLeave={() => setOpen(false)}>
         <a
           ref={anchorRef}
           aria-controls={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
-          onClick={handleToggle}
+         
         >
-          Productos
+          {submenu}
         </a>
         <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
           {({ TransitionProps, placement }) => (
@@ -70,19 +76,8 @@ export default function MenuListComposition() {
             >
               <Paper className={classes.paper}>
                 <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                    <MenuItem onClick={handleClose}><Link to="/butacas">Butacas</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/esquineros">Esquineros</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/comedor">Comedor</Link></MenuItem>
-
-                    <MenuItem onClick={handleClose}><Link to='/fundas'>Fundas</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to='/banquetas'>Banquetas</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to='/almohadones'>Almohadones</Link></MenuItem>
-
-                    <MenuItem onClick={handleClose}><Link to="/sofas">Sofas</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/sofacama">Sofacama</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/respaldos">Respaldos</Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/sale">Sale</Link></MenuItem>
+                  <MenuList style={{ zIndex: 2 }} autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                    {renderLinks()}
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

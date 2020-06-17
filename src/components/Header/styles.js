@@ -4,7 +4,6 @@ export const InsideLinkDiv = styled.div`
   display: flex;
   flexd-irection: row;
   justify-content: center;
-  margin-left: 11.555555rem;
   flex-wrap: wrap;
   @media (max-width: 768px) {
     margin-left: 0rem;
@@ -12,28 +11,33 @@ export const InsideLinkDiv = styled.div`
 `
 
 export const LinkDiv = styled.div`
-  font-size: 15px;
-  color: #aa5c3b;
+width: 100%;
+    // padding: 1rem;
+  font-size: 12px;
+  color: #016699;
   font-family: "MonteserratR";
   font-weight: 300;
   text-align: center;
   cursor: pointer;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 65rem;
   justify-content: space-evenly;
   display: flex;
   text-transform: uppercase;
   a {
     text-decoration: none !important;
-    color: #aa5c3b !important;
+    color: white;
     box-shadow: none;
-    margin-right: 4rem;
+    margin-right: 2rem;
     text-transform: uppercase;
   }
 
+  a:hover{
+    color: #2E3192!important;
+  }
+
   @media (max-width: 768px) {
-    color: #aa5c3b;
+    color: #016699;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -42,7 +46,7 @@ export const LinkDiv = styled.div`
       width: 100%;
       margin-right: 0px;
       text-decoration: none;
-      color: #aa5c3b;
+      color: #016699;
     }
   }
 `
@@ -71,12 +75,14 @@ export const LinksContainerDiv = styled.div`
 
 export const MainDiv = styled.nav`
   display: flex;
-  flex-direction: column;
-  position: ${props => (props.pathname !== "/" ? "relative" : "absolute")};
+  flex-direction: row;
+  background-color: #9ED3D9;
   z-index: 1;
+  justify-content: space-evenly;
+    align-items: center;
+}
   width: 100%;
-  background-color: ${props =>
-    props.pathname !== "/" ? "rgb(170, 92, 59, 0.5)" : "rgba(255,255,255,0.5)"};
+
   @media (max-width: 768px) {
     padding-right: 1rem;
     padding-left: 1rem;

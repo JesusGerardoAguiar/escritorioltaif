@@ -5,7 +5,6 @@ import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import Modal from "../components/Modal"
 import InfoDialog from "../components/InfoDialog"
-import InfoSvg from "../../content/assets/icons/info.svg"
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -54,7 +53,6 @@ const ProductTemplate = props => {
     if(identifier === 'proyectos'){
       return <></>
     }
-    return <img src={InfoSvg} style={{ width: "2.5rem", marginBottom: 0 }} onClick={() => setOpenInfo(true)}/>
   }
   return (
     <Layout location={props.location}>
