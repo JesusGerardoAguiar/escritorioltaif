@@ -18,7 +18,7 @@ export const TextDiv = styled.div`
 
   @media (max-width: 768px) {
     p{
-      font-family: MonteserratR;
+      font-family: RobotoR;
     }
   }
 `

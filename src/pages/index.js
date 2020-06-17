@@ -2,31 +2,33 @@ import React from "react"
 import { graphql } from "gatsby"
 import Carousel from "../components/Carousel"
 import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
-import styled from "styled-components"
+import styled, { keyframes }  from "styled-components"
 import Layout from "../components/layout"
-import BuildingEx03 from "../../content/assets/img/building-ex03.jpg"
+import BuildingEx03 from "../../content/assets/img/building-ex03-01.jpg"
 import { createGlobalStyle } from "styled-components"
 import SearchTab from '../components/SearchTab';
+import { fadeInLeft, fadeInRight } from 'react-animations';
+ 
+const fadeInLeftAnimation = keyframes`${fadeInLeft}`;
+const fadeInRightAnimation = keyframes`${fadeInRight}`;
+
+
 const GlobalStyles = createGlobalStyle`
   @font-face {
-    font-family: MontserratL;
-    src: url(${require("../../content/assets/fonts/Montserrat-Light.ttf")});
+    font-family: RobotoL;
+    src: url(${require("../../content/assets/fonts/Roboto-Light.ttf")});
   }
   @font-face {
-    font-family: MonteserratR;
-    src: url(${require("../../content/assets/fonts/Montserrat-Medium.ttf")});
+    font-family: RobotoM;
+    src: url(${require("../../content/assets/fonts/Roboto-Medium.ttf")});
   }
   @font-face {
-    font-family: MonteserratB;
-    src: url(${require("../../content/assets/fonts/Montserrat-Bold.otf")});
+    font-family: RobotoB;
+    src: url(${require("../../content/assets/fonts/Roboto-Bold.ttf")});
   }
   @font-face {
-    font-family: DinRegular;
-    src: url(${require("../../content/assets/fonts/DIN-Regular.ttf")});
-  }
-  @font-face {
-    font-family: Museo;
-    src: url(${require("../../content/assets/fonts/Museo700-Regular.ttf")});
+    font-family: RobotoR;
+    src: url(${require("../../content/assets/fonts/Roboto-Regular.ttf")});
   }
 `
 
@@ -44,6 +46,9 @@ class Blog extends React.Component {
             <LtaifText>¡Comienza tu busqueda!</LtaifText>
             <SearchTab />
           </SearchContainer>
+          <ImageHouse backgroundImg={bg}>
+
+          </ImageHouse>
         </LogoContainer>
       )
     }
@@ -57,9 +62,6 @@ class Blog extends React.Component {
           StyledSlide={StyledSlide}
         >
           {renderCarouselContent(BuildingEx03)}
-          {/* {renderCarouselContent(BuildingEx03)}
-            {renderCarouselContent(BuildingEx04)}
-            {renderCarouselContent(BuildingEx05)} */}
         </Carousel>
       </Layout>
     )
@@ -69,35 +71,52 @@ class Blog extends React.Component {
 
 
 const LtaifText = styled.h3`
-  font-family: MonteserratB;
+  font-family: RobotoB;
   work-break: break-all;
   margin: 1rem;
   color: white;
 `
 
 const SearchContainer = styled.div`
-position: absolute;
-  top: 2rem;
+  top: 4rem;
   left: 10rem;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: 2s ${fadeInLeftAnimation};
+  width: 100%;
 `
 
 const LogoContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
-  justify-content: start;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 40rem;
-  background-image: url(${props => props.backgroundImg});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  background-color: #94CED5;
+
+  img{
+    animation: 2s ${fadeInRightAnimation};
+  }
+`
+
+const ImageHouse = styled.div`
+background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(${props => props.backgroundImg});
+  background-color: #94CED5;
+  animation: 2s ${fadeInRightAnimation};
+  width: 100%;
+  height: inherit;
 `
 // const Banner = styled.div`
 //   background-color: #aa5c3b;
@@ -113,7 +132,7 @@ const LogoContainer = styled.div`
 //   }
 //   h1 {
 //     color: white;
-//     font-family: MonteserratB;
+//     font-family: RobotoB;
 //     font-size: 3.5rem;
 //     text-transform: uppercase;
 //     margin-top: 0px;
@@ -145,7 +164,6 @@ const LogoContainer = styled.div`
 
 export const StyledCarousel = styled(CarouselProvider)`
   display: flex;
-  opacity: 0.9;
   z-index: 0;
   flex-direction: column;
   justify-content: center;

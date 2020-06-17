@@ -46,7 +46,7 @@ export const Column = styled.div`
   text-align: center;
 
   h1 {
-    font-family: "MonteserratR";
+    font-family: "RobotoR";
     color: #aa5c3b;
     text-transform: uppercase;
     @media (max-width: 768px) {

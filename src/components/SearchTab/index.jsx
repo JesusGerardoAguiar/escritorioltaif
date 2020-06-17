@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { makeStyles } from "@material-ui/core/styles"
 import InputLabel from "@material-ui/core/InputLabel"
@@ -10,6 +10,7 @@ import Button from "@material-ui/core/Button"
 import Icon from "@material-ui/core/Icon"
 import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
+import SelectComponent from "./SelectComponent"
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -29,98 +30,51 @@ const useStyles = makeStyles(theme => ({
 
 const SearchTab = () => {
   const classes = useStyles()
-  const [age, setAge] = React.useState("")
-
-  const handleChange = event => {
-    setAge(event.target.value)
-  }
+  const [propertyType, setPropertyType] = useState("")
+  const dummyMenuItems = [
+    { value: 10, label: "Item 1" },
+    { value: 20, label: "Item 2" },
+  ]
 
   return (
     <SearchContainer>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">
-          Tipo de Propiedad
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">
-          Tipo de Listado
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Moneda</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Min Precio</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Max Precio</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-      </FormControl>
+      <SelectRow>
+        <SelectComponent
+          label="Tipo de Propiedad"
+          menuItems={dummyMenuItems}
+          property={propertyType}
+          setPropertyValue={setPropertyType}
+        />
+        <SelectComponent
+          label="Tipo de Listado"
+          menuItems={dummyMenuItems}
+          property={propertyType}
+          setPropertyValue={setPropertyType}
+        />
+      </SelectRow>
+      <SelectRow>
+        <SelectComponent
+          label="Moneda"
+          menuItems={dummyMenuItems}
+          property={propertyType}
+          setPropertyValue={setPropertyType}
+        />
+        <SelectComponent
+          label="Min Precio"
+          menuItems={dummyMenuItems}
+          property={propertyType}
+          setPropertyValue={setPropertyType}
+        />
+      </SelectRow>
+      <SelectRow id="maxprice">
+        <SelectComponent
+          style={{width: '100%'}}
+          label="Max Precio"
+          menuItems={dummyMenuItems}
+          property={propertyType}
+          setPropertyValue={setPropertyType}
+        />
+      </SelectRow>
       <ButtonDiv>
         <Button
           variant="contained"
@@ -146,15 +100,25 @@ const SearchTab = () => {
 }
 
 const SearchContainer = styled.div`
-  width: 30rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   .MuiSelect-root {
     width: 10rem;
   }
+  #maxprice {
+    width: 100%;
+    height: 4.5rem;
+  }
+`
+
+const SelectRow = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  
 `
 
 const ButtonDiv = styled.div`

@@ -13,9 +13,9 @@ export const InsideLinkDiv = styled.div`
 export const LinkDiv = styled.div`
 width: 100%;
     // padding: 1rem;
-  font-size: 12px;
+  font-size: 14px;
   color: #016699;
-  font-family: "MonteserratR";
+  font-family: "RobotoR";
   font-weight: 300;
   text-align: center;
   cursor: pointer;
@@ -76,7 +76,7 @@ export const LinksContainerDiv = styled.div`
 export const MainDiv = styled.nav`
   display: flex;
   flex-direction: row;
-  background-color: #9ED3D9;
+  background-color: #94CED5;
   z-index: 1;
   justify-content: space-evenly;
     align-items: center;
