@@ -7,9 +7,9 @@ exports.onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
       dangerouslySetInnerHTML={{
         __html: `
         var options = {
-          facebook: "1197493380277609",
+          facebook: "",
           // Facebook page ID
-          whatsapp: "+59899278101",
+          whatsapp: "+59899819199",
           // WhatsApp number
           call_to_action: "Escribenos!",
           // Call to action

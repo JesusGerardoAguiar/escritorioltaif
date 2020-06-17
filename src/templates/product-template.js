@@ -5,27 +5,26 @@ import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import Modal from "../components/Modal"
 import InfoDialog from "../components/InfoDialog"
-import InfoSvg from "../../content/assets/icons/info.svg"
 
-const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: MontserratL;
-    src: url(${require("../../content/assets/fonts/Montserrat-Light.ttf")});
-  }
-  @font-face {
-    font-family: MonteserratR;
-    src: url(${require("../../content/assets/fonts/Montserrat-Medium.ttf")});
-  }
-  @font-face {
-    font-family: MonteserratB;
-    src: url(${require("../../content/assets/fonts/Montserrat-Bold.otf")});
-  }
-  @font-face {
-    font-family: DinRegular;
-    src: url(${require("../../content/assets/fonts/DIN-Regular.ttf")});
-  }
+// const GlobalStyles = createGlobalStyle`
+//   @font-face {
+//     font-family: MontserratL;
+//     src: url(${require("../../content/assets/fonts/Montserrat-Light.ttf")});
+//   }
+//   @font-face {
+//     font-family: RobotoR;
+//     src: url(${require("../../content/assets/fonts/Montserrat-Medium.ttf")});
+//   }
+//   @font-face {
+//     font-family: RobotoB;
+//     src: url(${require("../../content/assets/fonts/Montserrat-Bold.otf")});
+//   }
+//   @font-face {
+//     font-family: DinRegular;
+//     src: url(${require("../../content/assets/fonts/DIN-Regular.ttf")});
+//   }
  
-`
+// `
 
 const ProductTemplate = props => {
   const [open, setOpen] = useState(false);
@@ -54,11 +53,9 @@ const ProductTemplate = props => {
     if(identifier === 'proyectos'){
       return <></>
     }
-    return <img src={InfoSvg} style={{ width: "2.5rem", marginBottom: 0 }} onClick={() => setOpenInfo(true)}/>
   }
   return (
     <Layout location={props.location}>
-      <GlobalStyles />
       <MainDiv>
         <Modal open={open} handleClose={handleOnClose} product={product} isProject={identifier === 'proyectos'} />
         <InfoDialog open={openInfo} handleClose={handleCloseInfo} />
@@ -95,7 +92,7 @@ const MainDiv = styled.div`
   align-items: center;
 
   h1 {
-    font-family: "MonteserratR";
+    font-family: "RobotoR";
     color: #aa5c3b;
     text-transform: uppercase;
     margin-right: 1.5rem;
@@ -147,7 +144,7 @@ export const ProdCircle = styled.div`
       height: -webkit-fill-available;
       margin 0px!important;
       p {
-        font-family: MonteserratR;
+        font-family: RobotoR;
         color: white;
         font-size: 25px;
         margin-bottom: 0px;

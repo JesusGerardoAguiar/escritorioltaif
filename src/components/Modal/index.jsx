@@ -23,12 +23,12 @@ const useStyles = makeStyles({
     width: "20rem",
   },
   h2: {
-    fontFamily: "MonteserratR",
+    fontFamily: "RobotoR",
     color: "#aa5c3b",
     textTransform: "uppercase",
   },
   p: {
-    fontFamily: "MonteserratR",
+    fontFamily: "RobotoR",
     textAlign: "justify",
   },
   button: {
@@ -38,7 +38,7 @@ const useStyles = makeStyles({
     fontSize: "0.6rem",
     backgroundColor: "white",
     border: "3px solid #aa5c3b",
-    fontFamily: "MonteserratR",
+    fontFamily: "RobotoR",
     textTransform: "uppercase",
     color: "#aa5c3b",
   },

@@ -6,22 +6,6 @@ import Lograf from "../../content/assets/lografLogoBlack.svg";
 
 import { rhythm, scale } from "../utils/typography"
 
-import { createGlobalStyle } from "styled-components"
-
-const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: MontserratL;
-    src: url(${require("../../content/assets/fonts/Montserrat-Light.ttf")});
-  }
-  @font-face {
-    font-family: MonteserratR;
-    src: url(${require("../../content/assets/fonts/Montserrat-Regular.otf")});
-  }
-  @font-face {
-    font-family: MonteserratB;
-    src: url(${require("../../content/assets/fonts/Montserrat-Bold.otf")});
-  }
-`
 
 class Layout extends React.Component {
   render() {
@@ -33,11 +17,11 @@ class Layout extends React.Component {
           <header>{header}</header>
           <main>{children}</main>
         </div>
-        <Footer backgroundImg={Lograf}>
+        {/* <Footer backgroundImg={Lograf}>
           © {new Date().getFullYear()}, powered by
           {` `}
           <a href="https://www.lografdesign.com"><img src={Lograf} alt="f" style={{width: '5rem'}} /></a>
-        </Footer>
+        </Footer> */}
       </Wrapper>
     )
   }
@@ -47,7 +31,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
 
   p {
-    font-family: MonteserratR;
+    font-family: RobotoR;
   }
 `
 
@@ -55,7 +39,7 @@ const Footer = styled.footer`
   text-align: center;
   margin: 24px;
   font-size: 18px;
-  font-family: "MonteserratR";;
+  font-family: "RobotoR";;
   display: flex;
   flex-direction: row;
   justify-content: center;

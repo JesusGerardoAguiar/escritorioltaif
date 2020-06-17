@@ -63,7 +63,7 @@ export const Button = styled.button`
   height: 3rem;
 
   border: 3px solid #aa5c3b;
-  font-family: MonteserratR;
+  font-family: RobotoR;
   text-transform: uppercase;
   color: #aa5c3b;
   outline: none;

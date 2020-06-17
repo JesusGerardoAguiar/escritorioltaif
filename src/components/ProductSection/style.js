@@ -53,7 +53,7 @@ export const ProdCircle = styled.div`
       }
 
       p {
-        font-family: MonteserratR;
+        font-family: RobotoR;
         color: white;
         font-size: 25px;
         margin-bottom: 0px;
@@ -95,7 +95,7 @@ export const SaleCircle = styled.div`
     }
 
     p {
-      font-family: MonteserratR;
+      font-family: RobotoR;
       color: white;
       font-size: 25px;
       margin-bottom: 0px;
@@ -119,7 +119,7 @@ export const Button = styled.button`
   width: 10rem;
   height: 3rem;
   border: 3px solid #aa5c3b;
-  font-family: MonteserratR;
+  font-family: RobotoR;
   text-transform: uppercase;
   color: #aa5c3b;
   outline: none;

@@ -12,9 +12,10 @@ import { Link } from "gatsby"
 import Drawer from "@material-ui/core/Drawer"
 import { makeStyles } from "@material-ui/core/styles"
 import IconButton from "@material-ui/core/IconButton"
-import Hamburguer from '../../../content/assets/icons/hamburguer.svg'
-import Close from '../../../content/assets/icons/close.svg'
-import DecorartLogo from '../../../content/assets/gatsby-icon.png'
+import Hamburguer from "../../../content/assets/icons/hamburguer.svg"
+import Close from "../../../content/assets/icons/close.svg"
+import LtaiftLogo from "../../../content/assets/icons/logoescritorio-01.svg"
+// import LtaiftLogo from "../../../content/assets/img/logoltaif-01.jpg"
 import Media from "react-media"
 import Scroll from "react-scroll"
 import Submenu from "./SubMenu"
@@ -90,9 +91,13 @@ const Header = ({ location }) => {
       return (
         <div>
           <MainDiv>
-            <div onClick={() => setOpen(true)}><img alt="a" src={Hamburguer} style={{width: '3rem'}}/></div>
+            <div onClick={() => setOpen(true)}>
+              <img alt="a" src={Hamburguer} style={{ width: "3rem" }} />
+            </div>
 
-            <div><img alt="a" src={DecorartLogo} style={{ width: '3rem' }}/></div>
+            <div>
+              <img alt="a" src={LtaiftLogo} style={{ width: "3rem" }} />
+            </div>
           </MainDiv>
           <Drawer
             className={classes.drawer}
@@ -106,7 +111,9 @@ const Header = ({ location }) => {
           >
             <div className={classes.drawerHeader}>
               <IconButton onClick={() => setOpen(false)}>
-                <div><img alt="a" src={Close}  style={{width: '1rem'}}/></div>
+                <div>
+                  <img alt="a" src={Close} style={{ width: "1rem" }} />
+                </div>
               </IconButton>
             </div>
             <LinkDiv onClick={() => setOpen(false)}>
@@ -171,12 +178,12 @@ const Header = ({ location }) => {
             </LinkDiv>
             <IconDiv>
               <img
-               alt="a"
+                alt="a"
                 src={Facebook}
                 style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
               />
               <img
-               alt="a"
+                alt="a"
                 src={Instagram}
                 style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
               />
@@ -188,22 +195,12 @@ const Header = ({ location }) => {
       console.log(anchorEl)
       return (
         <MainDiv pathname={location.pathname}>
-          <LinksContainerDiv>
+          <img alt="a" src={LtaiftLogo} style={{ width: "20rem", marginBottom: 0 }} />
             <LinkDiv>
               <InsideLinkDiv>
                 <Link>Inicio</Link>
-                <LinkScroll
-                  activeClass="active"
-                  to="History"
-                  spy={true}
-                  smooth={true}
-                  duration={400}
-                >
-                  <Link to="" style={{ marginRight: "0px" }}>
-                    Historia
-                  </Link>
-                </LinkScroll>
-                <Submenu />
+                <Submenu submenu={"Ventas"} submenuChilds={["casas", "apartamentos"]} />
+                <Submenu submenu={"Alquileres"} submenuChilds={["casas", "apartamentos"]} />
                 <LinkScroll
                   activeClass="active"
                   to="process"
@@ -212,7 +209,20 @@ const Header = ({ location }) => {
                   duration={400}
                 >
                   <Link to="" style={{ marginRight: "0px" }}>
-                    Proceso
+                    Terrenos
+                  </Link>
+                </LinkScroll>
+                <Submenu submenu={"Campos y Chacras"} submenuChilds={["venta", "alquiler"]} />
+                <Submenu submenu={"Galpones y Locales Comerciales"} submenuChilds={["venta", "alquiler"]} />
+                <LinkScroll
+                  activeClass="active"
+                  to="Contact"
+                  spy={true}
+                  smooth={true}
+                  duration={400}
+                >
+                  <Link to="" style={{ marginRight: "0px" }}>
+                    Remates
                   </Link>
                 </LinkScroll>
                 <LinkScroll
@@ -228,9 +238,8 @@ const Header = ({ location }) => {
                 </LinkScroll>
               </InsideLinkDiv>
             </LinkDiv>
-            <IconDiv>
-            <a
-                href="https://www.facebook.com/decorartamoblamientos/"
+              {/* <a
+                href="_"
                 target="_blank"
               >
                 <img alt="a"
@@ -239,7 +248,7 @@ const Header = ({ location }) => {
                 />
               </a>
               <a
-                href="https://www.instagram.com/decorartamoblamientos/"
+                href="_"
                 target="_blank"
               >
                 <img
@@ -247,9 +256,7 @@ const Header = ({ location }) => {
                   src={Instagram}
                   style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
                 />
-              </a>
-            </IconDiv>
-          </LinksContainerDiv>
+              </a> */}
         </MainDiv>
       )
     }
