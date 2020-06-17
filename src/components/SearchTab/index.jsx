@@ -109,7 +109,13 @@ const SearchContainer = styled.div`
   .MuiButton-containedPrimary{
     background-color: #2f358f;
   }
-  
+  .MuiFormControl-root{
+    margin: 8px;
+    min-width: 120px;
+  }
+  .MuiButtonBase-root{
+    margin: 8px;
+  }
   #maxprice {
     width: 100%;
     height: 4.5rem;
