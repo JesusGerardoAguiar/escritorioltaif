@@ -38,63 +38,63 @@ const SearchTab = () => {
 
   return (
     <SearchContainer>
-      <SelectRow>
-        <SelectComponent
-          label="Tipo de Propiedad"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
-        />
-        <SelectComponent
-          label="Tipo de Listado"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
-        />
-      </SelectRow>
-      <SelectRow>
-        <SelectComponent
-          label="Moneda"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
-        />
-        <SelectComponent
-          label="Min Precio"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
-        />
-      </SelectRow>
-      <SelectRow id="maxprice">
-        <SelectComponent
-          style={{width: '100%'}}
-          label="Max Precio"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
-        />
-      </SelectRow>
-      <ButtonDiv>
-        <Button
-          variant="contained"
-          color="secundary"
-          size="large"
-          className={classes.button}
-          startIcon={<ClearAllIcon />}
-        >
-          Limpiar
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          className={classes.button}
-          startIcon={<SearchIcon />}
-        >
-          Buscar
-        </Button>
-      </ButtonDiv>
+        <SelectRow>
+          <SelectComponent
+            label="Tipo de Propiedad"
+            menuItems={dummyMenuItems}
+            property={propertyType}
+            setPropertyValue={setPropertyType}
+          />
+          <SelectComponent
+            label="Tipo de Listado"
+            menuItems={dummyMenuItems}
+            property={propertyType}
+            setPropertyValue={setPropertyType}
+          />
+        </SelectRow>
+        <SelectRow>
+          <SelectComponent
+            label="Moneda"
+            menuItems={dummyMenuItems}
+            property={propertyType}
+            setPropertyValue={setPropertyType}
+          />
+          <SelectComponent
+            label="Min Precio"
+            menuItems={dummyMenuItems}
+            property={propertyType}
+            setPropertyValue={setPropertyType}
+          />
+        </SelectRow>
+        <SelectRow id="maxprice">
+          <SelectComponent
+            style={{ width: "100%" }}
+            label="Max Precio"
+            menuItems={dummyMenuItems}
+            property={propertyType}
+            setPropertyValue={setPropertyType}
+          />
+        </SelectRow>
+        <ButtonDiv>
+          <Button
+            variant="contained"
+            color="secundary"
+            size="large"
+            className={classes.button}
+            startIcon={<ClearAllIcon />}
+          >
+            Limpiar
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+            startIcon={<SearchIcon />}
+          >
+            Buscar
+          </Button>
+        </ButtonDiv>
     </SearchContainer>
   )
 }
@@ -106,10 +106,20 @@ const SearchContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 30rem;
-  .MuiButton-containedPrimary{
+  .MuiButton-containedPrimary {
     background-color: #2f358f;
   }
+<<<<<<< Updated upstream
   
+=======
+  .MuiFormControl-root {
+    margin: 8px;
+    min-width: 120px;
+  }
+  .MuiButtonBase-root {
+    margin: 8px;
+  }
+>>>>>>> Stashed changes
   #maxprice {
     width: 100%;
     height: 4.5rem;
@@ -120,7 +130,6 @@ const SelectRow = styled.div`
   display: flex;
   flex-direction: row;
   width: inherit;
-  
 `
 
 const ButtonDiv = styled.div`

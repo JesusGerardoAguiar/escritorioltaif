@@ -5,9 +5,12 @@ import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
 import styled, { keyframes } from "styled-components"
 import Layout from "../components/layout"
 import BuildingEx03 from "../../content/assets/img/building-ex03-01.jpg"
+import BuildingEx04 from "../../content/assets/img/building-ex04.jpg"
+import BuildingEx05 from "../../content/assets/img/building-ex05.jpg"
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab"
 import { fadeInLeft, fadeInRight } from "react-animations"
+import BackgroundSlider from "react-background-slider"
 
 const fadeInLeftAnimation = keyframes`${fadeInLeft}`
 const fadeInRightAnimation = keyframes`${fadeInRight}`
@@ -42,39 +45,50 @@ class Blog extends React.Component {
 
     const renderCarouselContent = bg => {
       return (
-        <LogoContainer backgroundImg={bg}>
+        <>
           <SearchContainer>
-            <PresentationColumn>
-              <PresentationTextBox>
-                <PresentationText
-                  id="deskltaif"
-                  style={{ borderBotttom: "2px solid white" }}
-                >
-                  Escritorio Ltaif{" "}
-                </PresentationText>
-                <PresentationText style={{ paddingTop: "0.2rem" }}>
-                  Venta de Inmuebles
-                </PresentationText>
-              </PresentationTextBox>
-              <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
-            </PresentationColumn>
-            <SearchTab />
+            <div
+              style={{
+                width: "40rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid lightgray",
+                background: "lightgray",
+                opacity: "0.5",
+                padding: "1rem",
+                borderRadius: "10px",
+              }}
+            >
+              <PresentationColumn>
+                <PresentationTextBox>
+                  <PresentationText
+                    id="deskltaif"
+                    style={{ borderBotttom: "2px solid white" }}
+                  >
+                    Escritorio Ltaif{" "}
+                  </PresentationText>
+                  <PresentationText style={{ paddingTop: "0.2rem" }}>
+                    Venta de Inmuebles
+                  </PresentationText>
+                </PresentationTextBox>
+                <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
+              </PresentationColumn>
+              <SearchTab />
+            </div>
           </SearchContainer>
-          <ImageHouse backgroundImg={bg}></ImageHouse>
-        </LogoContainer>
+        </>
       )
     }
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <GlobalStyles />
-        <Carousel
-          totalSlides={`1`}
-          StyledCarousel={StyledCarousel}
-          StyledSlider={StyledSlider}
-          StyledSlide={StyledSlide}
-        >
-          {renderCarouselContent(BuildingEx03)}
-        </Carousel>
+        <BackgroundSlider
+          images={[BuildingEx04, BuildingEx05]}
+          duration={4}
+          transition={2}
+        />
+        {renderCarouselContent(BuildingEx03)}
       </Layout>
     )
   }
@@ -125,6 +139,8 @@ const PresentationColumn = styled.div`
 `
 
 const SearchContainer = styled.div`
+  height: 65vh;
+  margin: 0;
   color: white;
   display: flex;
   flex-direction: column;

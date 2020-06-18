@@ -38,6 +38,7 @@
     "pure-react-carousel": "^1.27.0",
     "react": "^16.8.6",
     "react-animations": "^1.0.0",
+    "react-background-slider": "^2.0.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-media": "^1.10.0",
