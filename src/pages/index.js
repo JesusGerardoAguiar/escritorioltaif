@@ -4,9 +4,11 @@ import Carousel from "../components/Carousel"
 import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
 import styled, { keyframes } from "styled-components"
 import Layout from "../components/layout"
-import BuildingEx03 from "../../content/assets/img/building-ex03-01.jpg"
-import BuildingEx04 from "../../content/assets/img/building-ex04.jpg"
-import BuildingEx05 from "../../content/assets/img/building-ex05.jpg"
+import Durazno1 from "../../content/assets/img/durazno1.jpg"
+import Durazno2 from "../../content/assets/img/durazno2.jpg"
+import Durazno3 from "../../content/assets/img/durazno3.jpg"
+import Durazno4 from "../../content/assets/img/durazno4.jpg"
+import Durazno5 from "../../content/assets/img/durazno5.jpg"
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab"
 import { fadeInLeft, fadeInRight } from "react-animations"
@@ -43,7 +45,7 @@ class Blog extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
 
-    const renderCarouselContent = bg => {
+    const renderCarouselContent = () => {
       return (
         <>
           <SearchContainer>
@@ -55,14 +57,14 @@ class Blog extends React.Component {
                 alignItems: "center",
                 border: "1px solid lightgray",
                 background: "lightgray",
-                opacity: "0.5",
                 padding: "1rem",
                 borderRadius: "10px",
+                opacity: '0.9',
               }}
             >
               <PresentationColumn>
                 <PresentationTextBox>
-                  <PresentationText
+                  {/* <PresentationText
                     id="deskltaif"
                     style={{ borderBotttom: "2px solid white" }}
                   >
@@ -70,7 +72,7 @@ class Blog extends React.Component {
                   </PresentationText>
                   <PresentationText style={{ paddingTop: "0.2rem" }}>
                     Venta de Inmuebles
-                  </PresentationText>
+                  </PresentationText> */}
                 </PresentationTextBox>
                 <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
               </PresentationColumn>
@@ -84,11 +86,15 @@ class Blog extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <GlobalStyles />
         <BackgroundSlider
-          images={[BuildingEx04, BuildingEx05]}
+          images={[Durazno1,
+            Durazno2,
+            Durazno3,
+            Durazno4,
+            Durazno5]}
           duration={4}
           transition={2}
         />
-        {renderCarouselContent(BuildingEx03)}
+        {renderCarouselContent()}
       </Layout>
     )
   }
@@ -97,7 +103,6 @@ class Blog extends React.Component {
 const PresentationTextBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   border: 4px solid white;
   border-top: 0px;
   border-bottom: 0px;
@@ -139,16 +144,14 @@ const PresentationColumn = styled.div`
 `
 
 const SearchContainer = styled.div`
-  height: 65vh;
+  height: 80vh;
   margin: 0;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: 2s ${fadeInLeftAnimation};
   width: 100%;
-  margin-bottom: 2rem;
 `
 
 const LogoContainer = styled.div`

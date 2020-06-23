@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   }
 
   #ReactBackgroundSlider > figure{
-    height: 65vh;
+    height: 80vh;
     top: auto;
     left: auto;
   }
