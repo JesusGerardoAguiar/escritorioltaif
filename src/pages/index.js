@@ -13,10 +13,10 @@ import HouseForSellImg from "../../content/assets/img/casaprueba.jpg"
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab/SearchInit"
 import SearchHouses from "../components/SearchTab/SearchHouses"
-import { fadeInLeft, fadeInRight } from "react-animations"
+import { fadeIn, fadeInRight } from "react-animations"
 import BackgroundSlider from "react-background-slider"
 
-const fadeInLeftAnimation = keyframes`${fadeInLeft}`
+const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInRightAnimation = keyframes`${fadeInRight}`
 
 const GlobalStyles = createGlobalStyle`
@@ -106,12 +106,22 @@ class Blog extends React.Component {
             </TitleContainer>
             <FeaturedStateRow>
               <StateContainer>
-                <StateImage bg={HouseForSellImg}></StateImage>
-                <StateLabel>Terreno en venta</StateLabel>
-                <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                <div>
-                  <StatePrice>USD 1.800.000</StatePrice>
-                </div>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
               </StateContainer>
             </FeaturedStateRow>
           </FeaturedColumn>
@@ -121,13 +131,40 @@ class Blog extends React.Component {
   }
 }
 
+const StateInfo = styled.div`
+  display: none;
+  background-color: #303f9f;
+  opacity: 0.6;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`
+
 const StateImage = styled.div`
-  background-color: blue;
   background-image: url(${props => props.bg});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
+  h4,
+  h5 {
+    display: none;
+  }
 
+  :hover {
+    cursor: pointer;
+    h4,
+    h5 {
+      display: initial;
+      color: white;
+    }
+    div {
+      display: flex;
+    }
+  }
   width: 100%;
   height: 10rem;
 `
@@ -159,14 +196,17 @@ const StateContainer = styled.div`
   align-items: start;
   flex-wrap: wrap;
   width: 15rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 `
 
 const FeaturedStateRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: start;
-  justify-content: space-evenly;
   padding: 1rem;
+  flex-wrap: wrap;
+    justify-content: end;
 `
 
 const SearchColumn = styled.div`
