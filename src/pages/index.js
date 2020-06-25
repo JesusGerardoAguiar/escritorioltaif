@@ -66,15 +66,15 @@ class Blog extends React.Component {
             >
               <PresentationColumn>
                 <PresentationTextBox>
-                  {/* <PresentationText
+                  <PresentationText
                     id="deskltaif"
                     style={{ borderBotttom: "2px solid white" }}
                   >
-                    Escritorio Ltaif{" "}
+                    La llave segura de su negocio{" "}
                   </PresentationText>
                   <PresentationText style={{ paddingTop: "0.2rem" }}>
-                    Venta de Inmuebles
-                  </PresentationText> */}
+                  Ventas, Alquileres, Remates y tasaciones
+                  </PresentationText>
                 </PresentationTextBox>
                 <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
               </PresentationColumn>
@@ -123,6 +123,43 @@ class Blog extends React.Component {
                   </StateInfo>
                 </StateImage>
               </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              
             </FeaturedStateRow>
           </FeaturedColumn>
         </FeaturedHouses>
@@ -270,11 +307,11 @@ const PresentationTextBox = styled.div`
   border-top: 0px;
   border-bottom: 0px;
   border-right: 0px;
-
+  margin-top: 8px;
   #deskltaif {
     border-bottom: 4px solid white;
     padding-top: 0px;
-    width: 19rem;
+    width: 28.22222222rem;
   }
 `
 
@@ -285,10 +322,11 @@ const LtaifText = styled.h2`
   color: #2f358f;
   font-size: 2em;
   margin-left: 0px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 `
 
-const PresentationText = styled.h2`
-  font-size: 2em;
+const PresentationText = styled.h4`
   margin: 0px;
   font-family: RobotoB;
   work-break: break-all;
@@ -297,7 +335,7 @@ const PresentationText = styled.h2`
   margin-top: 0px;
   padding: 0.5rem;
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 2px;
 `
 
 const PresentationColumn = styled.div`
