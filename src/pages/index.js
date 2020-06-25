@@ -9,9 +9,10 @@ import Durazno2 from "../../content/assets/img/durazno2.jpg"
 import Durazno3 from "../../content/assets/img/durazno3.jpg"
 import Durazno4 from "../../content/assets/img/durazno4.jpg"
 import Durazno5 from "../../content/assets/img/durazno5.jpg"
+import HouseForSellImg from "../../content/assets/img/casaprueba.jpg"
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab/SearchInit"
-import SearchHouses from '../components/SearchTab/SearchHouses';
+import SearchHouses from "../components/SearchTab/SearchHouses"
 import { fadeInLeft, fadeInRight } from "react-animations"
 import BackgroundSlider from "react-background-slider"
 
@@ -103,12 +104,70 @@ class Blog extends React.Component {
             <TitleContainer id="featured">
               <h4>Las propiedades destacadas</h4>
             </TitleContainer>
+            <FeaturedStateRow>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}></StateImage>
+                <StateLabel>Terreno en venta</StateLabel>
+                <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                <div>
+                  <StatePrice>USD 1.800.000</StatePrice>
+                </div>
+              </StateContainer>
+            </FeaturedStateRow>
           </FeaturedColumn>
         </FeaturedHouses>
       </Layout>
     )
   }
 }
+
+const StateImage = styled.div`
+  background-color: blue;
+  background-image: url(${props => props.bg});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100%;
+  height: 10rem;
+`
+
+const StateLabel = styled.h4`
+  font-family: RobotoB;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`
+
+const StateAddress = styled.h5`
+  font-family: RobotoM;
+  margin: 0;
+`
+
+const StatePrice = styled.h4`
+  font-family: RobotoB;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+`
+
+const StateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 15rem;
+`
+
+const FeaturedStateRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  padding: 1rem;
+`
 
 const SearchColumn = styled.div`
   display: flex;
@@ -120,10 +179,9 @@ const SearchColumn = styled.div`
 const FeaturedColumn = styled.div`
   display: flex;
   flex-direction: row;
- width: 100%;
+  width: 100%;
   flex-wrap: wrap;
 `
-
 
 const TitleContainer = styled.div`
   width: 100%;
