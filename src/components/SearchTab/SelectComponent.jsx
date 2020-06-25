@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SelectComponent = ({ menuItems, label, property, setPropertyValue, style }) => {
+const SelectComponent = ({ menuItems, label, property, setPropertyValue, style,   labelColor }) => {
   const classes = useStyles()
 
   const renderMenuItems =() => {
@@ -35,7 +35,7 @@ const SelectComponent = ({ menuItems, label, property, setPropertyValue, style }
 
   return (
       <FormControlStyled style={style} variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label" style={{ color: 'white'}}>
+        <InputLabel id="demo-simple-select-filled-label" style={{ color: (labelColor ? labelColor : 'white')}}>
           {label}
         </InputLabel>
         <Select

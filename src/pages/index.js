@@ -10,7 +10,8 @@ import Durazno3 from "../../content/assets/img/durazno3.jpg"
 import Durazno4 from "../../content/assets/img/durazno4.jpg"
 import Durazno5 from "../../content/assets/img/durazno5.jpg"
 import { createGlobalStyle } from "styled-components"
-import SearchTab from "../components/SearchTab"
+import SearchTab from "../components/SearchTab/SearchInit"
+import SearchHouses from '../components/SearchTab/SearchHouses';
 import { fadeInLeft, fadeInRight } from "react-animations"
 import BackgroundSlider from "react-background-slider"
 
@@ -59,7 +60,7 @@ class Blog extends React.Component {
                 background: "lightgray",
                 padding: "1rem",
                 borderRadius: "10px",
-                opacity: '0.9',
+                opacity: "0.9",
               }}
             >
               <PresentationColumn>
@@ -86,19 +87,83 @@ class Blog extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <GlobalStyles />
         <BackgroundSlider
-          images={[Durazno1,
-            Durazno2,
-            Durazno3,
-            Durazno4,
-            Durazno5]}
+          images={[Durazno1, Durazno2, Durazno3, Durazno4, Durazno5]}
           duration={4}
           transition={2}
         />
         {renderCarouselContent()}
+        <FeaturedHouses>
+          <SearchColumn>
+            <TitleContainer id="search">
+              <h4>Busqueda de Propiedades</h4>
+            </TitleContainer>
+            <SearchHouses />
+          </SearchColumn>
+          <FeaturedColumn>
+            <TitleContainer id="featured">
+              <h4>Las propiedades destacadas</h4>
+            </TitleContainer>
+          </FeaturedColumn>
+        </FeaturedHouses>
       </Layout>
     )
   }
 }
+
+const SearchColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 32%;
+`
+
+const FeaturedColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+ width: 100%;
+  flex-wrap: wrap;
+`
+
+
+const TitleContainer = styled.div`
+  width: 100%;
+  background-color: lightgray;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  h4 {
+    margin: 0px;
+    font-family: RobotoB;
+    letter-spacing: 1px;
+    text-transform: initial;
+    color: #323785;
+  }
+`
+
+const FeaturedHouses = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+
+  padding: 2rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+
+  #search{
+    border-right: 1px solid #323785;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #featured{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  }
+`
 
 const PresentationTextBox = styled.div`
   display: flex;
