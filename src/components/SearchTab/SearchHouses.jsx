@@ -78,7 +78,7 @@ const SearchHouses = () => {
           <Button
             variant="contained"
             color="primary"
-            size="large"
+            size="medium"
             className={classes.button}
             startIcon={<SearchIcon />}
           >
@@ -87,7 +87,7 @@ const SearchHouses = () => {
           <Button
             variant="contained"
             color="secundary"
-            size="large"
+            size="medium"
             className={classes.button}
             startIcon={<ClearAllIcon />}
           >
@@ -120,6 +120,7 @@ const SearchContainer = styled.div`
   .MuiButtonBase-root {
     margin-left: 0px;
     margin-rigth: 0px;
+    width: 100%;
   }
   #maxprice {
     height: 4.5rem;
@@ -135,6 +136,7 @@ const SelectRow = styled.div`
 const ButtonDiv = styled.div`
   align-items: baseline;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+
 `
 export default SearchHouses
