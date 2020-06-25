@@ -5,6 +5,7 @@ import {
   LinkDiv,
   InsideLinkDiv,
   IconDiv,
+  LinkBox,
 } from "./styles"
 import Facebook from "../../../content/assets/icons/facebook.svg"
 import Instagram from "../../../content/assets/icons/instagram.svg"
@@ -195,50 +196,72 @@ const Header = ({ location }) => {
       console.log(anchorEl)
       return (
         <MainDiv pathname={location.pathname}>
-          <img alt="a" src={LtaiftLogo} style={{ width: "20rem", marginBottom: 0 }} />
-            <LinkDiv>
-              <InsideLinkDiv>
-                <Link>Inicio</Link>
-                <Submenu submenu={"Ventas"} submenuChilds={["casas", "apartamentos"]} />
-                <Submenu submenu={"Alquileres"} submenuChilds={["casas", "apartamentos"]} />
-                <LinkScroll
-                  activeClass="active"
-                  to="process"
-                  spy={true}
-                  smooth={true}
-                  duration={400}
-                >
-                  <Link to="" style={{ marginRight: "0px" }}>
-                    Terrenos
-                  </Link>
-                </LinkScroll>
-                <Submenu submenu={"Campos y Chacras"} submenuChilds={["venta", "alquiler"]} />
-                <Submenu submenu={"Galpones y Locales Comerciales"} submenuChilds={["venta", "alquiler"]} />
-                <LinkScroll
-                  activeClass="active"
-                  to="Contact"
-                  spy={true}
-                  smooth={true}
-                  duration={400}
-                >
-                  <Link to="" style={{ marginRight: "0px" }}>
-                    Remates
-                  </Link>
-                </LinkScroll>
-                <LinkScroll
-                  activeClass="active"
-                  to="Contact"
-                  spy={true}
-                  smooth={true}
-                  duration={400}
-                >
-                  <Link to="" style={{ marginRight: "0px" }}>
-                    Contacto
-                  </Link>
-                </LinkScroll>
-              </InsideLinkDiv>
-            </LinkDiv>
-              {/* <a
+          <img
+            alt="a"
+            src={LtaiftLogo}
+            style={{ width: "20rem", marginBottom: 0 }}
+          />
+          <LinkDiv>
+            <LinkBox>
+              <Link>Inicio</Link>
+            </LinkBox>
+            <Submenu
+              submenu={"Ventas"}
+              submenuChilds={["casas", "apartamentos"]}
+            />
+            <Submenu
+              submenu={"Alquileres"}
+              submenuChilds={["casas", "apartamentos"]}
+              />
+              <LinkBox>
+            <LinkScroll
+              activeClass="active"
+              to="process"
+              spy={true}
+              smooth={true}
+              duration={400}
+            >
+                <Link to="" style={{ marginRight: "0px" }}>
+                  Terrenos
+                </Link>
+            </LinkScroll>
+              </LinkBox>
+            <Submenu
+              submenu={"Campos y Chacras"}
+              submenuChilds={["venta", "alquiler"]}
+            />
+            <Submenu
+              submenu={"Galpones y Locales Comerciales"}
+              submenuChilds={["venta", "alquiler"]}
+              />
+              <LinkBox>
+            <LinkScroll
+              activeClass="active"
+              to="Contact"
+              spy={true}
+              smooth={true}
+              duration={400}
+            >
+                <Link to="" style={{ marginRight: "0px" }}>
+                  Remates
+                </Link>
+            </LinkScroll>
+              </LinkBox>
+              <LinkBox>
+            <LinkScroll
+              activeClass="active"
+              to="Contact"
+              spy={true}
+              smooth={true}
+              duration={400}
+            >
+                <Link to="" style={{ marginRight: "0px" }}>
+                  Contacto
+                </Link>
+            </LinkScroll>
+              </LinkBox>
+          </LinkDiv>
+          {/* <a
                 href="_"
                 target="_blank"
               >

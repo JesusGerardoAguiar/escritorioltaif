@@ -33,6 +33,12 @@ const Wrapper = styled.div`
   p {
     font-family: RobotoR;
   }
+
+  #ReactBackgroundSlider > figure{
+    height: 80vh;
+    top: auto;
+    left: auto;
+  }
 `
 
 const Footer = styled.footer`

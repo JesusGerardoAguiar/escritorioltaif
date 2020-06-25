@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SearchTab = () => {
+const SearchHouses = () => {
   const classes = useStyles()
   const [propertyType, setPropertyType] = useState("")
   const dummyMenuItems = [
@@ -44,57 +44,57 @@ const SearchTab = () => {
           menuItems={dummyMenuItems}
           property={propertyType}
           setPropertyValue={setPropertyType}
+          labelColor="#2f358f"
         />
         <SelectComponent
           label="Tipo de Listado"
           menuItems={dummyMenuItems}
           property={propertyType}
           setPropertyValue={setPropertyType}
+          labelColor="#2f358f"
         />
-      </SelectRow>
-      <SelectRow>
         <SelectComponent
           label="Moneda"
           menuItems={dummyMenuItems}
           property={propertyType}
           setPropertyValue={setPropertyType}
+          labelColor="#2f358f"
         />
         <SelectComponent
           label="Min Precio"
           menuItems={dummyMenuItems}
           property={propertyType}
           setPropertyValue={setPropertyType}
+          labelColor="#2f358f"
         />
-      </SelectRow>
-      <SelectRow id="maxprice">
         <SelectComponent
-          style={{width: '100%'}}
           label="Max Precio"
           menuItems={dummyMenuItems}
           property={propertyType}
           setPropertyValue={setPropertyType}
+          labelColor="#2f358f"
         />
+        <ButtonDiv>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            className={classes.button}
+            startIcon={<SearchIcon />}
+          >
+            Buscar
+          </Button>
+          <Button
+            variant="contained"
+            color="secundary"
+            size="large"
+            className={classes.button}
+            startIcon={<ClearAllIcon />}
+          >
+            Limpiar
+          </Button>
+        </ButtonDiv>
       </SelectRow>
-      <ButtonDiv>
-        <Button
-          variant="contained"
-          color="secundary"
-          size="large"
-          className={classes.button}
-          startIcon={<ClearAllIcon />}
-        >
-          Limpiar
-        </Button>
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          className={classes.button}
-          startIcon={<SearchIcon />}
-        >
-          Buscar
-        </Button>
-      </ButtonDiv>
     </SearchContainer>
   )
 }
@@ -103,30 +103,33 @@ const SearchContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   flex-wrap: wrap;
-  width: 30rem;
-  .MuiButton-containedPrimary{
+  width: 97.777777777%;
+  .MuiButton-containedPrimary {
     background-color: #2f358f;
+    margin-bottom: 0.5rem;
   }
-  .MuiFormControl-root{
-    margin: 8px;
+  .MuiFormControl-root {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     min-width: 120px;
   }
-  .MuiButtonBase-root{
-    margin: 8px;
+  .MuiButtonBase-root {
+    margin-left: 0px;
+    margin-rigth: 0px;
   }
   #maxprice {
-    width: 100%;
     height: 4.5rem;
   }
 `
 
 const SelectRow = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: inherit;
-  
 `
 
 const ButtonDiv = styled.div`
@@ -134,4 +137,4 @@ const ButtonDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
 `
-export default SearchTab
+export default SearchHouses

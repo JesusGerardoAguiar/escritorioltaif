@@ -4,12 +4,19 @@ import Carousel from "../components/Carousel"
 import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
 import styled, { keyframes } from "styled-components"
 import Layout from "../components/layout"
-import BuildingEx03 from "../../content/assets/img/building-ex03-01.jpg"
+import Durazno1 from "../../content/assets/img/durazno1.jpg"
+import Durazno2 from "../../content/assets/img/durazno6.jpg"
+import Durazno3 from "../../content/assets/img/durazno7.jpg"
+import Durazno4 from "../../content/assets/img/durazno8.jpg"
+import Durazno5 from "../../content/assets/img/durazno5.jpg"
+import HouseForSellImg from "../../content/assets/img/casaprueba.jpg"
 import { createGlobalStyle } from "styled-components"
-import SearchTab from "../components/SearchTab"
-import { fadeInLeft, fadeInRight } from "react-animations"
+import SearchTab from "../components/SearchTab/SearchInit"
+import SearchHouses from "../components/SearchTab/SearchHouses"
+import { fadeIn, fadeInRight } from "react-animations"
+import BackgroundSlider from "react-background-slider"
 
-const fadeInLeftAnimation = keyframes`${fadeInLeft}`
+const fadeInAnimation = keyframes`${fadeIn}`
 const fadeInRightAnimation = keyframes`${fadeInRight}`
 
 const GlobalStyles = createGlobalStyle`
@@ -40,59 +47,271 @@ class Blog extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
 
-    const renderCarouselContent = bg => {
+    const renderCarouselContent = () => {
       return (
-        <LogoContainer backgroundImg={bg}>
+        <>
           <SearchContainer>
-            <PresentationColumn>
-              <PresentationTextBox>
-                <PresentationText
-                  id="deskltaif"
-                  style={{ borderBotttom: "2px solid white" }}
-                >
-                  Escritorio Ltaif{" "}
-                </PresentationText>
-                <PresentationText style={{ paddingTop: "0.2rem" }}>
-                  Venta de Inmuebles
-                </PresentationText>
-              </PresentationTextBox>
-              <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
-            </PresentationColumn>
-            <SearchTab />
+            <div
+              style={{
+                width: "40rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                border: "1px solid lightgray",
+                background: "lightgray",
+                padding: "1rem",
+                borderRadius: "10px",
+                opacity: "0.9",
+              }}
+            >
+              <PresentationColumn>
+                <PresentationTextBox>
+                  <PresentationText
+                    id="deskltaif"
+                    style={{ borderBotttom: "2px solid white" }}
+                  >
+                    La llave segura de su negocio{" "}
+                  </PresentationText>
+                  <PresentationText style={{ paddingTop: "0.2rem" }}>
+                  Ventas, Alquileres, Remates y tasaciones
+                  </PresentationText>
+                </PresentationTextBox>
+                <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
+              </PresentationColumn>
+              <SearchTab />
+            </div>
           </SearchContainer>
-          <ImageHouse backgroundImg={bg}></ImageHouse>
-        </LogoContainer>
+        </>
       )
     }
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <GlobalStyles />
-        <Carousel
-          totalSlides={`1`}
-          StyledCarousel={StyledCarousel}
-          StyledSlider={StyledSlider}
-          StyledSlide={StyledSlide}
-        >
-          {renderCarouselContent(BuildingEx03)}
-        </Carousel>
+        <BackgroundSlider
+          images={[Durazno1, Durazno2, Durazno3, Durazno4, Durazno5]}
+          duration={4}
+          transition={2}
+        />
+        {renderCarouselContent()}
+        <FeaturedHouses>
+          <SearchColumn>
+            <TitleContainer id="search">
+              <h4>Busqueda de Propiedades</h4>
+            </TitleContainer>
+            <SearchHouses />
+          </SearchColumn>
+          <FeaturedColumn>
+            <TitleContainer id="featured">
+              <h4>Las propiedades destacadas</h4>
+            </TitleContainer>
+            <FeaturedStateRow>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              <StateContainer>
+                <StateImage bg={HouseForSellImg}>
+                  <StateInfo>
+                    <StateLabel>Terreno en venta</StateLabel>
+                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
+                    <StatePrice>USD 1.800.000</StatePrice>
+                  </StateInfo>
+                </StateImage>
+              </StateContainer>
+              
+            </FeaturedStateRow>
+          </FeaturedColumn>
+        </FeaturedHouses>
       </Layout>
     )
   }
 }
 
+const StateInfo = styled.div`
+  display: none;
+  background-color: #303f9f;
+  opacity: 0.6;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+`
+
+const StateImage = styled.div`
+  background-image: url(${props => props.bg});
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  h4,
+  h5 {
+    display: none;
+  }
+
+  :hover {
+    cursor: pointer;
+    h4,
+    h5 {
+      display: initial;
+      color: white;
+    }
+    div {
+      display: flex;
+    }
+  }
+  width: 100%;
+  height: 10rem;
+`
+
+const StateLabel = styled.h4`
+  font-family: RobotoB;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`
+
+const StateAddress = styled.h5`
+  font-family: RobotoM;
+  margin: 0;
+`
+
+const StatePrice = styled.h4`
+  font-family: RobotoB;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+`
+
+const StateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  flex-wrap: wrap;
+  width: 15rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+`
+
+const FeaturedStateRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding: 1rem;
+  flex-wrap: wrap;
+    justify-content: end;
+`
+
+const SearchColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 32%;
+`
+
+const FeaturedColumn = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+`
+
+const TitleContainer = styled.div`
+  width: 100%;
+  background-color: lightgray;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  h4 {
+    margin: 0px;
+    font-family: RobotoB;
+    letter-spacing: 1px;
+    text-transform: initial;
+    color: #323785;
+  }
+`
+
+const FeaturedHouses = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+
+  padding: 2rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+
+  #search{
+    border-right: 1px solid #323785;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  #featured{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  }
+`
+
 const PresentationTextBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
   border: 4px solid white;
   border-top: 0px;
   border-bottom: 0px;
   border-right: 0px;
-
+  margin-top: 8px;
   #deskltaif {
     border-bottom: 4px solid white;
     padding-top: 0px;
-    width: 19rem;
+    width: 28.22222222rem;
   }
 `
 
@@ -103,10 +322,11 @@ const LtaifText = styled.h2`
   color: #2f358f;
   font-size: 2em;
   margin-left: 0px;
+  margin-top: 30px;
+  margin-bottom: 0px;
 `
 
-const PresentationText = styled.h2`
-  font-size: 2em;
+const PresentationText = styled.h4`
   margin: 0px;
   font-family: RobotoB;
   work-break: break-all;
@@ -115,7 +335,7 @@ const PresentationText = styled.h2`
   margin-top: 0px;
   padding: 0.5rem;
   padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 2px;
 `
 
 const PresentationColumn = styled.div`
@@ -125,14 +345,14 @@ const PresentationColumn = styled.div`
 `
 
 const SearchContainer = styled.div`
+  height: 80vh;
+  margin: 0;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: 2s ${fadeInLeftAnimation};
   width: 100%;
-  margin-bottom: 2rem;
 `
 
 const LogoContainer = styled.div`
