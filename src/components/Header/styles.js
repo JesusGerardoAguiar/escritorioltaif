@@ -45,6 +45,7 @@ export const LinkDiv = styled.div`
     font-weight: bold;
     font-size: 20px;
     width: 100%;
+    height: 2rem;
     a {
       width: 100%;
       margin-right: 0px;
@@ -113,7 +114,6 @@ export const MainDiv = styled.nav`
     flex-direction: row;
     img {
       margin-bottom: 0px;
-      width: 3rem !important;
     }
     justify-content: space-between;
     align-items: center;

@@ -97,7 +97,7 @@ const Header = ({ location }) => {
             </div>
 
             <div>
-              <img alt="a" src={LtaiftLogo} style={{ width: "3rem" }} />
+              <img alt="a" src={LtaiftLogo} style={{ width: "10rem" }} />
             </div>
           </MainDiv>
           <Drawer
@@ -113,7 +113,7 @@ const Header = ({ location }) => {
             <div className={classes.drawerHeader}>
               <IconButton onClick={() => setOpen(false)}>
                 <div>
-                  <img alt="a" src={Close} style={{ width: "1rem" }} />
+                  <img alt="a" src={Close} style={{ width: "2rem;" }} />
                 </div>
               </IconButton>
             </div>
@@ -181,12 +181,12 @@ const Header = ({ location }) => {
               <img
                 alt="a"
                 src={Facebook}
-                style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
+                style={{ width: "4rem", marginBottom: 0, cursor: "pointer" }}
               />
               <img
                 alt="a"
                 src={Instagram}
-                style={{ width: "2rem", marginBottom: 0, cursor: "pointer" }}
+                style={{ width: "4rem", marginBottom: 0, cursor: "pointer" }}
               />
             </IconDiv>
           </Drawer>

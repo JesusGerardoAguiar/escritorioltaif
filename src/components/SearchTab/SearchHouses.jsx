@@ -125,6 +125,11 @@ const SearchContainer = styled.div`
   #maxprice {
     height: 4.5rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%!important;
+   }
+ 
 `
 
 const SelectRow = styled.div`
