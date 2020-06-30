@@ -106,6 +106,10 @@ const SearchContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 30rem;
+
+  @media (max-width: 768px) {
+    width: inherit;
+  }
   .MuiButton-containedPrimary {
     background-color: #2f358f;
   }

@@ -9,10 +9,10 @@ import Durazno2 from "../../content/assets/img/durazno6.jpg"
 import Durazno3 from "../../content/assets/img/durazno7.jpg"
 import Durazno4 from "../../content/assets/img/durazno8.jpg"
 import Durazno5 from "../../content/assets/img/durazno5.jpg"
-import HouseForSellImg from "../../content/assets/img/casaprueba.jpg"
+import FeaturedHousesComponent from '../components/FeaturedHouses';
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab/SearchInit"
-import SearchHouses from "../components/SearchTab/SearchHouses"
+
 import { fadeIn, fadeInRight } from "react-animations"
 import BackgroundSlider from "react-background-slider"
 
@@ -51,19 +51,7 @@ class Blog extends React.Component {
       return (
         <>
           <SearchContainer>
-            <div
-              style={{
-                width: "40rem",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                border: "1px solid lightgray",
-                background: "lightgray",
-                padding: "1rem",
-                borderRadius: "10px",
-                opacity: "0.9",
-              }}
-            >
+            <Container>
               <PresentationColumn>
                 <PresentationTextBox>
                   <PresentationText
@@ -79,7 +67,7 @@ class Blog extends React.Component {
                 <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
               </PresentationColumn>
               <SearchTab />
-            </div>
+            </Container>
           </SearchContainer>
         </>
       )
@@ -93,212 +81,27 @@ class Blog extends React.Component {
           transition={2}
         />
         {renderCarouselContent()}
-        <FeaturedHouses>
-          <SearchColumn>
-            <TitleContainer id="search">
-              <h4>Busqueda de Propiedades</h4>
-            </TitleContainer>
-            <SearchHouses />
-          </SearchColumn>
-          <FeaturedColumn>
-            <TitleContainer id="featured">
-              <h4>Las propiedades destacadas</h4>
-            </TitleContainer>
-            <FeaturedStateRow>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              <StateContainer>
-                <StateImage bg={HouseForSellImg}>
-                  <StateInfo>
-                    <StateLabel>Terreno en venta</StateLabel>
-                    <StateAddress>Tres Cruces, Montevideo</StateAddress>
-                    <StatePrice>USD 1.800.000</StatePrice>
-                  </StateInfo>
-                </StateImage>
-              </StateContainer>
-              
-            </FeaturedStateRow>
-          </FeaturedColumn>
-        </FeaturedHouses>
+       <FeaturedHousesComponent />
       </Layout>
     )
   }
 }
 
-const StateInfo = styled.div`
-  display: none;
-  background-color: #303f9f;
-  opacity: 0.6;
-  width: inherit;
-  height: inherit;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-`
-
-const StateImage = styled.div`
-  background-image: url(${props => props.bg});
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
-  h4,
-  h5 {
-    display: none;
-  }
-
-  :hover {
-    cursor: pointer;
-    h4,
-    h5 {
-      display: initial;
-      color: white;
-    }
-    div {
-      display: flex;
-    }
-  }
-  width: 100%;
-  height: 10rem;
-`
-
-const StateLabel = styled.h4`
-  font-family: RobotoB;
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`
-
-const StateAddress = styled.h5`
-  font-family: RobotoM;
-  margin: 0;
-`
-
-const StatePrice = styled.h4`
-  font-family: RobotoB;
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-`
-
-const StateContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  flex-wrap: wrap;
-  width: 15rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-`
-
-const FeaturedStateRow = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  padding: 1rem;
-  flex-wrap: wrap;
-    justify-content: end;
-`
-
-const SearchColumn = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 32%;
-`
-
-const FeaturedColumn = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-`
-
-const TitleContainer = styled.div`
-  width: 100%;
-  background-color: lightgray;
-  opacity: 0.9;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-
-  h4 {
-    margin: 0px;
-    font-family: RobotoB;
-    letter-spacing: 1px;
-    text-transform: initial;
-    color: #323785;
+const Container = styled.div`
+width: 40rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+border: 1px solid lightgray;
+background: lightgray;
+padding: 1rem;
+border-radius: 10px;
+opacity: 0.9;
+ @media (max-width: 768px) {
+    width: inherit;
   }
 `
 
-const FeaturedHouses = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: start;
-
-  padding: 2rem;
-  padding-left: 7rem;
-  padding-right: 7rem;
-
-  #search{
-    border-right: 1px solid #323785;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-
-  #featured{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  }
-`
 
 const PresentationTextBox = styled.div`
   display: flex;
@@ -312,6 +115,10 @@ const PresentationTextBox = styled.div`
     border-bottom: 4px solid white;
     padding-top: 0px;
     width: 28.22222222rem;
+
+    @media (max-width: 768px) {
+      width: inherit;
+    }
   }
 `
 
@@ -324,6 +131,10 @@ const LtaifText = styled.h2`
   margin-left: 0px;
   margin-top: 30px;
   margin-bottom: 0px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `
 
 const PresentationText = styled.h4`
