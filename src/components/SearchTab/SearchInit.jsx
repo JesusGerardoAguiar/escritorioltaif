@@ -11,6 +11,7 @@ import Icon from "@material-ui/core/Icon"
 import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
+import Collapsible from "react-collapsible"
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -37,67 +38,91 @@ const SearchTab = () => {
   ]
 
   return (
-    <SearchContainer>
-        <SelectRow>
-          <SelectComponent
-            label="Tipo de Propiedad"
-            menuItems={dummyMenuItems}
-            property={propertyType}
-            setPropertyValue={setPropertyType}
-          />
-          <SelectComponent
-            label="Tipo de Listado"
-            menuItems={dummyMenuItems}
-            property={propertyType}
-            setPropertyValue={setPropertyType}
-          />
-        </SelectRow>
-        <SelectRow>
-          <SelectComponent
-            label="Moneda"
-            menuItems={dummyMenuItems}
-            property={propertyType}
-            setPropertyValue={setPropertyType}
-          />
-          <SelectComponent
-            label="Min Precio"
-            menuItems={dummyMenuItems}
-            property={propertyType}
-            setPropertyValue={setPropertyType}
-          />
-        </SelectRow>
-        <SelectRow id="maxprice">
-          <SelectComponent
-            style={{ width: "100%" }}
-            label="Max Precio"
-            menuItems={dummyMenuItems}
-            property={propertyType}
-            setPropertyValue={setPropertyType}
-          />
-        </SelectRow>
-        <ButtonDiv>
-          <Button
-            variant="contained"
-            color="secundary"
-            size="large"
-            className={classes.button}
-            startIcon={<ClearAllIcon />}
-          >
-            Limpiar
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            className={classes.button}
-            startIcon={<SearchIcon />}
-          >
-            Buscar
-          </Button>
-        </ButtonDiv>
-    </SearchContainer>
+    <Container>
+      <Collapsible trigger="¡Comienza tu Búsqueda!">
+        <SearchContainer>
+          <SelectRow>
+            <SelectComponent
+              label="Tipo de Propiedad"
+              menuItems={dummyMenuItems}
+              property={propertyType}
+              setPropertyValue={setPropertyType}
+            />
+            <SelectComponent
+              label="Tipo de Listado"
+              menuItems={dummyMenuItems}
+              property={propertyType}
+              setPropertyValue={setPropertyType}
+            />
+          </SelectRow>
+          <SelectRow>
+            <SelectComponent
+              label="Moneda"
+              menuItems={dummyMenuItems}
+              property={propertyType}
+              setPropertyValue={setPropertyType}
+            />
+            <SelectComponent
+              label="Min Precio"
+              menuItems={dummyMenuItems}
+              property={propertyType}
+              setPropertyValue={setPropertyType}
+            />
+          </SelectRow>
+          <SelectRow id="maxprice">
+            <SelectComponent
+              style={{ width: "100%" }}
+              label="Max Precio"
+              menuItems={dummyMenuItems}
+              property={propertyType}
+              setPropertyValue={setPropertyType}
+            />
+          </SelectRow>
+          <ButtonDiv>
+            <Button
+              variant="contained"
+              color="secundary"
+              size="large"
+              className={classes.button}
+              startIcon={<ClearAllIcon />}
+            >
+              Limpiar
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              className={classes.button}
+              startIcon={<SearchIcon />}
+            >
+              Buscar
+            </Button>
+          </ButtonDiv>
+        </SearchContainer>
+      </Collapsible>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  .Collapsible__trigger {
+    font-family: RobotoBlack;
+    work-break: break-all;
+    margin: 1rem;
+    color: #2f358f;
+    font-size: 2em;
+    margin-left: 0px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    :hover{
+      opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+      font-size: 1.5em;
+    }
+  }
+`
 
 const SearchContainer = styled.div`
   display: flex;
