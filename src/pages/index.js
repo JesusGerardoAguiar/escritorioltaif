@@ -64,7 +64,7 @@ class Blog extends React.Component {
                   Ventas, Alquileres, Remates y tasaciones
                   </PresentationText>
                 </PresentationTextBox>
-                <LtaifText>¡Comienza tu Búsqueda!</LtaifText>
+              
               </PresentationColumn>
               <SearchTab />
             </Container>
@@ -122,20 +122,7 @@ const PresentationTextBox = styled.div`
   }
 `
 
-const LtaifText = styled.h2`
-  font-family: RobotoBlack;
-  work-break: break-all;
-  margin: 1rem;
-  color: #2f358f;
-  font-size: 2em;
-  margin-left: 0px;
-  margin-top: 30px;
-  margin-bottom: 0px;
 
-  @media (max-width: 768px) {
-    font-size: 1.5em;
-  }
-`
 
 const PresentationText = styled.h4`
   margin: 0px;
@@ -166,35 +153,7 @@ const SearchContainer = styled.div`
   width: 100%;
 `
 
-const LogoContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 40rem;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 
-  background-color: #94ced5;
-
-  img {
-    animation: 2s ${fadeInRightAnimation};
-  }
-`
-
-const ImageHouse = styled.div`
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(${props => props.backgroundImg});
-  background-color: #94ced5;
-  animation: 2s ${fadeInRightAnimation};
-  width: 100%;
-  height: inherit;
-`
 // const Banner = styled.div`
 //   background-color: #aa5c3b;
 //   width: 100%;
