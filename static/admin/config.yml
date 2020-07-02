@@ -16,8 +16,20 @@ collections:
       - { name: description, label: Description }
       - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
       - { label: identifier, name: identifier, widget: "hidden", default: "butacas" }
+  - name: propiedad
+    label: Propiedad
+    folder: content/propiedad
+    create: true
+    fields:
+      - { name: bedroom, label: Dormitorios }
+      - { name: bathroom, label: Baños }
+      - { name: mts2, label: Mts2 }
+      - { name: garage, label: Garaje }
+      - { name: description, label: Descripción }
+      - { name: location, label: Ubicación }
+      - { name: images, label: Imagenes, widget: list,  field: {label: Imagen, name: image, widget: image} }
+      - { label: "Tipo de Propiedad", name: "propertyType", widget: "select", options: ["Casa-Venta", "Casa-Alquiler", "Apartamento-Venta", "Apartamento-Alquiler",  "Terrenos", "Campos y Chacras-Vender", "Campos y Chacras-Alquiler", "Galpones-Vender", "Galpones-Alquiler", "Remates"] }
 
 
       
-
 
