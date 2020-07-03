@@ -57,9 +57,9 @@ export default function MenuListComposition({ submenuChilds, submenu }) {
         <MenuItem onClick={handleClose}>
           <Link
             style={{ textTransform: "initial", color: "black" }}
-            to={`/${subMenuChild}`}
+            to={`/${subMenuChild.menuPath}`}
           >
-            {subMenuChild[0].toUpperCase() + subMenuChild.slice(1)}
+            {subMenuChild.menuTitle[0].toUpperCase() + subMenuChild.menuTitle.slice(1)}
           </Link>
         </MenuItem>
       ))

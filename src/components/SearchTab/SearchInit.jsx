@@ -105,6 +105,10 @@ const SearchTab = () => {
 }
 
 const Container = styled.div`
+  .Collapsible {
+    text-align: center;
+  }
+
   .Collapsible__trigger {
     font-family: RobotoBlack;
     work-break: break-all;
@@ -115,6 +119,7 @@ const Container = styled.div`
     margin-top: 30px;
     margin-bottom: 0px;
     cursor: pointer;
+    text-align: center;
     :hover{
       opacity: 0.8;
     }
