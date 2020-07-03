@@ -173,7 +173,7 @@ const FeaturedColumn = styled.div`
 `
 
 const TitleContainer = styled.div`
-  width: 100%;
+  width: 88.666666%;
   background-color: lightgray;
   opacity: 0.9;
   display: flex;
@@ -194,7 +194,7 @@ const FeaturedHouses = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: start;
-
+  background-color: #fcfcfc;
   padding: 2rem;
   padding-left: 7rem;
   padding-right: 7rem;
@@ -204,6 +204,7 @@ const FeaturedHouses = styled.div`
    padding-top: 1rem;
   }
   #search{
+    width: 100%;
     border-right: 1px solid #323785;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;

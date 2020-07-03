@@ -193,7 +193,6 @@ const Header = ({ location }) => {
         </div>
       )
     } else if (matches.large) {
-      console.log(anchorEl)
       return (
         <MainDiv pathname={location.pathname}>
           <img
@@ -207,11 +206,11 @@ const Header = ({ location }) => {
             </LinkBox>
             <Submenu
               submenu={"Ventas"}
-              submenuChilds={["casas", "apartamentos"]}
+              submenuChilds={[{ menuTitle: "Casas", menuPath: "propiedades?casas?ventas" }, { menuTitle: "Apartamentos", menuPath: "propiedades?apartamentos?ventas" }]}
             />
             <Submenu
               submenu={"Alquileres"}
-              submenuChilds={["casas", "apartamentos"]}
+              submenuChilds={[{ menuTitle: "Casas", menuPath: "propiedades?casas?alquiler" }, { menuTitle: "Apartamentos", menuPath: "propiedades?apartamentos?alquiler" }]}
               />
               <LinkBox>
             <LinkScroll
@@ -221,18 +220,18 @@ const Header = ({ location }) => {
               smooth={true}
               duration={400}
             >
-                <Link to="" style={{ marginRight: "0px" }}>
+                <Link to="/propiedades?terrenos" style={{ marginRight: "0px" }}>
                   Terrenos
                 </Link>
             </LinkScroll>
               </LinkBox>
             <Submenu
               submenu={"Campos y Chacras"}
-              submenuChilds={["venta", "alquiler"]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?camposychacras?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?camposychacras?alquileres" }]}
             />
             <Submenu
               submenu={"Galpones y Locales Comerciales"}
-              submenuChilds={["venta", "alquiler"]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?galpones?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?galpones?alquileres" }]}
               />
               <LinkBox>
             <LinkScroll
