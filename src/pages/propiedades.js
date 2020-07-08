@@ -31,75 +31,89 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const Propiedades = ({ location }) => {
+const Propiedades = ({ location, data }) => {
   const transformText = text => {
     return text[0].toUpperCase() + text.slice(1)
   }
-  console.log(location.search.split("?"))
-  // const title = `${transformText(
-  //   location.search.split("?")[1]
-  // )} - ${transformText(location.search.split("?")[2])}`
+
+  const properties = data.allMdx.nodes
+    .filter(node => node.frontmatter.listType !== null)
+    .map(frontmatter => {
+      return { ...frontmatter.frontmatter }
+    })
+
+  const renderProperties = (properties) => {
+    return properties && properties.length> 0 && properties.map(property => {
+      return (
+        <PropertyContainer>
+          <PropertyRow>
+            <img src={property.images[0]} />
+            <TextColumn>
+              <h3>{property.title}</h3>
+              <h5
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  width: "25rem",
+                  alignItems: "center",
+                }}
+              >
+                {property.bathroom} Baños{" "}
+                <img
+                  src={BathIcon}
+                  style={{
+                    width: "1.8rem",
+                    marginBottom: "14.44444444px",
+                    marginLeft: 5,
+                    marginRight: 5,
+                  }}
+                />{" "}
+                &#9679; {property.bedroom} Dormitorios{" "}
+                <img
+                  src={BedIcon}
+                  style={{
+                    width: "2rem",
+                    marginBottom: "9.44444444px",
+                    marginLeft: 5,
+                    marginRight: 5,
+                  }}
+                />{" "}
+                &#9679;{" "}
+                <>
+                  {property.mts2} mts<sup>2</sup>{" "}
+                </>
+              </h5>
+              <p>{property.description}</p>
+              <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
+              <PriceTag>
+                {property.currency} {property.price}
+                <img src={PriceTagIcon} />
+              </PriceTag>
+            </TextColumn>
+          </PropertyRow>
+        </PropertyContainer>
+      )
+    })
+  }
+
+  const renderTitle = () => {
+    const search = location.search;
+    if (search.split("?")[1] === "galponesylocalescomerciales") {
+      return `Galpones y Locales Comerciales ${search.split("?")[2] !== '' ? '- ' + transformText(search.split("?")[2]) : ''}`
+    }else if(search.split("?")[1] === "camposychacras"){
+      return `Campos y Chacras ${search.split("?")[2] !== '' ? '- ' + transformText(search.split("?")[2]) : ''}`
+    }
+    return `${transformText(search.split("?")[1])} ${search.split("?")[2] ? '- ' + transformText(search.split("?")[2]) : ''}`
+  }
+
   return (
     <>
       <GlobalStyles />
       <Layout location={location}>
         <Container>
-          <PresentationText>Casas - Ventas</PresentationText>
+          <PresentationText>{renderTitle()}</PresentationText>
           <SearchPropiedades />
-          <Properties>
-            <PropertyContainer>
-              <PropertyRow>
-                <img src={CasaPrueba} />
-                <TextColumn>
-                  <h3>Venta de Casa Excelente Oportunidad</h3>
-                  <h5
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      width: "25rem",
-                      alignItems: "center",
-                    }}
-                  >
-                    4 Baños{" "}
-                    <img
-                      src={BathIcon}
-                      style={{
-                        width: "1.8rem",
-                        marginBottom: "14.44444444px",
-                        marginLeft: 5,
-                        marginRight: 5,
-                      }}
-                    />{" "}
-                    &#9679; 6 Dormitorios{" "}
-                    <img
-                      src={BedIcon}
-                      style={{
-                        width: "2rem",
-                        marginBottom: "9.44444444px",
-                        marginLeft: 5,
-                        marginRight: 5,
-                      }}
-                    />{" "}
-                    &#9679;{" "}
-                    <>
-                      200 mts<sup>2</sup>{" "}
-                    </>
-                  </h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <h5 style={{ alignSelf: 'flex-end' }}>18 de Julio, Durazno</h5>
-                  <PriceTag>
-                    U$S 200.000
-                    <img src={PriceTagIcon} />
-                  </PriceTag>
-                </TextColumn>
-              </PropertyRow>
-            </PropertyContainer>
-          </Properties>
+          <Properties>{renderProperties(properties)}</Properties>
         </Container>
       </Layout>
     </>
@@ -152,7 +166,7 @@ const TextColumn = styled.div`
     margin-top: 0.5rem;
     padding-top: 0px;
   }
-  p{
+  p {
     margin: 0px;
     font-family: RobotoL;
     work-break: break-all;
@@ -171,6 +185,13 @@ border-radius: 10px;
 width: fit-content;
 padding-top: 1rem;
 padding-bottom: 1rem;
+margin-bottom: 1rem;
+}
+:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 1s;
+}
 `
 
 const Properties = styled.div`
@@ -212,3 +233,28 @@ const Container = styled.div`
 `
 
 export default Propiedades
+
+export const pageQuery = graphql`
+  query Properties {
+    allMdx {
+      nodes {
+        frontmatter {
+          bathroom
+          bedroom
+          currency
+          date
+          description
+          garage
+          images
+          listType
+          location
+          mts2
+          path
+          price
+          propertyType
+          title
+        }
+      }
+    }
+  }
+`

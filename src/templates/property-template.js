@@ -26,7 +26,7 @@ import InfoDialog from "../components/InfoDialog"
  
 // `
 
-const ProductTemplate = props => {
+const PropertyTemplate = props => {
   const [open, setOpen] = useState(false);
   const [openInfo, setOpenInfo] = useState(false)
   const [product, setProduct] = useState({
@@ -57,28 +57,7 @@ const ProductTemplate = props => {
   return (
     <Layout location={props.location}>
       <MainDiv>
-        <Modal open={open} handleClose={handleOnClose} product={product} isProject={identifier === 'proyectos'} />
-        <InfoDialog open={openInfo} handleClose={handleCloseInfo} />
-        <div style={{ display: "flex", flexDirection: "row", alignItems: 'baseline' }}>
-          <h1>{identifier === 'respaldos' ? 'Dormitorio' : identifier}</h1>
-          {renderImage()}
-        </div>
-        <RowProductsDiv>
-          {productsByIdentifier.map(product => (
-            <ProdCircle
-              backgroundImg={product.frontmatter.activityImages ? product.frontmatter.activityImages[0] : ''} 
-              onClick={() => {
-                setOpen(true)
-                setProduct(product.frontmatter)
-                return
-              }}
-            >
-              <div style={{ display: "none" }} id="ProdCircle">
-                <p>Ver más</p>
-              </div>
-            </ProdCircle>
-          ))}
-        </RowProductsDiv>
+        sdsds
       </MainDiv>
     </Layout>
   )
@@ -157,7 +136,7 @@ export const ProdCircle = styled.div`
   }
 `
 
-export default ProductTemplate
+export default PropertyTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug {

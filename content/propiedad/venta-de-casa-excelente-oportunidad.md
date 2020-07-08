@@ -15,6 +15,6 @@ images:
   - /assets/casaprueba.jpg
 propertyType: Casas
 listType: Ventas
-creationDate: 'July 8, 2020 3:52 PM'
+date: 'July 8, 2020 3:52 PM'
 ---
 

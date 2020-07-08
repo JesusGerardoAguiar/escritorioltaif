@@ -205,12 +205,12 @@ const Header = ({ location }) => {
               <Link>Inicio</Link>
             </LinkBox>
             <Submenu
-              submenu={"Ventas"}
-              submenuChilds={[{ menuTitle: "Casas", menuPath: "propiedades?casas?ventas" }, { menuTitle: "Apartamentos", menuPath: "propiedades?apartamentos?ventas" }]}
+              submenu={"Casas"}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?casas?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?casas?alquileres" }]}
             />
             <Submenu
-              submenu={"Alquileres"}
-              submenuChilds={[{ menuTitle: "Casas", menuPath: "propiedades?casas?alquiler" }, { menuTitle: "Apartamentos", menuPath: "propiedades?apartamentos?alquiler" }]}
+              submenu={"Apartamentos"}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?apartamentos?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?apartamentos?alquileres" }]}
               />
               <LinkBox>
             <LinkScroll
@@ -231,7 +231,7 @@ const Header = ({ location }) => {
             />
             <Submenu
               submenu={"Galpones y Locales Comerciales"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?galpones?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?galpones?alquileres" }]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?galponesylocalescomerciales?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?galponesylocalescomerciales?alquileres" }]}
               />
               <LinkBox>
             <LinkScroll
