@@ -39,7 +39,7 @@ const SearchTab = () => {
 
   return (
     <Container>
-      <Collapsible trigger="¡Comienza tu Búsqueda!">
+      <Collapsible trigger="Buscar Propiedad">
         <SearchContainer>
           <SelectRow>
             <SelectComponent

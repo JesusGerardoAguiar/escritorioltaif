@@ -228,10 +228,11 @@ const Header = ({ location }) => {
             <Submenu
               submenu={"Campos y Chacras"}
               submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?camposychacras?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?camposychacras?alquileres" }]}
-            />
+              />
             <Submenu
               submenu={"Galpones y Locales Comerciales"}
               submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?galponesylocalescomerciales?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?galponesylocalescomerciales?alquileres" }]}
+              openTest={true}
               />
               <LinkBox>
             <LinkScroll

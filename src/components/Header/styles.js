@@ -26,6 +26,7 @@ export const LinkDiv = styled.div`
   height: inherit;
   align-items: center;
 
+  padding-left: 5rem;
   width: 100%;
 
   a {
@@ -64,8 +65,6 @@ export const LinkBox = styled.div`
   display: flex;
   z-index: 4;
   :hover{
-    background-color: #94CED5;;
-    opacity: 0.5;
     border-top: 2px solid #2f358f;
     transition: 0.5s;
     a{

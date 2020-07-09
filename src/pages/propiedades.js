@@ -121,7 +121,7 @@ const Propiedades = ({ location, data }) => {
 }
 
 const PriceTag = styled.div`
-  width: 8rem;
+  width: 9rem;
 
   display: flex;
   flex-direction: row;
@@ -135,7 +135,7 @@ const PriceTag = styled.div`
   cursor: pointer;
   clear: both;
   margin-top: 0px;
-  font-size: 13px;
+  font-size: 17px;
   font-family: RobotoL;
 
   img {
