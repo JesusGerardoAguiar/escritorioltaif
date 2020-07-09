@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import SearchPropiedades from "../components/SearchTab/SearchPropiedades"
-import CasaPrueba from "../../content/assets/img/casaprueba.jpg"
 import PriceTagIcon from "../../content/assets/icons/pricetag.png"
 import BathIcon from "../../content/assets/icons/bathtub.svg"
 import BedIcon from "../../content/assets/icons/king_bed.svg"
+import { Link } from "gatsby"
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
 
 const Propiedades = ({ location, data }) => {
   const transformText = text => {
-    return text[0].toUpperCase() + text.slice(1)
+    return text && text[0].toUpperCase() + text.slice(1)
   }
 
   const properties = data.allMdx.nodes
@@ -42,68 +42,86 @@ const Propiedades = ({ location, data }) => {
       return { ...frontmatter.frontmatter }
     })
 
-  const renderProperties = (properties) => {
-    return properties && properties.length> 0 && properties.map(property => {
-      return (
-        <PropertyContainer>
-          <PropertyRow>
-            <img src={property.images[0]} />
-            <TextColumn>
-              <h3>{property.title}</h3>
-              <h5
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  width: "25rem",
-                  alignItems: "center",
-                }}
-              >
-                {property.bathroom} Baños{" "}
-                <img
-                  src={BathIcon}
-                  style={{
-                    width: "1.8rem",
-                    marginBottom: "14.44444444px",
-                    marginLeft: 5,
-                    marginRight: 5,
-                  }}
-                />{" "}
-                &#9679; {property.bedroom} Dormitorios{" "}
-                <img
-                  src={BedIcon}
-                  style={{
-                    width: "2rem",
-                    marginBottom: "9.44444444px",
-                    marginLeft: 5,
-                    marginRight: 5,
-                  }}
-                />{" "}
-                &#9679;{" "}
-                <>
-                  {property.mts2} mts<sup>2</sup>{" "}
-                </>
-              </h5>
-              <p>{property.description}</p>
-              <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
-              <PriceTag>
-                {property.currency} {property.price}
-                <img src={PriceTagIcon} />
-              </PriceTag>
-            </TextColumn>
-          </PropertyRow>
-        </PropertyContainer>
-      )
-    })
+  const renderProperties = properties => {
+    return (
+      properties &&
+      properties.length > 0 &&
+      properties.map(property => {
+        return (
+          <PropertyContainer>
+            <Link to="/propiedad">
+              <PropertyRow>
+                <img alt="propiedad" src={property.images[0]} />
+                <TextColumn>
+                  <h3>{property.title}</h3>
+                  <h5
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      width: "25rem",
+                      alignItems: "center",
+                    }}
+                  >
+                    {property.bathroom} Baños{" "}
+                    <img
+                      alt="propiedad"
+                      src={BathIcon}
+                      style={{
+                        width: "1.8rem",
+                        marginBottom: "14.44444444px",
+                        marginLeft: 5,
+                        marginRight: 5,
+                      }}
+                    />{" "}
+                    &#9679; {property.bedroom} Dormitorios{" "}
+                    <img
+                      alt="propiedad"
+                      src={BedIcon}
+                      style={{
+                        width: "2rem",
+                        marginBottom: "9.44444444px",
+                        marginLeft: 5,
+                        marginRight: 5,
+                      }}
+                    />{" "}
+                    &#9679;{" "}
+                    <>
+                      {property.mts2} mts<sup>2</sup>{" "}
+                    </>
+                  </h5>
+                  <p>{property.description}</p>
+                  <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
+                  <PriceTag>
+                    {property.currency} {property.price}
+                    <img alt="propiedad" src={PriceTagIcon} />
+                  </PriceTag>
+                </TextColumn>
+              </PropertyRow>
+            </Link>
+          </PropertyContainer>
+        )
+      })
+    )
   }
 
   const renderTitle = () => {
-    const search = location.search;
+    const search = location.search
     if (search.split("?")[1] === "galponesylocalescomerciales") {
-      return `Galpones y Locales Comerciales ${search.split("?")[2] !== '' ? '- ' + transformText(search.split("?")[2]) : ''}`
-    }else if(search.split("?")[1] === "camposychacras"){
-      return `Campos y Chacras ${search.split("?")[2] !== '' ? '- ' + transformText(search.split("?")[2]) : ''}`
+      return `Galpones y Locales Comerciales ${
+        search.split("?")[2] !== ""
+          ? "- " + transformText(search.split("?")[2])
+          : ""
+      }`
+    } else if (search.split("?")[1] === "camposychacras") {
+      return `Campos y Chacras ${
+        search.split("?")[2] !== ""
+          ? "- " + transformText(search.split("?")[2])
+          : ""
+      }`
     }
-    return `${transformText(search.split("?")[1])} ${search.split("?")[2] ? '- ' + transformText(search.split("?")[2]) : ''}`
+    return `${transformText(search.split("?")[1])} ${
+      search.split("?")[2] ? "- " + transformText(search.split("?")[2]) : ""
+    }`
   }
 
   return (
@@ -137,7 +155,7 @@ const PriceTag = styled.div`
   margin-top: 0px;
   font-size: 17px;
   font-family: RobotoL;
-
+  
   img {
     width: 1rem !important;
   }
@@ -186,6 +204,8 @@ width: fit-content;
 padding-top: 1rem;
 padding-bottom: 1rem;
 margin-bottom: 1rem;
+a{
+  color: black!important;
 }
 :hover {
   cursor: pointer;

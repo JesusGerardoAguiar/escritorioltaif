@@ -37,10 +37,9 @@ exports.createPages = ({ graphql, actions }) => {
     console.log('this is on gatsby node ' + result)
     // Create blog posts pages.
     const properties = result.data.allMdx.nodes
-
     properties.forEach((product, index) => {
       createPage({
-        path: `property`,
+        path: `propiedad`,
         component: propertyPost,
         context: {
           identifier: product.frontmatter.identifier,

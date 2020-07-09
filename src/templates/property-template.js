@@ -1,138 +1,208 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import EmailContainer from "../components/EmailContainer"
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
-import Modal from "../components/Modal"
-import InfoDialog from "../components/InfoDialog"
+import PriceTagIcon from "../../content/assets/icons/pricetag.png"
+import BathIcon from "../../content/assets/icons/bathtub.svg"
+import BedIcon from "../../content/assets/icons/king_bed.svg"
 
-// const GlobalStyles = createGlobalStyle`
-//   @font-face {
-//     font-family: MontserratL;
-//     src: url(${require("../../content/assets/fonts/Montserrat-Light.ttf")});
-//   }
-//   @font-face {
-//     font-family: RobotoR;
-//     src: url(${require("../../content/assets/fonts/Montserrat-Medium.ttf")});
-//   }
-//   @font-face {
-//     font-family: RobotoB;
-//     src: url(${require("../../content/assets/fonts/Montserrat-Bold.otf")});
-//   }
-//   @font-face {
-//     font-family: DinRegular;
-//     src: url(${require("../../content/assets/fonts/DIN-Regular.ttf")});
-//   }
- 
-// `
+import ImageGallery from "react-image-gallery"
+require("react-image-gallery/styles/css/image-gallery.css")
+
+const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: RobotoL;
+    src: url(${require("../../content/assets/fonts/Roboto-Light.ttf")});
+  }
+  @font-face {
+    font-family: RobotoM;
+    src: url(${require("../../content/assets/fonts/Roboto-Medium.ttf")});
+  }
+  @font-face {
+    font-family: RobotoB;
+    src: url(${require("../../content/assets/fonts/Roboto-Bold.ttf")});
+  }
+  @font-face {
+    font-family: RobotoR;
+    src: url(${require("../../content/assets/fonts/Roboto-Regular.ttf")});
+  }
+  @font-face {
+    font-family: RobotoBlack;
+    src: url(${require("../../content/assets/fonts/Roboto-Black.ttf")});
+  }
+`
 
 const PropertyTemplate = props => {
-  const [open, setOpen] = useState(false);
-  const [openInfo, setOpenInfo] = useState(false)
-  const [product, setProduct] = useState({
-    images: [],
-    description: "",
-    title: "",
-  })
-  const { data, pageContext } = props
-  const identifier = pageContext.identifier
-  const products = data.allMdx.nodes
-  const productsByIdentifier = products.filter(
-    product => product.frontmatter.identifier === identifier
-  )
+  const { data } = props
+  const properties = data.allMdx.nodes
+    .filter(node => node.frontmatter.listType !== null)
+    .map(frontmatter => {
+      return { ...frontmatter.frontmatter }
+    })
 
-  const handleOnClose = () => {
-    setOpen(false)
-  }
+  const images = [
+    {
+      original: "https://picsum.photos/id/1018/1000/600/",
+      thumbnail: "https://picsum.photos/id/1018/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1015/1000/600/",
+      thumbnail: "https://picsum.photos/id/1015/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1019/1000/600/",
+      thumbnail: "https://picsum.photos/id/1019/250/150/",
+    },
+  ]
 
-  const handleCloseInfo = () => {
-    setOpenInfo(false);
-  }
-
-  const renderImage = () => {
-    if(identifier === 'proyectos'){
-      return <></>
-    }
-  }
+  const imagesToComponent =
+    properties &&
+    properties.length > 0 &&
+    properties[0].images.map(img => {
+      return { original: img, thumbnail: img }
+    })
+  const propertySelected = properties[0]
   return (
     <Layout location={props.location}>
+      <GlobalStyles />
       <MainDiv>
-        sdsds
+        <PropertyColumn>
+          <PropertyImage>
+            <ImageGallery
+              showFullscreenButton={false}
+              showPlayButton={false}
+              items={imagesToComponent}
+            />
+          </PropertyImage>
+          <h3>{propertySelected.title}</h3>
+          <Description>{propertySelected.description}</Description>
+          <Specs>
+            {propertySelected.bathroom} Baños{" "}
+            <img
+              alt="propiedad"
+              src={BathIcon}
+              style={{
+                width: "1.8rem",
+                marginBottom: "-1px",
+              }}
+            />{" "}
+            &#9679; {propertySelected.bedroom} Dormitorios{" "}
+            <img
+              alt="propiedad"
+              src={BedIcon}
+              style={{
+                width: "2rem",
+                marginBottom: "-7px",
+              }}
+            />{" "}
+            &#9679;{" "}
+            <>
+              {propertySelected.mts2} mts<sup>2</sup>{" "}
+            </>
+          </Specs>
+          <Specs style={{ alignSelf: "flex-end", marginTop: '1.5rem' }}>{propertySelected.location}</Specs>
+          <PriceTag>
+            {propertySelected.currency} {propertySelected.price}
+            <img alt="propiedad" style={{ margin: 0 }} src={PriceTagIcon} />
+          </PriceTag>
+        </PropertyColumn>
+        <ContactDiv><h3 style={{marginTop: 0,     marginBottom: '1.5rem'}}>¡Envianos tu consulta!</h3><EmailContainer /></ContactDiv>
       </MainDiv>
     </Layout>
   )
 }
 
-const MainDiv = styled.div`
+const PropertyImage = styled.div``
+
+const Description = styled.p`
+  margin: 0px;
+  font-family: RobotoL;
+  work-break: break-all;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-top: 0.5rem;
+  padding-top: 0px;
+  text-align: justify;
+`
+
+const PriceTag = styled.div`
+  width: 9rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: flex-end;
+  background-color: #2f358f;
+  color: #fff;
+  padding: 7px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  clear: both;
+  margin-top: 0px;
+  font-size: 17px;
+  font-family: RobotoL;
+  margin-top: 1.5rem;
+  
+  img {
+    width: 1rem !important;
+  }
+`
+
+const ContactDiv = styled.div`
+  width: 50rem;
+
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+`
+
+const PropertyColumn = styled.div`
+  width: 50rem;
+`
+
+const Specs = styled.h5`
+display: flex,
+flexDirection: row,
+width: 25rem,
+alignItems: center
+margin: 0px;
+font-family: RobotoM;
+work-break: break-all;
+margin-bottom: 0.5rem;
+margin-top: 0.5rem;
+padding-top: 0px;
+`
+
+const MainDiv = styled.div`
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
-
+  flex-direction: row;
+  padding: 2rem;
+  align-items: end;
+  h3 {
+    margin: 0px;
+    font-family: RobotoM;
+    work-break: break-all;
+    color: #2f358f;
+    margin-bottom: 0px;
+    margin-top: 1.5rem;
+    padding-top: 0px;
+  }
   h1 {
     font-family: "RobotoR";
     color: #aa5c3b;
     text-transform: uppercase;
     margin-right: 1.5rem;
   }
-  img{
-    cursor: pointer;
-    :hover{
+  img {
+    :hover {
       opacity: 0.5;
     }
-  }
-`
-
-const RowProductsDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
-  padding: 1rem;
-
-  div {
-    margin: 1rem;
-  }
-`
-
-export const ProdCircle = styled.div`
-  background-image: url(${props => props.backgroundImg});
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 190px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  :hover {
-    transition: 1s;
-    #ProdCircle {
-      cursor: pointer;
-      background-color: rgb(170, 92, 59, 0.5);
-      justify-content: center;
-      align-items: center;
-      border-radius: 190px;
-      display: flex !important;
-      flex-direction: column;
-      width: 100%;
-      height: -webkit-fill-available;
-      margin 0px!important;
-      p {
-        font-family: RobotoR;
-        color: white;
-        font-size: 25px;
-        margin-bottom: 0px;
-        text-transform: uppercase;
-      }
-    }
-  }
-  @media (max-width: 768px) {
-    margin-bottom: 1rem;
   }
 `
 
@@ -143,9 +213,19 @@ export const pageQuery = graphql`
     allMdx {
       nodes {
         frontmatter {
-          identifier
+          bathroom
+          bedroom
+          currency
+          date
           description
-          activityImages
+          garage
+          images
+          listType
+          location
+          mts2
+          path
+          price
+          propertyType
           title
         }
       }

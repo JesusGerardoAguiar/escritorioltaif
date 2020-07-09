@@ -1,11 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 import Header from "./Header"
 import PhoneNumber from "./Header/PhoneNumber"
 import Lograf from "../../content/assets/lografLogoBlack.svg"
 
-import { rhythm, scale } from "../utils/typography"
 
 class Layout extends React.Component {
   render() {

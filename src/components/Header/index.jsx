@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import {
   MainDiv,
-  LinksContainerDiv,
   LinkDiv,
-  InsideLinkDiv,
   IconDiv,
   LinkBox,
 } from "./styles"
@@ -84,7 +82,6 @@ const useStyles = makeStyles(theme => ({
 const Header = ({ location }) => {
   console.log(location)
   const [open, setOpen] = useState(false)
-  const [anchorEl, setAnchorEl] = React.useState(null)
   const classes = useStyles()
 
   const renderHeader = matches => {
