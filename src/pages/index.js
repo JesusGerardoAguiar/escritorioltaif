@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Carousel from "../components/Carousel"
 import { CarouselProvider, Slide, Slider } from "pure-react-carousel"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import Layout from "../components/layout"
 import Durazno1 from "../../content/assets/img/durazno1.jpg"
 import Durazno2 from "../../content/assets/img/durazno6.jpg"
@@ -13,11 +12,8 @@ import FeaturedHousesComponent from '../components/FeaturedHouses';
 import { createGlobalStyle } from "styled-components"
 import SearchTab from "../components/SearchTab/SearchInit"
 
-import { fadeIn, fadeInRight } from "react-animations"
 import BackgroundSlider from "react-background-slider"
 
-const fadeInAnimation = keyframes`${fadeIn}`
-const fadeInRightAnimation = keyframes`${fadeInRight}`
 
 const GlobalStyles = createGlobalStyle`
   @font-face {

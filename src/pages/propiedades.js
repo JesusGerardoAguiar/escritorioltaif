@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
 import SearchPropiedades from "../components/SearchTab/SearchPropiedades"
-import CasaPrueba from "../../content/assets/img/casaprueba.jpg"
 import PriceTagIcon from "../../content/assets/icons/pricetag.png"
 import BathIcon from "../../content/assets/icons/bathtub.svg"
 import BedIcon from "../../content/assets/icons/king_bed.svg"
+import { Link } from "gatsby"
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -31,27 +31,29 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const Propiedades = ({ location }) => {
+const Propiedades = ({ location, data }) => {
   const transformText = text => {
-    return text[0].toUpperCase() + text.slice(1)
+    return text && text[0].toUpperCase() + text.slice(1)
   }
-  console.log(location.search.split("?"))
-  // const title = `${transformText(
-  //   location.search.split("?")[1]
-  // )} - ${transformText(location.search.split("?")[2])}`
-  return (
-    <>
-      <GlobalStyles />
-      <Layout location={location}>
-        <Container>
-          <PresentationText>Casas - Ventas</PresentationText>
-          <SearchPropiedades />
-          <Properties>
-            <PropertyContainer>
+
+  const properties = data.allMdx.nodes
+    .filter(node => node.frontmatter.listType !== null)
+    .map(frontmatter => {
+      return { ...frontmatter.frontmatter }
+    })
+
+  const renderProperties = properties => {
+    return (
+      properties &&
+      properties.length > 0 &&
+      properties.map(property => {
+        return (
+          <PropertyContainer>
+            <Link to="/propiedad">
               <PropertyRow>
-                <img src={CasaPrueba} />
+                <img alt="propiedad" src={property.images[0]} />
                 <TextColumn>
-                  <h3>Venta de Casa Excelente Oportunidad</h3>
+                  <h3>{property.title}</h3>
                   <h5
                     style={{
                       display: "flex",
@@ -60,8 +62,9 @@ const Propiedades = ({ location }) => {
                       alignItems: "center",
                     }}
                   >
-                    4 Baños{" "}
+                    {property.bathroom} Baños{" "}
                     <img
+                      alt="propiedad"
                       src={BathIcon}
                       style={{
                         width: "1.8rem",
@@ -70,8 +73,9 @@ const Propiedades = ({ location }) => {
                         marginRight: 5,
                       }}
                     />{" "}
-                    &#9679; 6 Dormitorios{" "}
+                    &#9679; {property.bedroom} Dormitorios{" "}
                     <img
+                      alt="propiedad"
                       src={BedIcon}
                       style={{
                         width: "2rem",
@@ -82,24 +86,52 @@ const Propiedades = ({ location }) => {
                     />{" "}
                     &#9679;{" "}
                     <>
-                      200 mts<sup>2</sup>{" "}
+                      {property.mts2} mts<sup>2</sup>{" "}
                     </>
                   </h5>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                  <h5 style={{ alignSelf: 'flex-end' }}>18 de Julio, Durazno</h5>
+                  <p>{property.description}</p>
+                  <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
-                    U$S 200.000
-                    <img src={PriceTagIcon} />
+                    {property.currency} {property.price}
+                    <img alt="propiedad" src={PriceTagIcon} />
                   </PriceTag>
                 </TextColumn>
               </PropertyRow>
-            </PropertyContainer>
-          </Properties>
+            </Link>
+          </PropertyContainer>
+        )
+      })
+    )
+  }
+
+  const renderTitle = () => {
+    const search = location.search
+    if (search.split("?")[1] === "galponesylocalescomerciales") {
+      return `Galpones y Locales Comerciales ${
+        search.split("?")[2] !== ""
+          ? "- " + transformText(search.split("?")[2])
+          : ""
+      }`
+    } else if (search.split("?")[1] === "camposychacras") {
+      return `Campos y Chacras ${
+        search.split("?")[2] !== ""
+          ? "- " + transformText(search.split("?")[2])
+          : ""
+      }`
+    }
+    return `${transformText(search.split("?")[1])} ${
+      search.split("?")[2] ? "- " + transformText(search.split("?")[2]) : ""
+    }`
+  }
+
+  return (
+    <>
+      <GlobalStyles />
+      <Layout location={location}>
+        <Container>
+          <PresentationText>{renderTitle()}</PresentationText>
+          <SearchPropiedades />
+          <Properties>{renderProperties(properties)}</Properties>
         </Container>
       </Layout>
     </>
@@ -107,7 +139,7 @@ const Propiedades = ({ location }) => {
 }
 
 const PriceTag = styled.div`
-  width: 8rem;
+  width: 9rem;
 
   display: flex;
   flex-direction: row;
@@ -121,9 +153,9 @@ const PriceTag = styled.div`
   cursor: pointer;
   clear: both;
   margin-top: 0px;
-  font-size: 13px;
+  font-size: 17px;
   font-family: RobotoL;
-
+  
   img {
     width: 1rem !important;
   }
@@ -152,7 +184,7 @@ const TextColumn = styled.div`
     margin-top: 0.5rem;
     padding-top: 0px;
   }
-  p{
+  p {
     margin: 0px;
     font-family: RobotoL;
     work-break: break-all;
@@ -171,6 +203,15 @@ border-radius: 10px;
 width: fit-content;
 padding-top: 1rem;
 padding-bottom: 1rem;
+margin-bottom: 1rem;
+a{
+  color: black!important;
+}
+:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 1s;
+}
 `
 
 const Properties = styled.div`
@@ -212,3 +253,28 @@ const Container = styled.div`
 `
 
 export default Propiedades
+
+export const pageQuery = graphql`
+  query Properties {
+    allMdx {
+      nodes {
+        frontmatter {
+          bathroom
+          bedroom
+          currency
+          date
+          description
+          garage
+          images
+          listType
+          location
+          mts2
+          path
+          price
+          propertyType
+          title
+        }
+      }
+    }
+  }
+`

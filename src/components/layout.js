@@ -1,27 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
-import Header from './Header';
-import Lograf from "../../content/assets/lografLogoBlack.svg";
-
-import { rhythm, scale } from "../utils/typography"
+import Header from "./Header"
+import PhoneNumber from "./Header/PhoneNumber"
+import Lograf from "../../content/assets/lografLogoBlack.svg"
 
 
 class Layout extends React.Component {
   render() {
     const { children, location } = this.props
-    let header = (<Header location={location} />)
+    let header = <Header location={location} />
+    let PhoneNumberBar = <PhoneNumber location={location} />
     return (
       <Wrapper>
         <div>
+          <header>{PhoneNumberBar}</header>
           <header>{header}</header>
           <main>{children}</main>
         </div>
-        {/* <Footer backgroundImg={Lograf}>
+        <Footer backgroundImg={Lograf}>
           © {new Date().getFullYear()}, powered by
           {` `}
-          <a href="https://www.lografdesign.com"><img src={Lograf} alt="f" style={{width: '5rem'}} /></a>
-        </Footer> */}
+          <a href="https://www.lografdesign.com">
+            <img src={Lograf} alt="f" style={{ width: "5rem" }} />
+          </a>
+        </Footer>
       </Wrapper>
     )
   }
@@ -29,12 +31,12 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  
+
   p {
     font-family: RobotoR;
   }
 
-  #ReactBackgroundSlider > figure{
+  #ReactBackgroundSlider > figure {
     height: 80vh;
     top: auto;
     left: auto;
@@ -44,19 +46,19 @@ const Wrapper = styled.div`
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
+  margin-bottom: 0px;
   font-size: 18px;
-  font-family: "RobotoR";;
+  font-family: "RobotoR";
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  a{
+  a {
     display: flex;
     border-shadow: none;
     color: transparent;
-
   }
-  img{
+  img {
     width: 5rem;
     margin-bottom: 0px;
     margin-left: 0.5rem;

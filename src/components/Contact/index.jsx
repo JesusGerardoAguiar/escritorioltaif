@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { makeStyles } from "@material-ui/core/styles"
+
 import Button from "@material-ui/core/Button"
 import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SearchHouses = () => {
+const Contact = () => {
   const classes = useStyles()
   const [propertyType, setPropertyType] = useState("")
   const dummyMenuItems = [
@@ -79,6 +80,7 @@ const SearchHouses = () => {
             Buscar
           </Button>
           <Button
+            style={{    marginLeft: '0px'}}
             variant="contained"
             color="secundary"
             size="medium"
@@ -95,7 +97,7 @@ const SearchHouses = () => {
 
 const SearchContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: end;
   flex-wrap: wrap;
@@ -109,14 +111,17 @@ const SearchContainer = styled.div`
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
     margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-right: 0.5rem;
     min-width: 120px;
+  }
+  .MuiSelect-root{
+    background: white;
   }
   .MuiButtonBase-root {
     margin-left: 0px;
-    margin-rigth: 0px;
     width: 100%;
     margin: 8px;
+    margin-right: 0.5rem;
   }
   #maxprice {
     height: 4.5rem;
@@ -130,8 +135,9 @@ const SearchContainer = styled.div`
 
 const SelectRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: inherit;
+  align-items: center;
 `
 
 const ButtonDiv = styled.div`
@@ -140,4 +146,4 @@ const ButtonDiv = styled.div`
   flex-direction: row;
 
 `
-export default SearchHouses
+export default Contact

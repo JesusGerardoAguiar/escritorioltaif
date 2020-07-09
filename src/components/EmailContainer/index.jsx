@@ -22,7 +22,7 @@ const EmailContainer = () => {
         {({ handleChange, handleSubmit, errors, isSubmitting, values }) => {
           return (
             <FormContainer
-            action="https://formspree.io/info@decorartamoblamientos.com"
+            action=""
             method="POST">
               <Input
                 placeholder="Nombre / Empresa"

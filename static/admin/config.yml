@@ -17,7 +17,7 @@ collections:
       - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
       - { label: identifier, name: identifier, widget: "hidden", default: "butacas" }
   - name: propiedad
-    identifier_field: propertyType
+    identifier_field: title
     label: Propiedad
     folder: content/propiedad
     create: true
@@ -28,9 +28,13 @@ collections:
       - { name: garage, label: Garaje }
       - { name: description, label: Descripción }
       - { name: location, label: Ubicación }
+      - { name: title,identifier_field ,label: Titulo }
+      - { name: price, label: Precio }
+      - { label: "Tipo de Moneda",  name: currency, widget: select, options: ["U$S", "$"]}
       - { name: images, label: Imagenes, widget: list,  field: {label: Imagen, name: image, widget: image} }
-      - { label: "Tipo de Propiedad", identifier_field ,  name: propertyType, widget: select, options: ["Casa-Venta", "Casa-Alquiler", "Apartamento-Venta", "Apartamento-Alquiler",  "Terrenos", "Campos y Chacras-Vender", "Campos y Chacras-Alquiler", "Galpones-Vender", "Galpones-Alquiler", "Remates"] }
-
+      - { label: "Tipo de Propiedad" ,  name: propertyType, widget: select, options: ["Casas", "Apartamentos",   "Terrenos", "Campos y Chacras", "Galpones y Locales Comerciales", "Remates"] }
+      - { label: "Tipo de Listado",  name: listType, widget: select, options: ["Ventas", "Alquileres"]}
+      - { label: "Fecha de Creación", name: date,  widget: "datetime", dateFormat: "DD/MM/YYYY" , timeFormat: false, format: "LLL", pickerUtc: false }
 
       
 

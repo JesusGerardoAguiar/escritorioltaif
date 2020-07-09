@@ -3,9 +3,9 @@ import InputBase from "@material-ui/core/InputBase"
 
 export const Box = styled.div`
   width: 35rem;
-  margin-top: 2rem;
-  border: 3px solid #aa5c3b;
+  border: 1px solid #2F358F;
   padding: 2rem;
+  border-radius: 10px;
   padding-bottom: 0px;
   display: -webkit-flex;
   flex-direction: column;
@@ -19,11 +19,12 @@ export const Box = styled.div`
 
 export const InputField = styled(InputBase)`
   color: white;
-  height: 80px;
-  border: 3px solid #AA5C3B;
+  height: 76.6666666px;
+  border: 1px solid #2F358F;
+  border-radius: 10px;
   box-sizing: border-box;
   padding-left: 2rem !important;
-  font-family: MontserratL!important;
+  font-family: RobotoL!important;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -32,16 +33,21 @@ export const InputField = styled(InputBase)`
   width: 100%;
   color: black;
   margin-bottom: 0.5rem;
+
+  :placeholder {
+   color: #2F358F;
+  }
 `
 
 export const TextArea = styled(InputBase)`
   overflow: scroll;
   height: 8rem;
-  border: 3px solid #aa5c3b;
+  border: 1px solid #2F358F;
+  border-radius: 10px;
   padding-left: 2rem !important;
   padding-top: 2rem !important;
   padding-right: 2rem !important;
-  font-family: MontserratL !important;
+  font-family: RobotoL !important;
   font-style: normal !important;
   font-weight: 300 !important;
   font-size: 18px !important;
@@ -62,10 +68,11 @@ export const Button = styled.button`
   width: 13rem;
   height: 3rem;
 
-  border: 3px solid #aa5c3b;
+  border: 1px solid #2F358F;
+  border-radius: 10px;
   font-family: RobotoR;
   text-transform: uppercase;
-  color: #aa5c3b;
+  color: #2F358F;
   outline: none;
   cursor: pointer;
   background-color: white;

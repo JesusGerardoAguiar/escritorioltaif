@@ -1,13 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { makeStyles } from "@material-ui/core/styles"
-import InputLabel from "@material-ui/core/InputLabel"
-import MenuItem from "@material-ui/core/MenuItem"
-import FormHelperText from "@material-ui/core/FormHelperText"
-import FormControl from "@material-ui/core/FormControl"
-import Select from "@material-ui/core/Select"
 import Button from "@material-ui/core/Button"
-import Icon from "@material-ui/core/Icon"
 import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
@@ -39,7 +33,7 @@ const SearchTab = () => {
 
   return (
     <Container>
-      <Collapsible trigger="¡Comienza tu Búsqueda!">
+      <Collapsible trigger="Buscar Propiedad">
         <SearchContainer>
           <SelectRow>
             <SelectComponent
