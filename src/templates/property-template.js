@@ -7,6 +7,7 @@ import styled from "styled-components"
 import PriceTagIcon from "../../content/assets/icons/pricetag.png"
 import BathIcon from "../../content/assets/icons/bathtub.svg"
 import BedIcon from "../../content/assets/icons/king_bed.svg"
+import {GoogleMap} from '../components/Map';
 
 import ImageGallery from "react-image-gallery"
 require("react-image-gallery/styles/css/image-gallery.css")
@@ -76,6 +77,8 @@ const PropertyTemplate = props => {
               items={imagesToComponent}
             />
           </PropertyImage>
+        </PropertyColumn>
+        <div style={{ width: "50rem", marginLeft: "2rem" }}>
           <h3>{propertySelected.title}</h3>
           <Description>{propertySelected.description}</Description>
           <Specs>
@@ -102,17 +105,31 @@ const PropertyTemplate = props => {
               {propertySelected.mts2} mts<sup>2</sup>{" "}
             </>
           </Specs>
-          <Specs style={{ alignSelf: "flex-end", marginTop: '1.5rem' }}>{propertySelected.location}</Specs>
+          <Specs style={{ alignSelf: "flex-end", marginTop: "1.5rem" }}>
+            {propertySelected.location}
+          </Specs>
           <PriceTag>
             {propertySelected.currency} {propertySelected.price}
             <img alt="propiedad" style={{ margin: 0 }} src={PriceTagIcon} />
           </PriceTag>
-        </PropertyColumn>
-        <ContactDiv><h3 style={{marginTop: 0,     marginBottom: '1.5rem'}}>¡Envianos tu consulta!</h3><EmailContainer /></ContactDiv>
+        </div>
+      </MainDiv>
+      <MainDiv>
+        <ContactDiv>
+          <h3 style={{ marginTop: 0, marginBottom: "1.5rem" }}>
+            ¡Envianos tu consulta!
+          </h3>
+          <EmailContainer />
+        </ContactDiv>
+      </MainDiv>
+      <MainDiv>
+        <GoogleMap googleMapsApiKey={'AIzaSyACQIe4BWvhGROmJiNj9XmvHwywh1qMQ80'} address={{ lat: -34.9160354, lng: -56.1517524  }} />
       </MainDiv>
     </Layout>
   )
 }
+
+// 
 
 const PropertyImage = styled.div``
 
@@ -125,6 +142,7 @@ const Description = styled.p`
   margin-top: 0.5rem;
   padding-top: 0px;
   text-align: justify;
+  margin-right: 3rem;
 `
 
 const PriceTag = styled.div`
@@ -145,7 +163,7 @@ const PriceTag = styled.div`
   font-size: 17px;
   font-family: RobotoL;
   margin-top: 1.5rem;
-  
+
   img {
     width: 1rem !important;
   }
@@ -190,7 +208,7 @@ const MainDiv = styled.div`
     work-break: break-all;
     color: #2f358f;
     margin-bottom: 0px;
-    margin-top: 1.5rem;
+    margin-top: 0;
     padding-top: 0px;
   }
   h1 {

@@ -23,14 +23,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SelectComponent = ({ menuItems, label, property, setPropertyValue, style,   labelColor }) => {
+const SelectComponent = ({ menuItems, keyObject, label, filterState, setFilterValue, style,   labelColor }) => {
   const classes = useStyles()
-
+  
+  
   const renderMenuItems =() => {
-      return menuItems && menuItems.map((item) => <MenuItem value={item.value}>{item.label}</MenuItem>)
+      return menuItems && menuItems.map((item) => <MenuItem value={item.value} name={item.name}>{item.name}</MenuItem>)
   }
-  const handleChange = event => {
-    setPropertyValue(event.target.value)
+  const handleChange = (event) => {
+    setFilterValue({ value: event.target.value, keyObject: keyObject})
   }
 
   return (
@@ -41,7 +42,7 @@ const SelectComponent = ({ menuItems, label, property, setPropertyValue, style, 
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
-          value={property}
+          value={filterState}
           onChange={handleChange}
         >
           {renderMenuItems()}
@@ -57,6 +58,9 @@ width: inherit;
   }
   .MuiFilledInput-underline:before{
     border-bottom: 1px solid #2f358f;
+  }
+  .MuiInputBase-root{
+    color: #2f358f;
   }
 `
 

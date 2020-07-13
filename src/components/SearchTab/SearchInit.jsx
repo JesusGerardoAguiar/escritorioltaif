@@ -6,6 +6,13 @@ import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
 import Collapsible from "react-collapsible"
+import {
+  PropertyType,
+  ListType,
+  Currency,
+  MinPrice,
+  MaxPrice,
+} from "./MenuItems"
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -25,12 +32,18 @@ const useStyles = makeStyles(theme => ({
 
 const SearchTab = () => {
   const classes = useStyles()
-  const [propertyType, setPropertyType] = useState("")
-  const dummyMenuItems = [
-    { value: 10, label: "Item 1" },
-    { value: 20, label: "Item 2" },
-  ]
+  const [filterState, setFilterState] = useState({
+    propertyType: '',
+    listType: '',
+    currency: '',
+    minPrice: '',
+    maxPrice: '',
+  });
 
+  const changeFilter = (payload) => {
+    const keyObject = payload.keyObject;
+    setFilterState({ ...filterState, [keyObject]: payload.value })
+  }
   return (
     <Container>
       <Collapsible trigger="Buscar Propiedad">
@@ -38,38 +51,43 @@ const SearchTab = () => {
           <SelectRow>
             <SelectComponent
               label="Tipo de Propiedad"
-              menuItems={dummyMenuItems}
-              property={propertyType}
-              setPropertyValue={setPropertyType}
+              keyObject="propertyType"
+              menuItems={PropertyType}
+              filter={filterState}
+              setFilterValue={changeFilter}
             />
             <SelectComponent
               label="Tipo de Listado"
-              menuItems={dummyMenuItems}
-              property={propertyType}
-              setPropertyValue={setPropertyType}
+              keyObject='listType'
+              menuItems={((filterState.propertyType !== 'terrenos') ? ListType : [])}
+              filter={filterState}
+              setFilterValue={changeFilter}
             />
           </SelectRow>
           <SelectRow>
             <SelectComponent
               label="Moneda"
-              menuItems={dummyMenuItems}
-              property={propertyType}
-              setPropertyValue={setPropertyType}
+              keyObject='currency'
+              menuItems={Currency}
+              filter={filterState}
+              setFilterValue={changeFilter}
             />
             <SelectComponent
               label="Min Precio"
-              menuItems={dummyMenuItems}
-              property={propertyType}
-              setPropertyValue={setPropertyType}
+              keyObject='minPrice'
+              menuItems={MinPrice}
+              filter={filterState}
+              setFilterValue={changeFilter}
             />
           </SelectRow>
           <SelectRow id="maxprice">
             <SelectComponent
               style={{ width: "100%" }}
               label="Max Precio"
-              menuItems={dummyMenuItems}
-              property={propertyType}
-              setPropertyValue={setPropertyType}
+              keyObject='maxPrice'
+              menuItems={MaxPrice}
+              filter={filterState}
+              setFilterValue={changeFilter}
             />
           </SelectRow>
           <ButtonDiv>
@@ -114,7 +132,7 @@ const Container = styled.div`
     margin-bottom: 0px;
     cursor: pointer;
     text-align: center;
-    :hover{
+    :hover {
       opacity: 0.8;
     }
     @media (max-width: 768px) {
