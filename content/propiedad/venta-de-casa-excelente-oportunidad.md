@@ -9,11 +9,11 @@ description: >-
   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 location: '18 de Julio, Durazno'
 title: Venta de Casa Excelente Oportunidad
-price: '200.000'
+price: '200000'
 currency: U$S
 images:
   - /assets/casaprueba.jpg
-propertyType: casa
+propertyType: casas
 listType: ventas
 date: 'July 8, 2020 3:52 PM'
 ---

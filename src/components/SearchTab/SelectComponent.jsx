@@ -7,6 +7,7 @@ import Select from "@material-ui/core/Select"
 import styled from "styled-components";
 
 
+
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
@@ -23,7 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SelectComponent = ({ menuItems, keyObject, label, filterState, setFilterValue, style,   labelColor }) => {
+const SelectComponent = ({ menuItems, keyObject, label, filter, setFilterValue, style,   labelColor }) => {
   const classes = useStyles()
   
   
@@ -42,7 +43,7 @@ const SelectComponent = ({ menuItems, keyObject, label, filterState, setFilterVa
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
-          value={filterState}
+          value={filter}
           onChange={handleChange}
         >
           {renderMenuItems()}

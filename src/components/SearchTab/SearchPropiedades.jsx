@@ -6,6 +6,15 @@ import Button from "@material-ui/core/Button"
 import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
+import SnackbarComponent from '../Snackbar';
+import {navigate} from 'gatsby';
+import {
+  PropertyType,
+  ListType,
+  Currency,
+  MinPrice,
+  MaxPrice,
+} from "./MenuItems"
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -23,9 +32,54 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const SearchPropiedades = () => {
+const SearchPropiedades = ({ filterValues }) => {
   const classes = useStyles()
-  const [propertyType, setPropertyType] = useState("")
+  const [filterState, setFilterState] = useState(filterValues)
+  const [openSnackbar, setOpenSnackbar] = useState(false)
+
+  const changeFilter = payload => {
+    const keyObject = payload.keyObject
+    setFilterState({ ...filterState, [keyObject]: payload.value })
+  }
+
+  const clearFilter = () => {
+    setFilterState({
+      propertyType: "",
+      listType: "",
+      currency: "",
+      minPrice: "",
+      maxPrice: "",
+    })
+  }
+
+  const fieldsNotEmpty = (
+    propertyType,
+    listType,
+    currency,
+    minPrice,
+    maxPrice
+  ) =>
+    propertyType !== "" &&
+    listType !== "" &&
+    currency !== "" &&
+    minPrice !== "" &&
+    maxPrice !== ""
+
+  const checkFields = () => {
+    const { propertyType, listType, currency, minPrice, maxPrice } = filterState
+    if (fieldsNotEmpty(propertyType, listType, currency, minPrice, maxPrice)) {
+      navigate(
+        `propiedades?propertyType=${propertyType}&listType=${listType}&currency=${currency}&minPrice=${minPrice}&maxPrice=${maxPrice}`
+      )
+    } else {
+      setOpenSnackbar(true)
+    }
+  }
+
+  const closeSnakbar = (event, reason) => {
+    setOpenSnackbar(false)
+  }
+
   const dummyMenuItems = [
     { value: 10, label: "Item 1" },
     { value: 20, label: "Item 2" },
@@ -33,63 +87,72 @@ const SearchPropiedades = () => {
 
   return (
     <SearchContainer>
+      <SnackbarComponent variant='error' open={openSnackbar} handleClose={closeSnakbar} msg={"Ninguno de los campos puede ser vacio"} />
       <SelectRow>
         <SelectComponent
-          label="Tipo de Propiedad"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
+         label="Tipo de Propiedad"
+         keyObject="propertyType"
+         menuItems={PropertyType}
+         filter={filterState.propertyType}
+         setFilterValue={changeFilter}
           labelColor="#2f358f"
         />
         <SelectComponent
           label="Tipo de Listado"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
+          keyObject="listType"
+          menuItems={
+            filterState.propertyType !== "terrenos" ? ListType : []
+          }
+          filter={filterState.listType}
+          setFilterValue={changeFilter}
           labelColor="#2f358f"
         />
         <SelectComponent
           label="Moneda"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
+          keyObject="currency"
+          menuItems={Currency}
+          filter={filterState.currency}
+          setFilterValue={changeFilter}
           labelColor="#2f358f"
         />
         <SelectComponent
           label="Min Precio"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
+          keyObject="minPrice"
+          menuItems={MinPrice}
+          filter={filterState.minPrice}
+          setFilterValue={changeFilter}
           labelColor="#2f358f"
         />
         <SelectComponent
           label="Max Precio"
-          menuItems={dummyMenuItems}
-          property={propertyType}
-          setPropertyValue={setPropertyType}
+          keyObject="maxPrice"
+          menuItems={MaxPrice}
+          filter={filterState.maxPrice}
+          setFilterValue={changeFilter}
           labelColor="#2f358f"
         />
-        <ButtonDiv>
-          <Button
-            variant="contained"
-            color="primary"
-            size="medium"
-            className={classes.button}
-            startIcon={<SearchIcon />}
-          >
-            Buscar
-          </Button>
-          <Button
-            style={{    marginLeft: '0px'}}
-            variant="contained"
-            color="secundary"
-            size="medium"
-            className={classes.button}
-            startIcon={<ClearAllIcon />}
-          >
-            Limpiar
-          </Button>
-        </ButtonDiv>
+         <ButtonDiv>
+            <Button
+              variant="contained"
+              color="secundary"
+              size="large"
+              className={classes.button}
+              startIcon={<ClearAllIcon />}
+              onClick={() => clearFilter()}
+            >
+              Limpiar
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              className={classes.button}
+              startIcon={<SearchIcon />}
+              onClick={() => checkFields()}
+            >
+              Buscar
+            </Button>
+          </ButtonDiv>
       </SelectRow>
     </SearchContainer>
   )
@@ -105,7 +168,7 @@ const SearchContainer = styled.div`
   .MuiButton-containedPrimary {
     background-color: #2f358f;
     margin-bottom: 0.5rem;
-    margin-left: 0px!important;
+    margin-left: 0px !important;
   }
   .MuiFormControl-root {
     margin-top: 0.5rem !important;
@@ -114,7 +177,7 @@ const SearchContainer = styled.div`
     margin-right: 0.5rem;
     min-width: 120px;
   }
-  .MuiSelect-root{
+  .MuiSelect-root {
     background: white;
   }
   .MuiButtonBase-root {
@@ -128,9 +191,8 @@ const SearchContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%!important;
-   }
- 
+    width: 100% !important;
+  }
 `
 
 const SelectRow = styled.div`
@@ -144,6 +206,5 @@ const ButtonDiv = styled.div`
   align-items: baseline;
   display: flex;
   flex-direction: row;
-
 `
 export default SearchPropiedades
