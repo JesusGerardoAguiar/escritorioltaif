@@ -13,8 +13,8 @@ price: '200.000'
 currency: U$S
 images:
   - /assets/casaprueba.jpg
-propertyType: Casas
-listType: Ventas
+propertyType: casa
+listType: ventas
 date: 'July 8, 2020 3:52 PM'
 ---
 
