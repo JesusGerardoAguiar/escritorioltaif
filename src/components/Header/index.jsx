@@ -203,11 +203,11 @@ const Header = ({ location }) => {
             </LinkBox>
             <Submenu
               submenu={"Casas"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?casas?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?casas?alquileres" }]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=casas&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=casas&listType=alquileres" }]}
             />
             <Submenu
               submenu={"Apartamentos"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?apartamentos?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?apartamentos?alquileres" }]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=apartamentos&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=apartamentos&listType=alquileres" }]}
               />
               <LinkBox>
             <LinkScroll
@@ -217,18 +217,18 @@ const Header = ({ location }) => {
               smooth={true}
               duration={400}
             >
-                <Link to="/propiedades?terrenos" style={{ marginRight: "0px" }}>
+                <Link to="/propiedades?propertyType=terrenos" style={{ marginRight: "0px" }}>
                   Terrenos
                 </Link>
             </LinkScroll>
               </LinkBox>
             <Submenu
               submenu={"Campos y Chacras"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?camposychacras?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?camposychacras?alquileres" }]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=camposychacras&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=camposychacras&listType=alquileres" }]}
               />
             <Submenu
               submenu={"Galpones y Locales Comerciales"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?galponesylocalescomerciales?ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?galponesylocalescomerciales?alquileres" }]}
+              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=galponesylocalescomerciales&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=galponesylocalescomerciales&listType=alquileres" }]}
               openTest={true}
               />
               <LinkBox>

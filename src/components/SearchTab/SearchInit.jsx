@@ -6,6 +6,7 @@ import SearchIcon from "@material-ui/icons/Search"
 import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
 import Collapsible from "react-collapsible"
+import SnackbarComponent from '../Snackbar';
 import {
   PropertyType,
   ListType,
@@ -13,6 +14,7 @@ import {
   MinPrice,
   MaxPrice,
 } from "./MenuItems"
+import {navigate} from 'gatsby';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -33,19 +35,50 @@ const useStyles = makeStyles(theme => ({
 const SearchTab = () => {
   const classes = useStyles()
   const [filterState, setFilterState] = useState({
-    propertyType: '',
-    listType: '',
-    currency: '',
-    minPrice: '',
-    maxPrice: '',
-  });
+    propertyType: "",
+    listType: "",
+    currency: "",
+    minPrice: "",
+    maxPrice: "",
+  })
+  const [openSnackbar, setOpenSnackbar] = useState(false)
 
-  const changeFilter = (payload) => {
-    const keyObject = payload.keyObject;
+  const changeFilter = payload => {
+    const keyObject = payload.keyObject
     setFilterState({ ...filterState, [keyObject]: payload.value })
   }
+
+  const clearFilter = () => {
+    setFilterState({
+      propertyType: "",
+      listType: "",
+      currency: "",
+      minPrice: "",
+      maxPrice: "",
+    })
+  }
+
+  const fieldsNotEmpty = (propertyType, listType, currency, minPrice, maxPrice) => propertyType !== '' && listType !== '' && currency !== '' && minPrice !== '' && maxPrice !== ''
+
+  const checkFields = () => {
+    const { propertyType, listType, currency, minPrice, maxPrice } = filterState;
+    if(fieldsNotEmpty(propertyType, listType, currency, minPrice, maxPrice)){
+      navigate(`propiedades?propertyType=${propertyType}&listType=${listType}&currency=${currency}&minPrice=${minPrice}&maxPrice=${maxPrice}`)
+    }else{
+
+      setOpenSnackbar(true)
+    }
+  }
+
+  const closeSnakbar = (event, reason) => {
+    
+      
+          setOpenSnackbar(false);
+  }
+
   return (
     <Container>
+      <SnackbarComponent variant='error' open={openSnackbar} handleClose={closeSnakbar} msg={"Ninguno de los campos puede ser vacio"} />
       <Collapsible trigger="Buscar Propiedad">
         <SearchContainer>
           <SelectRow>
@@ -53,30 +86,32 @@ const SearchTab = () => {
               label="Tipo de Propiedad"
               keyObject="propertyType"
               menuItems={PropertyType}
-              filter={filterState}
+              filter={filterState.propertyType}
               setFilterValue={changeFilter}
             />
             <SelectComponent
               label="Tipo de Listado"
-              keyObject='listType'
-              menuItems={((filterState.propertyType !== 'terrenos') ? ListType : [])}
-              filter={filterState}
+              keyObject="listType"
+              menuItems={
+                filterState.propertyType !== "terrenos" ? ListType : []
+              }
+              filter={filterState.listType}
               setFilterValue={changeFilter}
             />
           </SelectRow>
           <SelectRow>
             <SelectComponent
               label="Moneda"
-              keyObject='currency'
+              keyObject="currency"
               menuItems={Currency}
-              filter={filterState}
+              filter={filterState.currency}
               setFilterValue={changeFilter}
             />
             <SelectComponent
               label="Min Precio"
-              keyObject='minPrice'
+              keyObject="minPrice"
               menuItems={MinPrice}
-              filter={filterState}
+              filter={filterState.minPrice}
               setFilterValue={changeFilter}
             />
           </SelectRow>
@@ -84,9 +119,9 @@ const SearchTab = () => {
             <SelectComponent
               style={{ width: "100%" }}
               label="Max Precio"
-              keyObject='maxPrice'
+              keyObject="maxPrice"
               menuItems={MaxPrice}
-              filter={filterState}
+              filter={filterState.maxPrice}
               setFilterValue={changeFilter}
             />
           </SelectRow>
@@ -97,6 +132,7 @@ const SearchTab = () => {
               size="large"
               className={classes.button}
               startIcon={<ClearAllIcon />}
+              onClick={() => clearFilter()}
             >
               Limpiar
             </Button>
@@ -106,6 +142,7 @@ const SearchTab = () => {
               size="large"
               className={classes.button}
               startIcon={<SearchIcon />}
+              onClick={() => checkFields()}
             >
               Buscar
             </Button>

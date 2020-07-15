@@ -7,6 +7,7 @@ import PriceTagIcon from "../../content/assets/icons/pricetag.png"
 import BathIcon from "../../content/assets/icons/bathtub.svg"
 import BedIcon from "../../content/assets/icons/king_bed.svg"
 import { Link } from "gatsby"
+import queryString from "query-string"
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -32,15 +33,20 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const Propiedades = ({ location, data }) => {
+  let params = queryString.parse(location.search)
+  const { propertyType, listType, currency, minPrice, maxPrice } = params
+  console.log(params)
   const transformText = text => {
     return text && text[0].toUpperCase() + text.slice(1)
   }
 
-  const properties = data.allMdx.nodes
-    .filter(node => node.frontmatter.listType !== null)
+  const propertiesToBeFiltered = data.allMdx.nodes
+    .filter(node => node.frontmatter.propertyType !== null)
     .map(frontmatter => {
       return { ...frontmatter.frontmatter }
     })
+  
+  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === currency && (parseInt(property.price) <= parseInt(maxPrice) && parseInt(property.price) >= parseInt(minPrice)))
 
   const renderProperties = properties => {
     return (
@@ -105,22 +111,24 @@ const Propiedades = ({ location, data }) => {
   }
 
   const renderTitle = () => {
-    const search = location.search
-    if (search.split("?")[1] === "galponesylocalescomerciales") {
+    let params = queryString.parse(location.search)
+    if (params.propertyType === "galponesylocalescomerciales") {
       return `Galpones y Locales Comerciales ${
-        search.split("?")[2] !== ""
-          ? "- " + transformText(search.split("?")[2])
+        params.listType && params.listType !== ""
+          ? "- " + transformText(params.listType)
           : ""
       }`
-    } else if (search.split("?")[1] === "camposychacras") {
+    } else if (params.propertyType === "camposychacras") {
       return `Campos y Chacras ${
-        search.split("?")[2] !== ""
-          ? "- " + transformText(search.split("?")[2])
+        params.listType && params.listType !== ""
+          ? "- " + transformText(params.listType)
           : ""
       }`
     }
-    return `${transformText(search.split("?")[1])} ${
-      search.split("?")[2] ? "- " + transformText(search.split("?")[2]) : ""
+    return `${transformText(params.propertyType)} ${
+      params.listType && params.listType !== ""
+        ? "- " + transformText(params.listType)
+        : ""
     }`
   }
 
@@ -155,7 +163,7 @@ const PriceTag = styled.div`
   margin-top: 0px;
   font-size: 17px;
   font-family: RobotoL;
-  
+
   img {
     width: 1rem !important;
   }
@@ -197,21 +205,21 @@ const TextColumn = styled.div`
 `
 
 const PropertyContainer = styled.div`
-padding: 1rem;
-border: 1px solid #016699;
-border-radius: 10px;
-width: fit-content;
-padding-top: 1rem;
-padding-bottom: 1rem;
-margin-bottom: 1rem;
-a{
-  color: black!important;
-}
-:hover {
-  cursor: pointer;
-  opacity: 0.8;
-  transition: 1s;
-}
+  padding: 1rem;
+  border: 1px solid #016699;
+  border-radius: 10px;
+  width: fit-content;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  a {
+    color: black !important;
+  }
+  :hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 1s;
+  }
 `
 
 const Properties = styled.div`
