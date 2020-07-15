@@ -46,7 +46,7 @@ const Propiedades = ({ location, data }) => {
       return { ...frontmatter.frontmatter }
     })
   
-  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === currency && (parseInt(property.price) <= parseInt(maxPrice) && parseInt(property.price) >= parseInt(minPrice)))
+  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price))))
 
   const renderProperties = properties => {
     return (
@@ -138,7 +138,7 @@ const Propiedades = ({ location, data }) => {
       <Layout location={location}>
         <Container>
           <PresentationText>{renderTitle()}</PresentationText>
-          <SearchPropiedades />
+          <SearchPropiedades filterValues={params} />
           <Properties>{renderProperties(properties)}</Properties>
         </Container>
       </Layout>

@@ -7,14 +7,14 @@ import ClearAllIcon from "@material-ui/icons/ClearAll"
 import SelectComponent from "./SelectComponent"
 import Collapsible from "react-collapsible"
 import SnackbarComponent from '../Snackbar';
-import {
-  PropertyType,
-  ListType,
-  Currency,
-  MinPrice,
-  MaxPrice,
-} from "./MenuItems"
 import {navigate} from 'gatsby';
+  import {
+    PropertyType,
+    ListType,
+    Currency,
+    MinPrice,
+    MaxPrice,
+  } from "./MenuItems"
 
 const useStyles = makeStyles(theme => ({
   formControl: {
