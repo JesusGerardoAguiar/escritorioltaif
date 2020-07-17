@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { createGlobalStyle } from "styled-components"
 import styled from "styled-components"
@@ -33,26 +33,46 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const Propiedades = ({ location, data }) => {
-  let params = queryString.parse(location.search)
-  const { propertyType, listType, currency, minPrice, maxPrice } = params
-  console.log(params)
-  const transformText = text => {
-    return text && text[0].toUpperCase() + text.slice(1)
-  }
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [pageNumbers, setPageNumbers] = useState(null);
   const propertiesToBeFiltered = data.allMdx.nodes
     .filter(node => node.frontmatter.propertyType !== null)
     .map(frontmatter => {
       return { ...frontmatter.frontmatter }
     })
-  
-  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price))))
+    let params = queryString.parse(location.search);
+    const { propertyType, listType, currency, minPrice, maxPrice } = params
+    const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))).reverse()
+  useEffect(() => {
+    let numberOfPages = calcpagenumbers(
+      properties,
+      itemsPerPage
+      )
+      console.log('this is number of pages' + numberOfPages)
+    numberOfPages !== null &&
+    setPageNumbers(numberOfPages)
+  }, [])
 
-  const renderProperties = properties => {
+  const handleClickPagination = (event) => {
+    setCurrentPage(Number(event.target.id))
+    document.body.scrollTop = document.documentElement.scrollTop = 0
+  }
+
+ 
+  const transformText = text => {
+    return text && text[0].toUpperCase() + text.slice(1)
+  }
+
+  
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = properties.slice(indexOfFirstItem, indexOfLastItem)
+  const renderProperties = currentItems => {
     return (
-      properties &&
-      properties.length > 0 &&
-      properties.map(property => {
+      currentItems &&
+      currentItems.length > 0 &&
+      currentItems.map(property => {
         return (
           <PropertyContainer>
             <Link to="/propiedad">
@@ -139,12 +159,36 @@ const Propiedades = ({ location, data }) => {
         <Container>
           <PresentationText>{renderTitle()}</PresentationText>
           <SearchPropiedades filterValues={params} />
-          <Properties>{renderProperties(properties)}</Properties>
+          <Properties>{renderProperties(currentItems)}</Properties>
         </Container>
+        <PaginationDiv>
+          {pageNumbers !== null &&
+            pageNumbers.map(number => {
+              return (
+                <Li
+                  key={number}
+                  id={number}
+                  currentNumber={
+                    number === currentPage ? "1px solid #016699;" : ""
+                  }
+                  onClick={(e) => handleClickPagination(e)}
+                >
+                  {number}
+                </Li>
+              )
+            })}
+        </PaginationDiv>
       </Layout>
     </>
   )
 }
+
+export const PaginationDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`
 
 const PriceTag = styled.div`
   width: 9rem;
@@ -241,6 +285,20 @@ const PropertyRow = styled.div`
   }
 `
 
+export const Li = styled.li`
+  border-radius: 20px;
+  border: ${props => props.currentNumber};
+  width: 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: RobotoM;
+  list-style-type: none;
+  cursor: pointer;
+  :hover {
+    opacity: 0.5;
+  }
+`
+
 const PresentationText = styled.h2`
   margin: 0px;
   font-family: RobotoB;
@@ -261,6 +319,14 @@ const Container = styled.div`
 `
 
 export default Propiedades
+
+const calcpagenumbers = (items, itemsPerPage) => {
+  const pageNumbers = []
+  for (let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
+    pageNumbers.push(i)
+  }
+  return pageNumbers
+}
 
 export const pageQuery = graphql`
   query Properties {

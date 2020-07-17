@@ -4,10 +4,14 @@ import Input from "./Input"
 import InputArea from "./InputArea"
 import { Formik } from "formik"
 import * as Yup from "yup"
+import {navigate} from 'gatsby';
+
+const isClient = typeof window !== 'undefined';
 
 const EmailContainer = () => {
   const onSubmit = useCallback(values => {
-    console.log(values)
+    window.open(`https://api.whatsapp.com/send?phone=++59899819199&text=%20Nombre:${values.name} Email: ${values.email} Consulta: ${values.consult}`, 'blank')
+    
   }, [])
   return (
     <Box>
@@ -21,9 +25,7 @@ const EmailContainer = () => {
       >
         {({ handleChange, handleSubmit, errors, isSubmitting, values }) => {
           return (
-            <FormContainer
-            action=""
-            method="POST">
+            <FormContainer onSubmit={handleSubmit}>
               <Input
                 placeholder="Nombre / Empresa"
                 name="name"
@@ -43,7 +45,7 @@ const EmailContainer = () => {
                 setField={handleChange}
               />
               <ButtonDiv>
-                <Button type="submit">Enviar Consulta</Button>
+                {isClient ? <Button type="submit">Enviar Consulta</Button> : <></>}
               </ButtonDiv>
             </FormContainer>
           )
