@@ -13,7 +13,7 @@ price: '200000'
 currency: U$S
 images:
   - /assets/casaprueba.jpg
-propertyType: casa
+propertyType: casas
 listType: ventas
 date: 'July 17, 2020 12:00 AM'
 ---
