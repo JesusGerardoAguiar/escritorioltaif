@@ -202,6 +202,7 @@ const MainDiv = styled.div`
   flex-direction: row;
   padding: 2rem;
   align-items: end;
+ 
   h3 {
     margin: 0px;
     font-family: RobotoM;
@@ -221,6 +222,10 @@ const MainDiv = styled.div`
     :hover {
       opacity: 0.5;
     }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap:wrap;
   }
 `
 

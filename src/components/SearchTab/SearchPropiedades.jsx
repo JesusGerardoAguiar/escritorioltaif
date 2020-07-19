@@ -200,6 +200,10 @@ const SelectRow = styled.div`
   flex-direction: row;
   width: inherit;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 const ButtonDiv = styled.div`

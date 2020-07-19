@@ -211,6 +211,11 @@ const PriceTag = styled.div`
   img {
     width: 1rem !important;
   }
+
+  @media (max-width: 768px) {
+    
+     align-self: flex-start;
+   }
 `
 
 const TextColumn = styled.div`
@@ -227,6 +232,8 @@ const TextColumn = styled.div`
     margin-bottom: 0px;
     margin-top: 0px;
     padding-top: 0px;
+
+
   }
   h5 {
     margin: 0px;
@@ -246,6 +253,23 @@ const TextColumn = styled.div`
     width: 42rem;
     text-align: justify;
   }
+
+  @media (max-width: 768px) {
+   h3{
+    width: 15rem;
+    margin-top: 1rem;
+   }
+   p{
+    width: 14rem;
+   }
+   h5 {
+    align-self: flex-start!important;
+    width: 9rem!important;
+    flex-wrap: wrap!important;
+  }
+  }
+
+  
 `
 
 const PropertyContainer = styled.div`
@@ -270,6 +294,9 @@ const Properties = styled.div`
   padding: 2rem;
   padding-top: 4rem;
   width: 100%;
+  @media (max-width: 768px) {
+    padding: 0rem;
+  }
 `
 
 const PropertyRow = styled.div`
@@ -282,6 +309,9 @@ const PropertyRow = styled.div`
   img {
     margin-bottom: 0;
     width: 23.333333rem;
+  }
+  @media (max-width: 768px) {
+    width: 17.333333rem;
   }
 `
 
@@ -316,6 +346,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 3rem;
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `
 
 export default Propiedades

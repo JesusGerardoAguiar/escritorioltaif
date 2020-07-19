@@ -41,17 +41,21 @@ export const LinkDiv = styled.div`
 
 
   @media (max-width: 768px) {
-    color: #016699;
+    color: white;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
     width: 100%;
-    height: 2rem;
+    height: 5rem;
+    z-index: auto!important;
+    padding-left: 0px!important;
+    justify-content: center;
     a {
       width: 100%;
+      z-index: auto!important;
       margin-right: 0px;
       text-decoration: none;
-      color: #016699;
+      color: white;
     }
   }
 `
@@ -70,6 +74,18 @@ export const LinkBox = styled.div`
     a{
       color: #2f358f;
       z-index: 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+  
+    a {
+      :hover{
+        color: white;
+      }
+      color: white;
+      margin-right: 0px;
+      text-decoration: none;
     }
   }
 `

@@ -1,10 +1,5 @@
 import React, { useState } from "react"
-import {
-  MainDiv,
-  LinkDiv,
-  IconDiv,
-  LinkBox,
-} from "./styles"
+import { MainDiv, LinkDiv, IconDiv, LinkBox } from "./styles"
 import Facebook from "../../../content/assets/icons/facebook.svg"
 import Instagram from "../../../content/assets/icons/instagram.svg"
 import { Link } from "gatsby"
@@ -12,7 +7,7 @@ import Drawer from "@material-ui/core/Drawer"
 import { makeStyles } from "@material-ui/core/styles"
 import IconButton from "@material-ui/core/IconButton"
 import Hamburguer from "../../../content/assets/icons/hamburguer.svg"
-import Close from "../../../content/assets/icons/close.svg"
+import Close from "../../../content/assets/icons/close-2-01.svg"
 import LtaiftLogo from "../../../content/assets/icons/logoescritorio-01.svg"
 // import LtaiftLogo from "../../../content/assets/img/logoltaif-01.jpg"
 import Media from "react-media"
@@ -49,9 +44,11 @@ const useStyles = makeStyles(theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    backgroundColor: "#323785",
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "#323785",
   },
   drawerHeader: {
     display: "flex",
@@ -110,82 +107,139 @@ const Header = ({ location }) => {
             <div className={classes.drawerHeader}>
               <IconButton onClick={() => setOpen(false)}>
                 <div>
-                  <img alt="a" src={Close} style={{ width: "2rem;" }} />
+                  <img
+                    alt="a"
+                    src={Close}
+                    style={{
+                      marginBottom: "0px",
+                      width: "2rem",
+                      zIndex: "2",
+                    }}
+                  />
                 </div>
               </IconButton>
             </div>
             <LinkDiv onClick={() => setOpen(false)}>
-              <Link>Inicio</Link>
+              <LinkBox>
+                <Link>Inicio</Link>
+              </LinkBox>
             </LinkDiv>
-
-            <LinkDiv onClick={() => setOpen(false)}>
-              <LinkScroll
-                onClick={() => setOpen(false)}
-                activeClass="active"
-                to="History"
-                spy={true}
-                smooth={true}
-                duration={400}
-              >
-                <Link to="" style={{ marginRight: "0px" }}>
-                  Historia
-                </Link>
-              </LinkScroll>
-            </LinkDiv>
-            <LinkDiv onClick={() => setOpen(false)}>
-              <LinkScroll
-                onClick={() => setOpen(false)}
-                activeClass="active"
-                to="products"
-                spy={true}
-                smooth={true}
-                duration={400}
-              >
-                <Link to="" style={{ marginRight: "0px" }}>
-                  Productos
-                </Link>
-              </LinkScroll>
-            </LinkDiv>
-            <LinkDiv onClick={() => setOpen(false)}>
-              <LinkScroll
-                onClick={() => setOpen(false)}
-                activeClass="active"
-                to="process"
-                spy={true}
-                smooth={true}
-                duration={400}
-              >
-                <Link to="" style={{ marginRight: "0px" }}>
-                  Proceso
-                </Link>
-              </LinkScroll>
-            </LinkDiv>
-            <LinkDiv onClick={() => setOpen(false)}>
-              <LinkScroll
-                onClick={() => setOpen(false)}
-                activeClass="active"
-                to="Contact"
-                spy={true}
-                smooth={true}
-                duration={400}
-              >
-                <Link to="" style={{ marginRight: "0px" }}>
-                  Contacto
-                </Link>
-              </LinkScroll>
-            </LinkDiv>
-            <IconDiv>
-              <img
-                alt="a"
-                src={Facebook}
-                style={{ width: "4rem", marginBottom: 0, cursor: "pointer" }}
+            <LinkDiv>
+              <Submenu
+                submenu={"Casas"}
+                submenuChilds={[
+                  {
+                    menuTitle: "Ventas",
+                    menuPath: "propiedades?propertyType=casas&listType=ventas",
+                  },
+                  {
+                    menuTitle: "Alquileres",
+                    menuPath:
+                      "propiedades?propertyType=casas&listType=alquileres",
+                  },
+                ]}
               />
-              <img
-                alt="a"
-                src={Instagram}
-                style={{ width: "4rem", marginBottom: 0, cursor: "pointer" }}
+            </LinkDiv>
+            <LinkDiv>
+              <Submenu
+                submenu={"Apartamentos"}
+                submenuChilds={[
+                  {
+                    menuTitle: "Ventas",
+                    menuPath:
+                      "propiedades?propertyType=apartamentos&listType=ventas",
+                  },
+                  {
+                    menuTitle: "Alquileres",
+                    menuPath:
+                      "propiedades?propertyType=apartamentos&listType=alquileres",
+                  },
+                ]}
               />
-            </IconDiv>
+            </LinkDiv>
+            <LinkDiv>
+              <LinkBox>
+                <LinkScroll
+                  activeClass="active"
+                  to="process"
+                  spy={true}
+                  smooth={true}
+                  duration={400}
+                >
+                  <Link
+                    to="/propiedades?propertyType=terrenos"
+                    style={{ marginRight: "0px" }}
+                  >
+                    Terrenos
+                  </Link>
+                </LinkScroll>
+              </LinkBox>
+            </LinkDiv>
+            <LinkDiv>
+              <Submenu
+                submenu={"Campos y Chacras"}
+                submenuChilds={[
+                  {
+                    menuTitle: "Ventas",
+                    menuPath:
+                      "propiedades?propertyType=camposychacras&listType=ventas",
+                  },
+                  {
+                    menuTitle: "Alquileres",
+                    menuPath:
+                      "propiedades?propertyType=camposychacras&listType=alquileres",
+                  },
+                ]}
+              />
+            </LinkDiv>
+            <LinkDiv>
+              <Submenu
+                submenu={"Galpones y Locales Comerciales"}
+                submenuChilds={[
+                  {
+                    menuTitle: "Ventas",
+                    menuPath:
+                      "propiedades?propertyType=galponesylocalescomerciales&listType=ventas",
+                  },
+                  {
+                    menuTitle: "Alquileres",
+                    menuPath:
+                      "propiedades?propertyType=galponesylocalescomerciales&listType=alquileres",
+                  },
+                ]}
+                openTest={true}
+              />
+            </LinkDiv>
+            <LinkDiv>
+              <LinkBox>
+                <LinkScroll
+                  activeClass="active"
+                  to="Contact"
+                  spy={true}
+                  smooth={true}
+                  duration={400}
+                >
+                  <Link to="" style={{ marginRight: "0px" }}>
+                    Remates
+                  </Link>
+                </LinkScroll>
+              </LinkBox>
+            </LinkDiv>
+            <LinkDiv>
+              <LinkBox>
+                <LinkScroll
+                  activeClass="active"
+                  to="Contact"
+                  spy={true}
+                  smooth={true}
+                  duration={400}
+                >
+                  <Link to="" style={{ marginRight: "0px" }}>
+                    Contacto
+                  </Link>
+                </LinkScroll>
+              </LinkBox>
+            </LinkDiv>
           </Drawer>
         </div>
       )
@@ -203,60 +257,106 @@ const Header = ({ location }) => {
             </LinkBox>
             <Submenu
               submenu={"Casas"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=casas&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=casas&listType=alquileres" }]}
+              submenuChilds={[
+                {
+                  menuTitle: "Ventas",
+                  menuPath: "propiedades?propertyType=casas&listType=ventas",
+                },
+                {
+                  menuTitle: "Alquileres",
+                  menuPath:
+                    "propiedades?propertyType=casas&listType=alquileres",
+                },
+              ]}
             />
             <Submenu
               submenu={"Apartamentos"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=apartamentos&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=apartamentos&listType=alquileres" }]}
-              />
-              <LinkBox>
-            <LinkScroll
-              activeClass="active"
-              to="process"
-              spy={true}
-              smooth={true}
-              duration={400}
-            >
-                <Link to="/propiedades?propertyType=terrenos" style={{ marginRight: "0px" }}>
+              submenuChilds={[
+                {
+                  menuTitle: "Ventas",
+                  menuPath:
+                    "propiedades?propertyType=apartamentos&listType=ventas",
+                },
+                {
+                  menuTitle: "Alquileres",
+                  menuPath:
+                    "propiedades?propertyType=apartamentos&listType=alquileres",
+                },
+              ]}
+            />
+            <LinkBox>
+              <LinkScroll
+                activeClass="active"
+                to="process"
+                spy={true}
+                smooth={true}
+                duration={400}
+              >
+                <Link
+                  to="/propiedades?propertyType=terrenos"
+                  style={{ marginRight: "0px" }}
+                >
                   Terrenos
                 </Link>
-            </LinkScroll>
-              </LinkBox>
+              </LinkScroll>
+            </LinkBox>
             <Submenu
               submenu={"Campos y Chacras"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=camposychacras&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=camposychacras&listType=alquileres" }]}
-              />
+              submenuChilds={[
+                {
+                  menuTitle: "Ventas",
+                  menuPath:
+                    "propiedades?propertyType=camposychacras&listType=ventas",
+                },
+                {
+                  menuTitle: "Alquileres",
+                  menuPath:
+                    "propiedades?propertyType=camposychacras&listType=alquileres",
+                },
+              ]}
+            />
             <Submenu
               submenu={"Galpones y Locales Comerciales"}
-              submenuChilds={[{ menuTitle: "Ventas", menuPath: "propiedades?propertyType=galponesylocalescomerciales&listType=ventas" }, { menuTitle: "Alquileres", menuPath: "propiedades?propertyType=galponesylocalescomerciales&listType=alquileres" }]}
+              submenuChilds={[
+                {
+                  menuTitle: "Ventas",
+                  menuPath:
+                    "propiedades?propertyType=galponesylocalescomerciales&listType=ventas",
+                },
+                {
+                  menuTitle: "Alquileres",
+                  menuPath:
+                    "propiedades?propertyType=galponesylocalescomerciales&listType=alquileres",
+                },
+              ]}
               openTest={true}
-              />
-              <LinkBox>
-            <LinkScroll
-              activeClass="active"
-              to="Contact"
-              spy={true}
-              smooth={true}
-              duration={400}
-            >
+            />
+            <LinkBox>
+              <LinkScroll
+                activeClass="active"
+                to="Contact"
+                spy={true}
+                smooth={true}
+                duration={400}
+              >
                 <Link to="" style={{ marginRight: "0px" }}>
                   Remates
                 </Link>
-            </LinkScroll>
-              </LinkBox>
-              <LinkBox>
-            <LinkScroll
-              activeClass="active"
-              to="Contact"
-              spy={true}
-              smooth={true}
-              duration={400}
-            >
+              </LinkScroll>
+            </LinkBox>
+            <LinkBox>
+              <LinkScroll
+                activeClass="active"
+                to="Contact"
+                spy={true}
+                smooth={true}
+                duration={400}
+              >
                 <Link to="" style={{ marginRight: "0px" }}>
                   Contacto
                 </Link>
-            </LinkScroll>
-              </LinkBox>
+              </LinkScroll>
+            </LinkBox>
           </LinkDiv>
           {/* <a
                 href="_"
