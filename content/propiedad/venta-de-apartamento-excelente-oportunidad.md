@@ -10,6 +10,8 @@ description: >-
   nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 location: '18 de Julio, Durazno'
 title: Venta de Apartamento Excelente Oportunidad
+longitud: -56.1517524
+latitud: -34.9160354
 price: '200000'
 currency: U$S
 images:
