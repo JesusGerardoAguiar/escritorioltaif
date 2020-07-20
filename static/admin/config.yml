@@ -12,7 +12,7 @@ collections:
     folder: content/propiedad
     create: true
     fields:
-    - { name: id, label: ID Identificador, widget: number }
+      - { name: id, label: ID Identificador, widget: number }
       - { name: bedroom, label: Dormitorios }
       - { name: bathroom, label: Baños }
       - { name: mts2, label: Mts2 }
