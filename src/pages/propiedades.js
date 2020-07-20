@@ -75,7 +75,7 @@ const Propiedades = ({ location, data }) => {
       currentItems.map(property => {
         return (
           <PropertyContainer>
-            <Link to="/propiedad">
+            <Link to={`/propiedad?id=${property.id}`}>
               <PropertyRow>
                 <img alt="propiedad" src={property.images[0]} />
                 <TextColumn>
@@ -380,6 +380,9 @@ export const pageQuery = graphql`
           price
           propertyType
           title
+          id
+          latitud
+          longitud
         }
       }
     }

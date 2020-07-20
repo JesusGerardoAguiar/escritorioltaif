@@ -20,6 +20,8 @@ collections:
       - { name: description, label: Descripción }
       - { name: location, label: Ubicación }
       - { name: title,identifier_field ,label: Titulo }
+      - { name: longitud, label: Longitud, widget: number, valueType: 'float' }
+      - { name: latitud, label: Latitud, widget: number, valueType: 'float' }
       - { name: price, label: Precio }
       - { label: "Tipo de Moneda",  name: currency, widget: select, options: ["U$S", "$"]}
       - { name: images, label: Imagenes, widget: list,  field: {label: Imagen, name: image, widget: image} }

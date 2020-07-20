@@ -25,6 +25,9 @@ exports.createPages = ({ graphql, actions }) => {
               price
               propertyType
               title
+              longitud
+              latitud
+              id
             }
           }
         }

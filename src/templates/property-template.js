@@ -37,7 +37,7 @@ const GlobalStyles = createGlobalStyle`
 
 const PropertyTemplate = props => {
   const { data } = props
-  const properties = data.allMdx.nodes
+  const properties = data && data.allMdx && data.allMdx.nodes && data.allMdx.nodes
     .filter(node => node.frontmatter.listType !== null)
     .map(frontmatter => {
       return { ...frontmatter.frontmatter }
@@ -58,13 +58,11 @@ const PropertyTemplate = props => {
     },
   ]
 
+  const propertySelected = properties && properties.length > 0 && properties.filter((property) => property.id === parseInt(props.location.search.split('=')[1]))[0]
   const imagesToComponent =
-    properties &&
-    properties.length > 0 &&
-    properties[0].images.map(img => {
+  propertySelected && propertySelected.images.map(img => {
       return { original: img, thumbnail: img }
     })
-  const propertySelected = properties[0]
   return (
     <Layout location={props.location}>
       <GlobalStyles />
@@ -74,15 +72,15 @@ const PropertyTemplate = props => {
             <ImageGallery
               showFullscreenButton={false}
               showPlayButton={false}
-              items={imagesToComponent}
+              items={imagesToComponent ? imagesToComponent : []}
             />
           </PropertyImage>
         </PropertyColumn>
         <div style={{ width: "50rem", marginLeft: "2rem" }}>
-          <h3>{propertySelected.title}</h3>
-          <Description>{propertySelected.description}</Description>
+          <h3>{propertySelected && propertySelected.title}</h3>
+          <Description>{ propertySelected && propertySelected.description}</Description>
           <Specs>
-            {propertySelected.bathroom} Baños{" "}
+            {propertySelected && propertySelected.bathroom} Baños{" "}
             <img
               alt="propiedad"
               src={BathIcon}
@@ -91,7 +89,7 @@ const PropertyTemplate = props => {
                 marginBottom: "-1px",
               }}
             />{" "}
-            &#9679; {propertySelected.bedroom} Dormitorios{" "}
+            &#9679; { propertySelected && propertySelected.bedroom} Dormitorios{" "}
             <img
               alt="propiedad"
               src={BedIcon}
@@ -102,14 +100,14 @@ const PropertyTemplate = props => {
             />{" "}
             &#9679;{" "}
             <>
-              {propertySelected.mts2} mts<sup>2</sup>{" "}
+              {propertySelected && propertySelected.mts2} mts<sup>2</sup>{" "}
             </>
           </Specs>
           <Specs style={{ alignSelf: "flex-end", marginTop: "1.5rem" }}>
-            {propertySelected.location}
+            {propertySelected && propertySelected.location}
           </Specs>
           <PriceTag>
-            {propertySelected.currency} {propertySelected.price}
+            {propertySelected && propertySelected.currency} {propertySelected && propertySelected.price}
             <img alt="propiedad" style={{ margin: 0 }} src={PriceTagIcon} />
           </PriceTag>
         </div>
@@ -119,11 +117,11 @@ const PropertyTemplate = props => {
           <h3 style={{ marginTop: 0, marginBottom: "1.5rem" }}>
             ¡Envianos tu consulta!
           </h3>
-          <EmailContainer />
+          <EmailContainer propertyId={ propertySelected && propertySelected.id} />
         </ContactDiv>
       </MainDiv>
       <MainDiv>
-        <GoogleMap googleMapsApiKey={'AIzaSyACQIe4BWvhGROmJiNj9XmvHwywh1qMQ80'} address={{ lat: -34.9160354, lng: -56.1517524  }} />
+        <GoogleMap googleMapsApiKey={'AIzaSyACQIe4BWvhGROmJiNj9XmvHwywh1qMQ80'} address={{ lat: (propertySelected && propertySelected.latitud), lng: (propertySelected && propertySelected.longitud)  }} />
       </MainDiv>
     </Layout>
   )
@@ -250,6 +248,9 @@ export const pageQuery = graphql`
           price
           propertyType
           title
+          id
+          latitud
+          longitud
         }
       }
     }
