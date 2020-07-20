@@ -6,22 +6,13 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: butaca
-    label: Butacas
-    folder: content/butaca
-    create: true
-    fields:
-      - { name: path, label: Path, value: butacas }
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: activityImages, label: Images, widget: list,  field: {label: Image, name: image, widget: image} }
-      - { label: identifier, name: identifier, widget: "hidden", default: "butacas" }
   - name: propiedad
-    identifier_field: title
+    identifier_field: id
     label: Propiedad
     folder: content/propiedad
     create: true
     fields:
+    - { name: id, label: ID Identificador, widget: number }
       - { name: bedroom, label: Dormitorios }
       - { name: bathroom, label: Baños }
       - { name: mts2, label: Mts2 }
