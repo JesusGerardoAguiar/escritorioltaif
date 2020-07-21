@@ -28,7 +28,7 @@ const FeaturedHousesComponent = ({data}) => {
                   <StateLabel>{property.title}</StateLabel>
                   <StateAddress>{property.location}</StateAddress>
                   <StatePrice>
-                    {property.currency} ${property.price}
+                    {property.currency} ${parseInt(property.price).toLocaleString().replace(/,/g, '.')}
                   </StatePrice>
                 </StateInfo>
               </StateImage>
