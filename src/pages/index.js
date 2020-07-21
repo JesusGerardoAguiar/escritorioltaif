@@ -41,6 +41,7 @@ const GlobalStyles = createGlobalStyle`
 class Blog extends React.Component {
   render() {
     const { data } = this.props
+    debugger;
     const siteTitle = data.site.siteMetadata.title
 
     const renderCarouselContent = () => {
@@ -77,7 +78,7 @@ class Blog extends React.Component {
           transition={2}
         />
         {renderCarouselContent()}
-       <FeaturedHousesComponent />
+       <FeaturedHousesComponent data={data}/>
       </Layout>
     )
   }
@@ -235,6 +236,29 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allMdx {
+      nodes {
+        frontmatter {
+          bathroom
+          bedroom
+          currency
+          date
+          description
+          garage
+          images
+          listType
+          location
+          mts2
+          path
+          price
+          propertyType
+          title
+          id
+          latitud
+          longitud
+        }
       }
     }
   }

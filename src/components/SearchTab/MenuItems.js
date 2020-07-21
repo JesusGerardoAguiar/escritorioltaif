@@ -21,6 +21,7 @@ export const Currency =[
 ]
 
 export const MinPrice = [
+  { value: '1000', name: '1.000' },
     { value: '50000', name: '50.000' },
     { value: '100000', name: '100.000' },
     { value: '150000', name: '150.000' },
@@ -39,6 +40,7 @@ export const MinPrice = [
 ]
 
 export const MaxPrice = [
+  { value: '1000', name: '1.000' },
   { value: '50000', name: '50.000' },
   { value: '100000', name: '100.000' },
   { value: '150000', name: '150.000' },

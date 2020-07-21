@@ -1,28 +1,46 @@
 import React from "react"
 import styled from "styled-components"
-import HouseForSellImg from "../../../content/assets/img/casaprueba.jpg"
 import SearchHouses from "../SearchTab/SearchHouses"
 import Media from "react-media"
+import { Link } from "gatsby"
 
-const FeaturedHousesComponent = () => {
+const FeaturedHousesComponent = ({data}) => {
+  const properties =
+    data &&
+    data.allMdx &&
+    data.allMdx.nodes &&
+    data.allMdx.nodes
+      .filter(node => node.frontmatter.listType !== null)
+      .map(frontmatter => {
+        return { ...frontmatter.frontmatter }
+      })
   const renderHouses = () => {
-    let ar = []
-    for (let i = 0; i <= 8; i++) {
-      ar.push(
-        <StateContainer>
-          <StateImage bg={HouseForSellImg}>
-            <StateInfo>
-              <StateLabel>Terreno en venta</StateLabel>
-              <StateAddress>Tres Cruces, Montevideo</StateAddress>
-              <StatePrice>USD 1.800.000</StatePrice>
-            </StateInfo>
-          </StateImage>
-        </StateContainer>
-      )
-    }
-    return ar
+    return (
+      properties &&
+      properties.length > 0 &&
+      properties.map((property, index) => {
+        if (index <= 8) {
+          return (
+            <Link to={`/propiedad?id=${property.id}`}>
+            <StateContainer>
+              <StateImage bg={property.images[0]}>
+                <StateInfo>
+                  <StateLabel>{property.title}</StateLabel>
+                  <StateAddress>{property.location}</StateAddress>
+                  <StatePrice>
+                    {property.currency} ${property.price}
+                  </StatePrice>
+                </StateInfo>
+              </StateImage>
+            </StateContainer>
+            </Link>
+          )
+        }
+      })
+    )
   }
-  const renderFeaturedHouses = matches => {
+
+  const renderFeaturedHouses = (matches, properties) => {
     if (matches.small) {
       return (
         <FeaturedHouses>
@@ -36,7 +54,7 @@ const FeaturedHousesComponent = () => {
             <TitleContainer id="featured">
               <h4>Las propiedades destacadas</h4>
             </TitleContainer>
-            <FeaturedStateRow>{renderHouses()}</FeaturedStateRow>
+            <FeaturedStateRow>{renderHouses(properties)}</FeaturedStateRow>
           </FeaturedColumn>
         </FeaturedHouses>
       )
@@ -53,7 +71,7 @@ const FeaturedHousesComponent = () => {
             <TitleContainer id="featured">
               <h4>Las propiedades destacadas</h4>
             </TitleContainer>
-            <FeaturedStateRow>{renderHouses()}</FeaturedStateRow>
+            <FeaturedStateRow>{renderHouses(properties)}</FeaturedStateRow>
           </FeaturedColumn>
         </FeaturedHouses>
       )
@@ -63,7 +81,7 @@ const FeaturedHousesComponent = () => {
   return (
     <>
       <Media queries={{ small: { maxWidth: 768 }, large: { minWidth: 769 } }}>
-        {matches => renderFeaturedHouses(matches)}
+        {matches => renderFeaturedHouses(matches, properties)}
       </Media>
     </>
   )
@@ -109,11 +127,13 @@ const StateImage = styled.div`
   height: 10rem;
 `
 
-const StateLabel = styled.h4`
+const StateLabel = styled.h5`
   font-family: RobotoB;
   margin: 0;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  text-align: center;
+  width: 10rem;
 `
 
 const StateAddress = styled.h5`
@@ -147,9 +167,12 @@ const FeaturedStateRow = styled.div`
   padding: 1rem;
   flex-wrap: wrap;
   justify-content: end;
+  a{
+    color: transparent;
+  }
   @media (max-width: 768px) {
     justify-content: center;
-   }
+  }
 `
 
 const SearchColumn = styled.div`
@@ -159,10 +182,8 @@ const SearchColumn = styled.div`
   width: 32%;
 
   @media (max-width: 768px) {
-    width: 100%!important;
-   }
- 
-
+    width: 100% !important;
+  }
 `
 
 const FeaturedColumn = styled.div`

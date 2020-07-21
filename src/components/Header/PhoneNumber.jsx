@@ -16,7 +16,7 @@ const PhoneNumber = ({ location }) => {
           pathname={location.pathname}
           style={{ height: "2rem", background: "#2f358f", justifyContent: 'flex-end', paddingRight: '2rem' }}
         >
-          <p style={{ marginBottom: 0, color: 'white', fontFamily: 'RobotoL' }}>Teléfono +598 99819199</p>
+          <p style={{ marginBottom: 0, color: 'white', fontFamily: 'RobotoL' }}>Teléfono +598 99361742 - Email sergioltaif@gmail.com</p>
         </MainDiv>
       )
     }

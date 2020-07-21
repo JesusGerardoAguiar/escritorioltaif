@@ -339,7 +339,7 @@ const Header = ({ location }) => {
                 smooth={true}
                 duration={400}
               >
-                <Link to="" style={{ marginRight: "0px" }}>
+                <Link to="propiedades?propertyType=remates" style={{ marginRight: "0px" }}>
                   Remates
                 </Link>
               </LinkScroll>
@@ -352,7 +352,7 @@ const Header = ({ location }) => {
                 smooth={true}
                 duration={400}
               >
-                <Link to="" style={{ marginRight: "0px" }}>
+                <Link to="contacto" style={{ marginRight: "0px" }}>
                   Contacto
                 </Link>
               </LinkScroll>
