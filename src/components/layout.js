@@ -31,7 +31,8 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-
+  display: flex;
+  flex-direction: column;
   p {
     font-family: RobotoR;
   }
@@ -45,7 +46,7 @@ const Wrapper = styled.div`
 
 const Footer = styled.footer`
   text-align: center;
-  margin: 24px;
+  margin-top: auto;
   margin-bottom: 0px;
   font-size: 18px;
   font-family: "RobotoR";

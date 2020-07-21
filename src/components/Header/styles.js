@@ -44,14 +44,16 @@ export const LinkDiv = styled.div`
     color: white;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 13px;
     width: 100%;
-    height: 5rem;
+    height: 2.5rem;
+    border-bottom: 0.2px solid white;
     z-index: auto!important;
     padding-left: 0px!important;
-    justify-content: center;
+    border-bottom: 0.2px solid white;
     a {
       width: 100%;
+      text-transform: uppercase;
       z-index: auto!important;
       margin-right: 0px;
       text-decoration: none;

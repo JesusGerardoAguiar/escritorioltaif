@@ -101,6 +101,8 @@ const StateInfo = styled.div`
   border-radius: 10px;
 `
 
+
+
 const StateImage = styled.div`
   background-image: url(${props => props.bg});
   background-position: center center;

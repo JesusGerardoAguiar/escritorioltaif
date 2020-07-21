@@ -44,15 +44,18 @@ const useStyles = makeStyles(theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    backgroundColor: "#323785",
+    backgroundColor: "rgb(50, 55, 133, 0.9);",
+
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#323785",
+    backgroundColor: "rgb(50, 55, 133, 0.9);",
+    width: '100%',
+    height: '24.111111rem',
   },
   drawerHeader: {
     display: "flex",
-    alignItems: "center",
+    alignItems: "start",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -91,7 +94,7 @@ const Header = ({ location }) => {
             </div>
 
             <div>
-              <img alt="a" src={LtaiftLogo} style={{ width: "10rem" }} />
+              <img alt="a" src={LtaiftLogo} style={{ width: "15rem" }} />
             </div>
           </MainDiv>
           <Drawer
@@ -119,7 +122,7 @@ const Header = ({ location }) => {
                 </div>
               </IconButton>
             </div>
-            <LinkDiv onClick={() => setOpen(false)}>
+            <LinkDiv style={{ borderTop: '0.1px solid white' }} onClick={() => setOpen(false)}>
               <LinkBox>
                 <Link>Inicio</Link>
               </LinkBox>

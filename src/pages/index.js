@@ -84,6 +84,8 @@ class Blog extends React.Component {
   }
 }
 
+
+
 const Container = styled.div`
 width: 40rem;
 display: flex;
