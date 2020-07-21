@@ -118,7 +118,7 @@ const Propiedades = ({ location, data }) => {
                   <p>{property.description}</p>
                   <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
-                    {property.currency} {property.price}
+                    {property.currency} {parseInt(property.price).toLocaleString().replace(/,/g, '.')}
                     <img alt="propiedad" src={PriceTagIcon} />
                   </PriceTag>
                 </TextColumn>
