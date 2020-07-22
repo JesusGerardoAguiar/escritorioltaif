@@ -177,6 +177,19 @@ const SearchContainer = styled.div`
     margin-right: 0 !important;
     min-width: 120px;
   }
+  .MuiButtonBase-root{
+    @media (max-width: 768px) {
+      margin-left: 0!important;
+      margin-right: 0!important;
+      
+    }
+  }
+
+  .MuiButton-containedPrimary{
+    @media (max-width: 768px) {
+      margin-left: 0.5rem!important;
+    }
+  }
   .MuiButtonBase-root {
     margin-left: 0px;
     margin-rigth: 0px;
@@ -202,5 +215,10 @@ const ButtonDiv = styled.div`
   align-items: baseline;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0.5rem;
+  }
 `
+
 export default SearchHouses

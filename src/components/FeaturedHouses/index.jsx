@@ -160,6 +160,12 @@ const StateContainer = styled.div`
   width: 15rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+ 
 `
 
 const FeaturedStateRow = styled.div`
@@ -174,6 +180,13 @@ const FeaturedStateRow = styled.div`
   }
   @media (max-width: 768px) {
     justify-content: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+    a{
+      width: 100%;
+      margin-right: 0px;
+    }
   }
 `
 
@@ -210,6 +223,11 @@ const TitleContainer = styled.div`
     text-transform: initial;
     color: #323785;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
 `
 
 const FeaturedHouses = styled.div`

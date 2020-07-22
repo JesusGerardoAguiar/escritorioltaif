@@ -104,6 +104,8 @@ const Container = styled.div`
   }
   @media (max-width: 768px) {
     width: inherit;
+    padding-right:1rem;
+    padding-left: 1rem;
   }
 `
 

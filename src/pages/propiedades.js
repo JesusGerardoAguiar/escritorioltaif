@@ -273,7 +273,7 @@ const TextColumn = styled.div`
    }
    h5 {
     align-self: flex-start!important;
-    width: 9rem!important;
+    width: 11rem!important;
     flex-wrap: wrap!important;
   }
   }
