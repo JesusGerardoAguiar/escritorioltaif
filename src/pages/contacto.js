@@ -33,6 +33,12 @@ const GlobalStyles = createGlobalStyle`
     font-family: RobotoBlack;
     src: url(${require("../../content/assets/fonts/Roboto-Black.ttf")});
   }
+  h1,h3,h4,h5,h6{
+    font-size: inherit;
+  }
+  a{
+    text-decorator: none;
+  }
 `
 
 class Contacto extends React.Component {

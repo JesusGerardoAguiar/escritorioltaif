@@ -36,12 +36,18 @@ const GlobalStyles = createGlobalStyle`
     font-family: RobotoBlack;
     src: url(${require("../../content/assets/fonts/Roboto-Black.ttf")});
   }
+  h1,h2,h3,h4,h5,h6{
+    font-size: inherit;
+  }
+  a{
+    text-decoration: none;
+  }
 `
 
 class Blog extends React.Component {
   render() {
     const { data } = this.props
-    debugger;
+    
     const siteTitle = data.site.siteMetadata.title
 
     const renderCarouselContent = () => {

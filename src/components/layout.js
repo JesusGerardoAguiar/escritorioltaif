@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Header from "./Header"
+import Header from "./Header2"
 import PhoneNumber from "./Header/PhoneNumber"
 import Lograf from "../../content/assets/lografLogoBlack.svg"
 
