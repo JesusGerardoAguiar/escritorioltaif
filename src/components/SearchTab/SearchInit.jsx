@@ -176,6 +176,24 @@ const Container = styled.div`
       font-size: 1.5em;
     }
   }
+
+  .MuiFormControl-root{
+    @media (max-width: 768px) {
+      width: 9rem;
+    }
+  }
+
+  .MuiFormLabel-root {
+    @media (max-width: 768px) {
+      width: 6rem;
+    }
+  }
+
+  .MuiSelect-root {
+    @media (max-width: 768px) {
+      margin-bottom: 0.5rem;
+    }
+  }
 `
 
 const SearchContainer = styled.div`
@@ -215,5 +233,9 @@ const ButtonDiv = styled.div`
   align-items: baseline;
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
+  }
 `
 export default SearchTab

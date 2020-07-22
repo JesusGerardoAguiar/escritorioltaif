@@ -30,6 +30,12 @@ const GlobalStyles = createGlobalStyle`
     font-family: RobotoBlack;
     src: url(${require("../../content/assets/fonts/Roboto-Black.ttf")});
   }
+  h4,h5,h6{
+    font-size: inherit;
+  }
+  a{
+    text-decoration: none!important;
+  }
 `
 
 const Propiedades = ({ location, data }) => {
@@ -115,7 +121,7 @@ const Propiedades = ({ location, data }) => {
                       {property.mts2} mts<sup>2</sup>{" "}
                     </>
                   </h5>
-                  <p>{property.description}</p>
+                  <p id='description'>{property.description}</p>
                   <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
                     {property.currency} {parseInt(property.price).toLocaleString().replace(/,/g, '.')}
@@ -232,7 +238,7 @@ const TextColumn = styled.div`
     margin-bottom: 0px;
     margin-top: 0px;
     padding-top: 0px;
-
+    width: 40rem;
 
   }
   h5 {
@@ -253,7 +259,10 @@ const TextColumn = styled.div`
     width: 42rem;
     text-align: justify;
   }
-
+  #description{
+    height: 6rem;
+    overflow: auto;
+  }
   @media (max-width: 768px) {
    h3{
     width: 15rem;
@@ -264,7 +273,7 @@ const TextColumn = styled.div`
    }
    h5 {
     align-self: flex-start!important;
-    width: 9rem!important;
+    width: 11rem!important;
     flex-wrap: wrap!important;
   }
   }
@@ -316,17 +325,22 @@ const PropertyRow = styled.div`
 `
 
 export const Li = styled.li`
-  border-radius: 20px;
   border: ${props => props.currentNumber};
-  width: 2rem;
-  text-align: center;
-  text-decoration: none;
-  font-family: RobotoM;
-  list-style-type: none;
-  cursor: pointer;
+  
   :hover {
     opacity: 0.5;
   }
+  border-radius: 26px;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-family: RobotoM;
+    list-style-type: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 `
 
 const PresentationText = styled.h2`

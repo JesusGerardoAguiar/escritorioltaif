@@ -17,12 +17,12 @@ const useStyles = makeStyles(theme => ({
     padding: "1rem",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: 2,
+    zIndex: 7,
   },
   paper: {
     marginRight: theme.spacing(2),
-    backgroundColor: "white",
-    zIndex: 2,
+    backgroundColor: "#2f358f",
+    zIndex: 7,
   },
 }))
 
@@ -56,7 +56,7 @@ export default function MenuListComposition({ submenuChilds, submenu }) {
       submenuChilds.map(subMenuChild => (
         <MenuItem onClick={handleClose}>
           <Link
-            style={{ textTransform: "initial", color: "black" }}
+            style={{ textTransform: "initial", color: "white" }}
             to={`/${subMenuChild.menuPath}`}
           >
             {subMenuChild.menuTitle[0].toUpperCase() + subMenuChild.menuTitle.slice(1)}
@@ -92,7 +92,7 @@ export default function MenuListComposition({ submenuChilds, submenu }) {
         </a>
       </LinkBox>
       <Popper
-      style={{ zIndex: 2 }}
+      style={{ zIndex: 7 }}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}
