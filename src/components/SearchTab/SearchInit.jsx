@@ -186,6 +186,14 @@ const Container = styled.div`
   .MuiFormLabel-root {
     @media (max-width: 768px) {
       width: 6rem;
+      text-align: initial;
+    }
+  }
+
+  .MuiInputLabel-shrink{
+    @media (max-width: 768px) {
+      width: 10rem;
+      text-align: initial;
     }
   }
 
