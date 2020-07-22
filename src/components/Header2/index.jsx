@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   a{
     text-decoration: none;
     box-shadow: none;
-    margin-right: 1rem;
+    margin-right: 1rem;/
   }
 `
 
@@ -28,24 +28,24 @@ const Header = () => {
         <Nav className="mr-auto">
           <Nav.Link style={{ boxShadow: 'none' }}href="/">Inicio</Nav.Link>
           <NavDropdown style={{ boxShadow: 'none!important' }} title="Casas" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=casas&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=casas&listType=alquileres">Alquileres</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=casas&listType=ventas">Ventas</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=casas&listType=alquileres">Alquileres</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown style={{ boxShadow: 'none' }} title="Apartamentos" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=apartamentos&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=apartamentos&listType=alquileres">Alquileres</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=apartamentos&listType=ventas">Ventas</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=apartamentos&listType=alquileres">Alquileres</NavDropdown.Item>
           </NavDropdown>
           <Nav.Link style={{ boxShadow: 'none' }}href="/propiedades?propertyType=terrenos">Terrenos</Nav.Link>
           <NavDropdown style={{ boxShadow: 'none' }} title="Campos y Chacras" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=camposychacras&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=camposychacras&listType=alquileres">Alquileres</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=camposychacras&listType=ventas">Ventas</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=camposychacras&listType=alquileres">Alquileres</NavDropdown.Item>
           </NavDropdown>
           <NavDropdown style={{ boxShadow: 'none' }} title="Galpones y Locales Comerciales" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=galponesylocalescomerciales&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="propiedades?propertyType=galponesylocalescomerciales&listType=alquileres">Alquileres</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=galponesylocalescomerciales&listType=ventas">Ventas</NavDropdown.Item>
+            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=galponesylocalescomerciales&listType=alquileres">Alquileres</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link style={{ boxShadow: 'none' }}href="propiedades?propertyType=remates">Remates</Nav.Link>
-          <Nav.Link style={{ boxShadow: 'none' }}href="contacto">Contacto</Nav.Link>
+          <Nav.Link style={{ boxShadow: 'none' }}href="/propiedades?propertyType=remates">Remates</Nav.Link>
+          <Nav.Link style={{ boxShadow: 'none' }}href="/contacto">Contacto</Nav.Link>
           
         </Nav>
         
