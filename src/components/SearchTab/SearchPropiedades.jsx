@@ -203,6 +203,10 @@ const SearchContainer = styled.div`
     height: 4.5rem;
   }
 
+  .MuiInputLabel-formControl{
+    top: -10px;
+  }
+
   @media (max-width: 768px) {
     width: 100% !important;
   }
