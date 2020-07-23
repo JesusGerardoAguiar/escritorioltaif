@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import LtaiftLogo from "../../../content/assets/icons/logoescritorio-01.svg"
 import { createGlobalStyle } from "styled-components"
+import styled from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
   a{
@@ -15,47 +16,122 @@ const GlobalStyles = createGlobalStyle`
 const Header = () => {
   return (
     <Navbar bg="light" expand="lg">
-        <GlobalStyles />
+      <GlobalStyles />
       <Navbar.Brand style={{ padding: 0 }}>
-        <img
+        <Img
           alt="logo"
-          style={{ width: "16rem", marginBottom: 0 }}
           src={LtaiftLogo}
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link style={{ boxShadow: 'none' }}href="/">Inicio</Nav.Link>
-          <NavDropdown style={{ boxShadow: 'none!important' }} title="Casas" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=casas&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=casas&listType=alquileres">Alquileres</NavDropdown.Item>
+          <Nav.Link style={{ boxShadow: "none" }} href="/">
+            Inicio
+          </Nav.Link>
+          <NavDropdown
+            style={{ boxShadow: "none!important" }}
+            title="Casas"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=casas&listType=ventas"
+            >
+              Ventas
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=casas&listType=alquileres"
+            >
+              Alquileres
+            </NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown style={{ boxShadow: 'none' }} title="Apartamentos" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=apartamentos&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=apartamentos&listType=alquileres">Alquileres</NavDropdown.Item>
+          <NavDropdown
+            style={{ boxShadow: "none" }}
+            title="Apartamentos"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=apartamentos&listType=ventas"
+            >
+              Ventas
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=apartamentos&listType=alquileres"
+            >
+              Alquileres
+            </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link style={{ boxShadow: 'none' }}href="/propiedades?propertyType=terrenos">Terrenos</Nav.Link>
-          <NavDropdown style={{ boxShadow: 'none' }} title="Campos y Chacras" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=camposychacras&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=camposychacras&listType=alquileres">Alquileres</NavDropdown.Item>
+          <Nav.Link
+            style={{ boxShadow: "none" }}
+            href="/propiedades?propertyType=terrenos"
+          >
+            Terrenos
+          </Nav.Link>
+          <NavDropdown
+            style={{ boxShadow: "none" }}
+            title="Campos y Chacras"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=camposychacras&listType=ventas"
+            >
+              Ventas
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=camposychacras&listType=alquileres"
+            >
+              Alquileres
+            </NavDropdown.Item>
           </NavDropdown>
-          <NavDropdown style={{ boxShadow: 'none' }} title="Galpones y Locales Comerciales" id="basic-nav-dropdown">
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=galponesylocalescomerciales&listType=ventas">Ventas</NavDropdown.Item>
-            <NavDropdown.Item style={{ boxShadow: 'none' }} href="/propiedades?propertyType=galponesylocalescomerciales&listType=alquileres">Alquileres</NavDropdown.Item>
+          <NavDropdown
+            style={{ boxShadow: "none" }}
+            title="Galpones y Locales Comerciales"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=galponesylocalescomerciales&listType=ventas"
+            >
+              Ventas
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              style={{ boxShadow: "none" }}
+              href="/propiedades?propertyType=galponesylocalescomerciales&listType=alquileres"
+            >
+              Alquileres
+            </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link style={{ boxShadow: 'none' }}href="/propiedades?propertyType=remates">Remates</Nav.Link>
-          <Nav.Link style={{ boxShadow: 'none' }}href="/contacto">Contacto</Nav.Link>
-          
+          <Nav.Link
+            style={{ boxShadow: "none" }}
+            href="/propiedades?propertyType=remates"
+          >
+            Remates
+          </Nav.Link>
+          <Nav.Link style={{ boxShadow: "none" }} href="/contacto">
+            Contacto
+          </Nav.Link>
         </Nav>
-        
       </Navbar.Collapse>
     </Navbar>
   )
 }
 
+const Img = styled.img`
+  width: 16rem;
+  margin-bottom: 0px;
+  @media (max-width: 320px) {
+    width: 10rem;
+  }
+`
 
-{/* <LinkDiv>
+{
+  /* <LinkDiv>
             <LinkBox>
               <Link>Inicio</Link>
             </LinkBox>
@@ -161,6 +237,7 @@ const Header = () => {
                 </Link>
               </LinkScroll>
             </LinkBox>
-          </LinkDiv> */}
+          </LinkDiv> */
+}
 
 export default Header

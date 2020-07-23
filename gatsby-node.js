@@ -28,6 +28,8 @@ exports.createPages = ({ graphql, actions }) => {
               longitud
               latitud
               id
+              soldout
+              rented
             }
           }
         }

@@ -58,6 +58,16 @@ const PropertyTemplate = props => {
     },
   ]
 
+  const renderRentedText = (property) => {
+    console.log(property)
+    if(property && property.soldout){
+      return <Specs style={{ marginTop: '2rem', marginBottom: '2rem' }}>Estado: VENDIDA</Specs>
+    }else if(property && property.rented){
+      return <Specs style={{ marginTop: '2rem', marginBottom: '2rem' }}>Estado: ALQUILADA</Specs>
+    }
+    return '';
+  }
+
   const propertySelected = properties && properties.length > 0 && properties.filter((property) => property.id === parseInt(props.location.search.split('=')[1]))[0]
   const imagesToComponent =
   propertySelected && propertySelected.images.map(img => {
@@ -79,6 +89,7 @@ const PropertyTemplate = props => {
         <div style={{ width: "50rem", marginLeft: "2rem" }}>
           <h3>{propertySelected && propertySelected.title}</h3>
           <Description>{ propertySelected && propertySelected.description}</Description>
+          {renderRentedText(propertySelected)}
           <Specs>
             {propertySelected && propertySelected.bathroom} Baños{" "}
             <img
@@ -251,6 +262,8 @@ export const pageQuery = graphql`
           id
           latitud
           longitud
+          soldout
+          rented
         }
       }
     }

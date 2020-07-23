@@ -70,6 +70,17 @@ const Propiedades = ({ location, data }) => {
     return text && text[0].toUpperCase() + text.slice(1)
   }
 
+  const renderRentedText = (property) => {
+    console.log(property)
+    if(property.soldout){
+      return <h5>Estado: VENDIDA</h5>
+    }else if(property.rented){
+      debugger;
+      return <h5>Estado: ALQUILADA</h5>
+    }
+    return '';
+  }
+
   
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
@@ -122,6 +133,7 @@ const Propiedades = ({ location, data }) => {
                     </>
                   </h5>
                   <p id='description'>{property.description}</p>
+                  {renderRentedText(property)}
                   <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
                     {property.currency} {parseInt(property.price).toLocaleString().replace(/,/g, '.')}
@@ -233,6 +245,17 @@ const TextColumn = styled.div`
   h3 {
     margin: 0px;
     font-family: RobotoM;
+    work-break: break-all;
+    color: #2f358f;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 40rem;
+
+  }
+  h4 {
+    margin: 0px;
+    font-family: RobotoB;
     work-break: break-all;
     color: #2f358f;
     margin-bottom: 0px;
@@ -397,6 +420,8 @@ export const pageQuery = graphql`
           id
           latitud
           longitud
+          soldout
+          rented
         }
       }
     }
