@@ -49,21 +49,30 @@ const Propiedades = ({ location, data }) => {
     })
     let params = queryString.parse(location.search);
     const { propertyType, listType, currency, minPrice, maxPrice } = params
-    const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))).reverse()
-  useEffect(() => {
-    let numberOfPages = calcpagenumbers(
-      properties,
-      itemsPerPage
-      )
-      console.log('this is number of pages' + numberOfPages)
-    numberOfPages !== null &&
+    
+   
+    useEffect(() => {
+      let numberOfPages = calcpagenumbers(
+        properties,
+        itemsPerPage
+        )
+        console.log('this is number of pages' + numberOfPages)
+        numberOfPages !== null &&
     setPageNumbers(numberOfPages)
   }, [])
-
+  
   const handleClickPagination = (event) => {
     setCurrentPage(Number(event.target.id))
     document.body.scrollTop = document.documentElement.scrollTop = 0
   }
+  
+  const priceQuery = (property) =>{
+    if(isNaN(parseInt(property.price))){
+      return true;
+    }
+    return (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))
+  }
+  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && priceQuery(property)).reverse()
 
  
   const transformText = text => {
@@ -75,13 +84,17 @@ const Propiedades = ({ location, data }) => {
     if(property.soldout){
       return <h5>Estado: VENDIDA</h5>
     }else if(property.rented){
-      debugger;
       return <h5>Estado: ALQUILADA</h5>
     }
     return '';
   }
 
-  
+  const renderParseInt = (price) => {
+    if(isNaN(parseInt(price).toLocaleString().replace(/,/g, '.'))){
+      return '-'
+    }
+    return parseInt(price).toLocaleString().replace(/,/g, '.')
+  }
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentItems = properties.slice(indexOfFirstItem, indexOfLastItem)
@@ -136,7 +149,7 @@ const Propiedades = ({ location, data }) => {
                   {renderRentedText(property)}
                   <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
-                    {property.currency} {parseInt(property.price).toLocaleString().replace(/,/g, '.')}
+                    {property.currency} {renderParseInt(property.price)}
                     <img alt="propiedad" src={PriceTagIcon} />
                   </PriceTag>
                 </TextColumn>

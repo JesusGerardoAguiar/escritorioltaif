@@ -8,9 +8,9 @@ import {navigate} from 'gatsby';
 
 const isClient = typeof window !== 'undefined';
 
-const EmailContainer = ({ propertyId }) => {
+const EmailContainer = ({ propertyId, location }) => {
   const onSubmit = useCallback(values => {
-    window.open(`https://api.whatsapp.com/send?phone=++59899361742&text=%20Nombre:${values.name}  Email: ${values.email} Consulta: ${values.consult} ID de la propiedad: ${propertyId}`, 'blank')
+    window.open(`https://api.whatsapp.com/send?phone=++59899361742&text=%20Nombre:${values.name}  Email: ${values.email} Consulta: ${values.consult} ID de la propiedad: ${propertyId} Propiedad Consultada: ${location}`, 'blank')
     
   }, [])
   return (

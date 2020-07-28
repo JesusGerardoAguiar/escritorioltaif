@@ -128,7 +128,7 @@ const PropertyTemplate = props => {
           <h3 style={{ marginTop: 0, marginBottom: "1.5rem" }}>
             ¡Envianos tu consulta!
           </h3>
-          <EmailContainer propertyId={ propertySelected && propertySelected.id} />
+          <EmailContainer propertyId={ propertySelected && propertySelected.id} location={props.location.href} />
         </ContactDiv>
       </MainDiv>
       <MainDiv>

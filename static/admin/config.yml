@@ -7,7 +7,7 @@ public_folder: assets
 
 collections:
   - name: propiedad
-    identifier_field: id
+    identifier_field: title
     label: Propiedad
     folder: content/propiedad
     create: true

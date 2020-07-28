@@ -14,6 +14,15 @@ const FeaturedHousesComponent = ({data}) => {
       .map(frontmatter => {
         return { ...frontmatter.frontmatter }
       })
+
+
+  const renderParseInt = (price) => {
+    
+    if(isNaN(parseInt(price).toLocaleString().replace(/,/g, '.'))){
+      return '-'
+    }
+    return parseInt(price).toLocaleString().replace(/,/g, '.')
+  }
   const renderHouses = () => {
     return (
       properties &&
@@ -28,7 +37,7 @@ const FeaturedHousesComponent = ({data}) => {
                   <StateLabel>{property.title}</StateLabel>
                   <StateAddress>{property.location}</StateAddress>
                   <StatePrice>
-                    {property.currency} ${parseInt(property.price).toLocaleString().replace(/,/g, '.')}
+                    {property.currency} {renderParseInt(property.price)}
                   </StatePrice>
                 </StateInfo>
               </StateImage>
