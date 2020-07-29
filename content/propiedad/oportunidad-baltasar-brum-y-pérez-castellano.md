@@ -10,8 +10,8 @@ description: >-
   baño – parrillero – todo de plancha
 location: Baltasar Brum y Pérez Castellano
 title: Oportunidad Baltasar Brum y Pérez Castellano
-longitud: -56.5309784
-latitud: -33.3739252
+longitud: -33.3739252
+latitud: -56.5309784
 price: '120000'
 soldout: false
 rented: false
