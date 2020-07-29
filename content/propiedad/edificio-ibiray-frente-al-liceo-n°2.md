@@ -9,8 +9,8 @@ description: >-
   lavadero Precio: 60.000 o entrega U$S 50.000 y saldo en BHU
 location: Edificio Ibiray frente al liceo N°2
 title: Edificio Ibiray frente al liceo N°2
-longitud: -56.5256374
-latitud: -33.387374
+longitud: -33.387374
+latitud: -56.5256374
 price: '60000'
 soldout: false
 rented: false
