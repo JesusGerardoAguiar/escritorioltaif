@@ -6,7 +6,7 @@ mts2: '-'
 garage: 'no'
 description: >-
   – apartamento en segundo piso – 2 dormitorios, uno con placares – terraza –
-  lavadero Precio: 65.000 o entrega U$S 50.000 y saldo en BHU
+  lavadero Precio: 60.000 o entrega U$S 50.000 y saldo en BHU
 location: Edificio Ibiray frente al liceo N°2
 title: Edificio Ibiray frente al liceo N°2
 longitud: -56.5256374
