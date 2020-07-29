@@ -9,8 +9,8 @@ description: >-
   a leña – cocina comedor – 2 baños completos – patio con parrillero
 location: Manuel Oribe esquina Basilio Muñoz
 title: Casa en esquina Manuel Oribe esquina Basilio Muñoz
-longitud: -56.5271274
-latitud: -33.3863654
+longitud: -33.3863654
+latitud: -56.5271274
 price: '165000'
 soldout: false
 rented: false
