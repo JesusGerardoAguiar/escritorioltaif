@@ -11,8 +11,8 @@ description: >-
   un baño. – Todo en muy buen estado Consulte
 location: Baltasar Brum casi Lavalleja
 title: Excelente residencia Baltasar Brum casi Lavalleja
-longitud: -57
-latitud: -33.3751075
+longitud: -33.3751075
+latitud: -56.526535
 price: Consulte
 soldout: false
 rented: true
