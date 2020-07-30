@@ -14,7 +14,7 @@ soldout: false
 rented: false
 currency: $
 images:
-  - /assets/104410971_3057522117662703_7257173398229761064_o.jpg
+  - /assets/103830002_3057522404329341_1773597772120039414_o.jpg
 propertyType: casas
 listType: alquileres
 date: 'July 30, 2020 12:00 AM'
