@@ -10,7 +10,7 @@ description: >-
 location: Zorrilla y Leandro Gómez
 title: Zorrilla y Leandro Gómez
 longitud: -33.375405
-latitud: -57
+latitud: -56.5231766
 price: '160000'
 soldout: false
 rented: false
