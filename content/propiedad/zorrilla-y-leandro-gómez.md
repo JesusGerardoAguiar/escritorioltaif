@@ -16,7 +16,7 @@ soldout: false
 rented: false
 currency: U$S
 images:
-  - /assets/107893393_3139614362786811_2509601522788317451_o.jpg
+  - /assets/img-0585.jpg
 propertyType: casas
 listType: ventas
 date: 'July 30, 2020 12:00 AM'
