@@ -12,7 +12,7 @@ title: Zorrilla y Leandro Gómez
 longitud: -33.375405
 latitud: -56.5231766
 price: '160000'
-soldout: true
+soldout: false
 rented: false
 currency: U$S
 images:
