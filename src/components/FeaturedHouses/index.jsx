@@ -13,7 +13,7 @@ const FeaturedHousesComponent = ({data}) => {
       .filter(node => node.frontmatter.listType !== null)
       .map(frontmatter => {
         return { ...frontmatter.frontmatter }
-      })
+      }).reverse()
 
 
   const renderParseInt = (price) => {
@@ -150,6 +150,7 @@ const StateLabel = styled.h5`
 const StateAddress = styled.h5`
   font-family: RobotoM;
   margin: 0;
+  text-align: center;
 `
 
 const StatePrice = styled.h4`

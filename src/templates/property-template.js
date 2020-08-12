@@ -70,7 +70,7 @@ const PropertyTemplate = props => {
 
   const propertySelected = properties && properties.length > 0 && properties.filter((property) => property.id === parseInt(props.location.search.split('=')[1]))[0]
   const imagesToComponent =
-  propertySelected && propertySelected.images.map(img => {
+  propertySelected && propertySelected.images && propertySelected.images.map(img => {
       return { original: img, thumbnail: img }
     })
   return (
@@ -132,7 +132,7 @@ const PropertyTemplate = props => {
         </ContactDiv>
       </MainDiv>
       <MainDiv>
-        <GoogleMap googleMapsApiKey={'AIzaSyACQIe4BWvhGROmJiNj9XmvHwywh1qMQ80'} address={{ lat: (propertySelected && propertySelected.latitud), lng: (propertySelected && propertySelected.longitud)  }} />
+        <GoogleMap googleMapsApiKey={'AIzaSyACQIe4BWvhGROmJiNj9XmvHwywh1qMQ80'} address={{ lat: (propertySelected && propertySelected.longitud), lng: (propertySelected && propertySelected.latitud) }} />
       </MainDiv>
     </Layout>
   )

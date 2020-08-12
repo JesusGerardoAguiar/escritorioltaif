@@ -72,9 +72,7 @@ const Propiedades = ({ location, data }) => {
     }
     return (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))
   }
-  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && property.listType === listType && property.currency === (currency ? currency : property.currency) && priceQuery(property)).reverse()
-
- 
+  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && (listType ? property.listType === listType : true) && property.currency === (currency ? currency : property.currency) && priceQuery(property)).reverse()
   const transformText = text => {
     return text && text[0].toUpperCase() + text.slice(1)
   }
@@ -107,7 +105,7 @@ const Propiedades = ({ location, data }) => {
           <PropertyContainer>
             <Link to={`/propiedad?id=${property.id}`}>
               <PropertyRow>
-                <img alt="propiedad" src={property.images[0]} />
+                <img alt="propiedad" src={property.images && property.images[0]} />
                 <TextColumn>
                   <h3>{property.title}</h3>
                   <h5
