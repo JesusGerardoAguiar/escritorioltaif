@@ -2,7 +2,7 @@
 id: 103
 bedroom: '-'
 bathroom: '-'
-mts2: '-'
+mts2: '32 hectáreas '
 garage: '-'
 description: >-
   Única oportunidad, 32 hectáreas de campo con construcciones 700 metros de
