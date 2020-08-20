@@ -7,8 +7,8 @@ garage: '-'
 description: >-
   Única oportunidad, 32 hectáreas de campo con construcciones 700 metros de
   frente a Ruta 5, Consulte en nuestro escritorio
-location: 'Terreno en Durazno sobre Ruta 5, pegado a destacamento de Caminera'
-title: 'Terreno en Durazno sobre Ruta 5, pegado a destacamento de Caminera'
+location: 'Campo en Durazno sobre Ruta 5, pegado a destacamento de Caminera'
+title: 'Campo en Durazno sobre Ruta 5, pegado a destacamento de Caminera'
 longitud: 1
 latitud: 1
 price: CONSULTE
