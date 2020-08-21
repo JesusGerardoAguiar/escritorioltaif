@@ -6,7 +6,7 @@ mts2: '-'
 garage: '-'
 description: >-
   25 de Agosto y Batlle, muy lindo apartamento de dos dormitorios, uno con
-  placar, terraza lavadero u baño y cocina a nuevos. 
+  placar, terraza lavadero, baño y cocina a nuevos. 
 location: 25 de Agosto y Batlle (APTO)
 title: 25 de Agosto y Batlle (APTO)
 longitud: 1
