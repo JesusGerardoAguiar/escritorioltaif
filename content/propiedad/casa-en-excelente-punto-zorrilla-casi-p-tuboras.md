@@ -13,7 +13,7 @@ title: Casa en excelente punto Zorrilla casi P. Tuboras
 longitud: -33.3762089
 latitud: -56.523695
 price: '75000'
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
