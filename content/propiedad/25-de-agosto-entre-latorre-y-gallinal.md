@@ -26,6 +26,7 @@ images:
   - /assets/img-0943.jpg
   - /assets/img-0942.jpg
 propertyType: casas
+destacada: true
 listType: ventas
 date: 'August 27, 2020 9:41 AM'
 ---

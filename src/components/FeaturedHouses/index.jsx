@@ -10,7 +10,10 @@ const FeaturedHousesComponent = ({data}) => {
     data.allMdx &&
     data.allMdx.nodes &&
     data.allMdx.nodes
-      .filter(node => node.frontmatter.listType !== null)
+      .filter(node => {
+        
+        
+        return node.frontmatter.listType !== null && node.frontmatter.destacada === true})
       .map(frontmatter => {
         return { ...frontmatter.frontmatter }
       }).reverse()

@@ -11,9 +11,6 @@ import {navigate} from 'gatsby';
   import {
     PropertyType,
     ListType,
-    Currency,
-    MinPrice,
-    MaxPrice,
   } from "./MenuItems"
 
 const useStyles = makeStyles(theme => ({
@@ -37,9 +34,6 @@ const SearchTab = () => {
   const [filterState, setFilterState] = useState({
     propertyType: "",
     listType: "",
-    currency: "",
-    minPrice: "",
-    maxPrice: "",
   })
   const [openSnackbar, setOpenSnackbar] = useState(false)
 
@@ -52,20 +46,23 @@ const SearchTab = () => {
     setFilterState({
       propertyType: "",
       listType: "",
-      currency: "",
-      minPrice: "",
-      maxPrice: "",
     })
   }
 
-  const fieldsNotEmpty = (propertyType, listType, currency, minPrice, maxPrice) => propertyType !== '' && listType !== '' && currency !== '' && minPrice !== '' && maxPrice !== ''
+  const fieldsNotEmpty = (
+    propertyType,
+    listType,
+  ) =>
+    propertyType !== "" &&
+    listType !== ""
 
   const checkFields = () => {
-    const { propertyType, listType, currency, minPrice, maxPrice } = filterState;
-    if(fieldsNotEmpty(propertyType, listType, currency, minPrice, maxPrice)){
-      navigate(`propiedades?propertyType=${propertyType}&listType=${listType}&currency=${currency}&minPrice=${minPrice}&maxPrice=${maxPrice}`)
-    }else{
-
+    const { propertyType, listType } = filterState
+    if (fieldsNotEmpty(propertyType, listType)) {
+      navigate(
+        `propiedades?propertyType=${propertyType}&listType=${listType}`
+      )
+    } else {
       setOpenSnackbar(true)
     }
   }
@@ -96,32 +93,6 @@ const SearchTab = () => {
                 filterState.propertyType !== "terrenos" ? ListType : []
               }
               filter={filterState.listType}
-              setFilterValue={changeFilter}
-            />
-          </SelectRow>
-          <SelectRow>
-            <SelectComponent
-              label="Moneda"
-              keyObject="currency"
-              menuItems={Currency}
-              filter={filterState.currency}
-              setFilterValue={changeFilter}
-            />
-            <SelectComponent
-              label="Min Precio"
-              keyObject="minPrice"
-              menuItems={MinPrice}
-              filter={filterState.minPrice}
-              setFilterValue={changeFilter}
-            />
-          </SelectRow>
-          <SelectRow id="maxprice">
-            <SelectComponent
-              style={{ width: "100%" }}
-              label="Max Precio"
-              keyObject="maxPrice"
-              menuItems={MaxPrice}
-              filter={filterState.maxPrice}
               setFilterValue={changeFilter}
             />
           </SelectRow>

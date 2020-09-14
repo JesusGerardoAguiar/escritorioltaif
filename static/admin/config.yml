@@ -23,6 +23,7 @@ collections:
       - { name: longitud, label: Longitud, widget: number, valueType: 'float' }
       - { name: latitud, label: Latitud, widget: number, valueType: 'float' }
       - { name: price, label: Precio }
+      - { name: destacada, label: Destacada, widget: "boolean", default: false }
       - {label: "Vendida", name: "soldout", widget: "boolean", default: false}
       - {label: "Alquilada", name: "rented", widget: "boolean", default: false}
       - { label: "Tipo de Moneda",  name: currency, widget: select, options: ["U$S", "$"]}

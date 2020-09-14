@@ -31,5 +31,6 @@ images:
 propertyType: casas
 listType: ventas
 date: 'July 28, 2020 12:35 PM'
+destacada: true
 ---
 

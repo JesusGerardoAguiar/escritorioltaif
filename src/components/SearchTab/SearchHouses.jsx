@@ -10,9 +10,6 @@ import { navigate } from "gatsby"
 import {
   PropertyType,
   ListType,
-  Currency,
-  MinPrice,
-  MaxPrice,
 } from "./MenuItems"
 
 const useStyles = makeStyles(theme => ({
@@ -36,9 +33,7 @@ const SearchHouses = () => {
   const [filterState, setFilterState] = useState({
     propertyType: "",
     listType: "",
-    currency: "",
-    minPrice: "",
-    maxPrice: "",
+
   })
   const [openSnackbar, setOpenSnackbar] = useState(false)
 
@@ -51,30 +46,21 @@ const SearchHouses = () => {
     setFilterState({
       propertyType: "",
       listType: "",
-      currency: "",
-      minPrice: "",
-      maxPrice: "",
     })
   }
 
   const fieldsNotEmpty = (
     propertyType,
     listType,
-    currency,
-    minPrice,
-    maxPrice
   ) =>
     propertyType !== "" &&
-    listType !== "" &&
-    currency !== "" &&
-    minPrice !== "" &&
-    maxPrice !== ""
+    listType !== ""
 
   const checkFields = () => {
-    const { propertyType, listType, currency, minPrice, maxPrice } = filterState
-    if (fieldsNotEmpty(propertyType, listType, currency, minPrice, maxPrice)) {
+    const { propertyType, listType } = filterState
+    if (fieldsNotEmpty(propertyType, listType)) {
       navigate(
-        `propiedades?propertyType=${propertyType}&listType=${listType}&currency=${currency}&minPrice=${minPrice}&maxPrice=${maxPrice}`
+        `propiedades?propertyType=${propertyType}&listType=${listType}`
       )
     } else {
       setOpenSnackbar(true)
@@ -104,30 +90,6 @@ const SearchHouses = () => {
             filterState.propertyType !== "terrenos" ? ListType : []
           }
           filter={filterState.listType}
-          setFilterValue={changeFilter}
-          labelColor="#2f358f"
-        />
-        <SelectComponent
-          label="Moneda"
-          keyObject="currency"
-          menuItems={Currency}
-          filter={filterState.currency}
-          setFilterValue={changeFilter}
-          labelColor="#2f358f"
-        />
-        <SelectComponent
-          label="Min Precio"
-          keyObject="minPrice"
-          menuItems={MinPrice}
-          filter={filterState.minPrice}
-          setFilterValue={changeFilter}
-          labelColor="#2f358f"
-        />
-        <SelectComponent
-          label="Max Precio"
-          keyObject="maxPrice"
-          menuItems={MaxPrice}
-          filter={filterState.maxPrice}
           setFilterValue={changeFilter}
           labelColor="#2f358f"
         />

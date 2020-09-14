@@ -266,6 +266,7 @@ export const pageQuery = graphql`
           id
           latitud
           longitud
+          destacada
         }
       }
     }

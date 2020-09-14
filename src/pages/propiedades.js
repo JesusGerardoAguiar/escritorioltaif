@@ -72,7 +72,7 @@ const Propiedades = ({ location, data }) => {
     }
     return (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))
   }
-  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && (listType ? property.listType === listType : true) && property.currency === (currency ? currency : property.currency) && priceQuery(property)).reverse()
+  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && (listType ? property.listType === listType : true)).reverse()
   const transformText = text => {
     return text && text[0].toUpperCase() + text.slice(1)
   }
