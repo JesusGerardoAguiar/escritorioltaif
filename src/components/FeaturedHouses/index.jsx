@@ -31,7 +31,7 @@ const FeaturedHousesComponent = ({data}) => {
       properties &&
       properties.length > 0 &&
       properties.map((property, index) => {
-        if (index <= 8) {
+        if (index <= 15) {
           return (
             <Link to={`/propiedad?id=${property.id}`}>
             <StateContainer>
