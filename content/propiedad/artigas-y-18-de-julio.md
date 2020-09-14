@@ -15,6 +15,7 @@ title: ' Lavalleja y 18 de Julio'
 longitud: 1
 latitud: 1
 price: '280000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
