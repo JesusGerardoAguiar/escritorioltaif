@@ -1,5 +1,5 @@
 ---
-id: 48
+id: 82
 bedroom: '3'
 bathroom: '2'
 mts2: '-'
@@ -12,6 +12,7 @@ title: Casa en esquina Manuel Oribe esquina Basilio Muñoz
 longitud: -33.3863654
 latitud: -56.5271274
 price: '165000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
