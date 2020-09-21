@@ -12,8 +12,9 @@ title: 25 de Agosto y Tuboras
 longitud: 1
 latitud: 1
 price: '42000'
+destacada: true
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - /assets/img-1051.jpg
