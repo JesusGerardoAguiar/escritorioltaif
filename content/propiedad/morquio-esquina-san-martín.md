@@ -12,7 +12,8 @@ title: Morquio esquina San Martín
 longitud: -33.3849033
 latitud: -56.520549
 price: '120000'
-soldout: false
+destacada: true
+soldout: true
 rented: false
 currency: U$S
 images:
