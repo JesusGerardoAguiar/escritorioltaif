@@ -1,33 +1,29 @@
 ---
-id: 131
+id: 132
 bedroom: '3'
-bathroom: '-'
-mts2: 5 HAS.
+bathroom: '2'
+mts2: '-'
 garage: '-'
 description: >-
-  Buena Chacra sobre RUTA 5 en excelente ubicación comercial y a escasos 4 km
-  del centro de la ciudad  5 hás con casa de muy buena construcción de 3
-  dormitorios y galpón.  Agua de OSE y Luz de UTE ÚNICA OPORTUNIDAD  VENTA O
-  ALQUILER
-location: >-
-  Buena Chacra sobre RUTA 5 en excelente ubicación comercial y a escasos 4 km
-  del centro de la ciudad
-title: >-
-  Buena Chacra sobre RUTA 5 en excelente ubicación comercial y a escasos 4 km
-  del centro de la ciudad
+  ALQUILER Basilio Muñoz y W. Ferreira buen apartamento de 3 dormitorios 2 baños
+  en excelente estado
+location: Basilio Muñoz y W. Ferreira APTO.
+title: Basilio Muñoz y W. Ferreira APTO.
 longitud: 1
 latitud: 1
-price: CONSULTE
+price: '28000'
 destacada: false
 soldout: false
 rented: false
 currency: $
 images:
-  - /assets/img-1750.jpg
-  - /assets/img-1751.jpg
-  - /assets/img-1752.jpg
-  - /assets/img-1749.png
-propertyType: camposychacras
+  - /assets/photo-2020-10-20-19-50-39_1.jpg
+  - /assets/photo-2020-10-20-19-50-39.jpg
+  - /assets/photo-2020-10-20-19-50-38_2.jpg
+  - /assets/photo-2020-10-20-19-50-38_1.jpg
+  - /assets/photo-2020-10-20-19-50-38.jpg
+  - /assets/photo-2020-10-20-19-50-37.jpg
+propertyType: apartamentos
 listType: alquileres
 date: 'November 4, 2020 12:00 AM'
 ---
