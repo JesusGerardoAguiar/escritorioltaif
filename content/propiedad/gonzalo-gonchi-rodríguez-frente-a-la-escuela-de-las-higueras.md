@@ -5,7 +5,7 @@ bathroom: '1'
 mts2: '-'
 garage: '-'
 description: >-
-  Única oportunidad cada ubicada sobre calle Gonzalo Gonchi Rodríguez frente a
+  Única oportunidad casa ubicada sobre calle Gonzalo Gonchi Rodríguez frente a
   la escuela de Las Higueras living comedor un dormitorio baño y dos piezas de
   depósito con entrada para vehículos
 location: 'Gonzalo Gonchi Rodríguez frente a la escuela de Las Higueras '
