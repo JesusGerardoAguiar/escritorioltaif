@@ -11,8 +11,6 @@ const FeaturedHousesComponent = ({data}) => {
     data.allMdx.nodes &&
     data.allMdx.nodes
       .filter(node => {
-        
-        
         return node.frontmatter.listType !== null && node.frontmatter.destacada === true})
       .map(frontmatter => {
         return { ...frontmatter.frontmatter }

@@ -39,63 +39,89 @@ const GlobalStyles = createGlobalStyle`
 `
 
 const Propiedades = ({ location, data }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
-  const [pageNumbers, setPageNumbers] = useState(null);
+  let params = queryString.parse(location.search)
+  const { propertyType, listType, pageNumber } = params
+
+  const [currentPage, setCurrentPage] = useState(
+    pageNumber ? Number(pageNumber) : 1
+  )
+  const [itemsPerPage, setItemsPerPage] = useState(6)
+  const [pageNumbers, setPageNumbers] = useState(null)
   const propertiesToBeFiltered = data.allMdx.nodes
     .filter(node => node.frontmatter.propertyType !== null)
     .map(frontmatter => {
       return { ...frontmatter.frontmatter }
     })
-    let params = queryString.parse(location.search);
-    const { propertyType, listType, currency, minPrice, maxPrice } = params
-    
-   
-    useEffect(() => {
-      let numberOfPages = calcpagenumbers(
-        properties,
-        itemsPerPage
-        )
-        console.log('this is number of pages' + numberOfPages)
-        numberOfPages !== null &&
-    setPageNumbers(numberOfPages)
+
+  useEffect(() => {
+    let numberOfPages = calcpagenumbers(properties, itemsPerPage)
+    console.log("this is number of pages" + numberOfPages)
+    numberOfPages !== null && setPageNumbers(numberOfPages)
   }, [])
-  
-  const handleClickPagination = (event) => {
+
+  const handleClickPagination = event => {
     setCurrentPage(Number(event.target.id))
     document.body.scrollTop = document.documentElement.scrollTop = 0
+    let newObjParam = { ...params, pageNumber: Number(event.target.id) }
+    const newLocation = queryString.stringify(newObjParam)
+    location.search = newLocation
+    window.location.href = `/propiedades?${location.search}`
   }
-  
-  const priceQuery = (property) =>{
-    if(isNaN(parseInt(property.price))){
-      return true;
-    }
-    return (parseInt(property.price) <= parseInt((maxPrice ? maxPrice : property.price)) && parseInt(property.price) >= parseInt((minPrice ? minPrice : property.price)))
-  }
-  const properties = propertiesToBeFiltered.filter((property) => property.propertyType === propertyType && (listType ? property.listType === listType : true)).reverse()
+
+  const properties = propertiesToBeFiltered
+    .filter(
+      property =>
+        property.propertyType === propertyType &&
+        (listType ? property.listType === listType : true)
+    )
+    .reverse()
+
   const transformText = text => {
     return text && text[0].toUpperCase() + text.slice(1)
   }
 
-  const renderRentedText = (property) => {
+  const renderRentedText = property => {
     console.log(property)
-    if(property.soldout){
+    if (property.soldout) {
       return <h5>Estado: VENDIDA</h5>
-    }else if(property.rented){
+    } else if (property.rented) {
       return <h5>Estado: ALQUILADA</h5>
     }
-    return '';
+    return ""
   }
 
-  const renderParseInt = (price) => {
-    if(isNaN(parseInt(price).toLocaleString().replace(/,/g, '.'))){
-      return '-'
+  const renderParseInt = price => {
+    if (
+      isNaN(
+        parseInt(price)
+          .toLocaleString()
+          .replace(/,/g, ".")
+      )
+    ) {
+      return "-"
     }
-    return parseInt(price).toLocaleString().replace(/,/g, '.')
+    return parseInt(price)
+      .toLocaleString()
+      .replace(/,/g, ".")
   }
+  const sortByName = (a, b) => {
+    if (a.title < b.title) {
+      return -1
+    }
+    if (a.title > b.title) {
+      return 1
+    }
+    return 0
+  }
+  const sortFav = (a, b) => {
+    return a.destacada-b.destacada
+  }
+  properties.sort((a,b) => sortByName(a,b)).sort((a, b) => sortFav(a, b)).reverse()
   const indexOfLastItem = currentPage * itemsPerPage
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
   const currentItems = properties.slice(indexOfFirstItem, indexOfLastItem)
+
+
   const renderProperties = currentItems => {
     return (
       currentItems &&
@@ -105,7 +131,10 @@ const Propiedades = ({ location, data }) => {
           <PropertyContainer>
             <Link to={`/propiedad?id=${property.id}`}>
               <PropertyRow>
-                <img alt="propiedad" src={property.images && property.images[0]} />
+                <img
+                  alt="propiedad"
+                  src={property.images && property.images[0]}
+                />
                 <TextColumn>
                   <h3>{property.title}</h3>
                   <h5
@@ -143,7 +172,7 @@ const Propiedades = ({ location, data }) => {
                       {property.mts2} mts<sup>2</sup>{" "}
                     </>
                   </h5>
-                  <p id='description'>{property.description}</p>
+                  <p id="description">{property.description}</p>
                   {renderRentedText(property)}
                   <h5 style={{ alignSelf: "flex-end" }}>{property.location}</h5>
                   <PriceTag>
@@ -200,7 +229,7 @@ const Propiedades = ({ location, data }) => {
                   currentNumber={
                     number === currentPage ? "1px solid #016699;" : ""
                   }
-                  onClick={(e) => handleClickPagination(e)}
+                  onClick={e => handleClickPagination(e)}
                 >
                   {number}
                 </Li>
@@ -242,9 +271,8 @@ const PriceTag = styled.div`
   }
 
   @media (max-width: 768px) {
-    
-     align-self: flex-start;
-   }
+    align-self: flex-start;
+  }
 `
 
 const TextColumn = styled.div`
@@ -262,7 +290,6 @@ const TextColumn = styled.div`
     margin-top: 0px;
     padding-top: 0px;
     width: 40rem;
-
   }
   h4 {
     margin: 0px;
@@ -273,7 +300,6 @@ const TextColumn = styled.div`
     margin-top: 0px;
     padding-top: 0px;
     width: 40rem;
-
   }
   h5 {
     margin: 0px;
@@ -293,26 +319,24 @@ const TextColumn = styled.div`
     width: 42rem;
     text-align: justify;
   }
-  #description{
+  #description {
     height: 6rem;
     overflow: auto;
   }
   @media (max-width: 768px) {
-   h3{
-    width: 15rem;
-    margin-top: 1rem;
-   }
-   p{
-    width: 14rem;
-   }
-   h5 {
-    align-self: flex-start!important;
-    width: 11rem!important;
-    flex-wrap: wrap!important;
+    h3 {
+      width: 15rem;
+      margin-top: 1rem;
+    }
+    p {
+      width: 14rem;
+    }
+    h5 {
+      align-self: flex-start !important;
+      width: 11rem !important;
+      flex-wrap: wrap !important;
+    }
   }
-  }
-
-  
 `
 
 const PropertyContainer = styled.div`
@@ -360,21 +384,21 @@ const PropertyRow = styled.div`
 
 export const Li = styled.li`
   border: ${props => props.currentNumber};
-  
+
   :hover {
     opacity: 0.5;
   }
   border-radius: 26px;
-    width: 2rem;
-    height: 2rem;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    font-family: RobotoM;
-    list-style-type: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: RobotoM;
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 `
 
 const PresentationText = styled.h2`
@@ -433,6 +457,7 @@ export const pageQuery = graphql`
           longitud
           soldout
           rented
+          destacada
         }
       }
     }
