@@ -12,7 +12,8 @@ title: Zorrilla y Leandro Gómez
 longitud: -33.375405
 latitud: -56.5231766
 price: '160000'
-soldout: false
+destacada: true
+soldout: true
 rented: false
 currency: U$S
 images:
@@ -20,6 +21,5 @@ images:
 propertyType: casas
 listType: ventas
 date: 'July 30, 2020 12:00 AM'
-destacada: true
 ---
 
