@@ -19,7 +19,7 @@ longitud: 1
 latitud: 1
 price: CONSULTE
 destacada: false
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
