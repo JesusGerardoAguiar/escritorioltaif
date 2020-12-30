@@ -2,7 +2,7 @@
 id: 140
 bedroom: '-'
 bathroom: '-'
-mts2: '1.000'
+mts2: '1.840'
 garage: '-'
 description: Santini y Giordano terreno de 1000 m2 20 x 50 Ideal dos familias.
 location: 'Santini y Giordano '
