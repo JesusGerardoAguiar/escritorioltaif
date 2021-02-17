@@ -19,6 +19,7 @@ rented: false
 currency: U$S
 images:
   - /assets/img-2700.jpg
+  - /assets/img-2699.jpg
 propertyType: casas
 listType: ventas
 date: 'February 17, 2021 4:27 PM'
