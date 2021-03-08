@@ -26,7 +26,7 @@ images:
   - /assets/img-2728.jpg
   - /assets/img-2727.jpg
 propertyType: casas
-listType: alquileres
+listType: ventas
 date: 'February 22, 2021 4:24 PM'
 ---
 
