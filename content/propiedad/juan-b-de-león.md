@@ -11,7 +11,7 @@ location: 'JUAN B. DE LEÓN '
 title: 'JUAN B. DE LEÓN '
 longitud: 1
 latitud: 1
-price: '280000'
+price: '28000'
 destacada: false
 soldout: false
 rented: false
@@ -26,7 +26,7 @@ images:
   - /assets/img-2728.jpg
   - /assets/img-2727.jpg
 propertyType: casas
-listType: ventas
+listType: alquileres
 date: 'February 22, 2021 4:24 PM'
 ---
 
