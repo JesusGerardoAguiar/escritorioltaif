@@ -1,5 +1,5 @@
 ---
-id: 128
+id: 122
 bedroom: '1'
 bathroom: '1'
 mts2: '1000'
@@ -16,13 +16,13 @@ price: CONSULTE
 destacada: false
 soldout: false
 rented: false
-currency: $
+currency: U$S
 images:
   - /assets/img_3321.jpg
   - /assets/img_3322.jpg
   - /assets/img_3323.jpg
 propertyType: casas
-listType: alquileres
+listType: ventas
 date: 'April 29, 2021 4:10 PM'
 ---
 
