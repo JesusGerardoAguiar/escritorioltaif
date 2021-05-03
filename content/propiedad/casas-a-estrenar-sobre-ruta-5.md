@@ -1,6 +1,6 @@
 ---
 id: 84
-bedroom: '3'
+bedroom: '2'
 bathroom: '1'
 mts2: '-'
 garage: '1'
@@ -12,6 +12,7 @@ title: Casas a estrenar sobre Ruta 5
 longitud: -34
 latitud: -56.5215334
 price: CONSULTA
+destacada: true
 soldout: false
 rented: false
 currency: U$S
@@ -22,6 +23,5 @@ images:
 propertyType: casas
 listType: ventas
 date: 'July 30, 2020 11:13 AM'
-destacada: true
 ---
 
