@@ -12,7 +12,8 @@ location: Rivera y San Martin
 title: Rivera y San Martin
 longitud: 1
 latitud: 1
-price: '110000'
+price: '95000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
@@ -28,6 +29,5 @@ images:
 propertyType: casas
 listType: ventas
 date: 'August 11, 2020 5:27 PM'
-destacada: true
 ---
 
