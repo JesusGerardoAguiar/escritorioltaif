@@ -12,7 +12,7 @@ location: Pleno centro Zorrilla y 18 de Julio
 title: Pleno centro Zorrilla y 18 de Julio
 longitud: 1
 latitud: 1
-price: CONSULTE
+price: '180000'
 destacada: false
 soldout: false
 rented: false
