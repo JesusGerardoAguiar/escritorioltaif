@@ -7,7 +7,7 @@ garage: 'entrada de vehículos '
 description: >-
   ALQUILER Santini esquina Giordano continuación Morquio a estrenar, amplio
   living comedor con cocina integrada, un dormitorio, baño y patio con entrada
-  de vehículos y parrillero. $ 20.000.
+  de vehículos y parrillero.
 location: Santini esquina Giordano continuación Morquio
 title: Santini esquina Giordano continuación Morquio a estrenar
 longitud: 1
