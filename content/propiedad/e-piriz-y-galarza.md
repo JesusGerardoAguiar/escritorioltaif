@@ -6,12 +6,13 @@ mts2: 60 m2
 garage: '-'
 description: >-
   Apto. desarrollado en dos plantas, con living comedor, cocina americana,
-  terraza y balcón.
+  terraza y balcón. Entrega U$S 65.000 saldo cuotas $ 16.000
 location: E. Piriz y Galarza
 title: E. Piriz y Galarza
 longitud: 1
 latitud: 0
-price: entrega U$S 65.000 saldo cuotas $ 16.000
+price: '65.000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
