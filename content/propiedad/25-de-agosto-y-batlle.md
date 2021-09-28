@@ -12,7 +12,8 @@ title: 25 de Agosto y Batlle
 longitud: -33.3820096
 latitud: -57
 price: CONSULTE
-soldout: false
+destacada: true
+soldout: true
 rented: false
 currency: U$S
 images:
