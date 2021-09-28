@@ -12,7 +12,7 @@ location: Santini esquina Giordano continuación Morquio
 title: Santini esquina Giordano continuación Morquio a estrenar
 longitud: 1
 latitud: 1
-price: '20000'
+price: '15000'
 destacada: false
 soldout: false
 rented: false
