@@ -13,7 +13,8 @@ location: Baltasar Brum casi Lavalleja
 title: Excelente residencia Baltasar Brum casi Lavalleja
 longitud: -33.3751075
 latitud: -56.526535
-price: Consulte
+price: '210000'
+destacada: true
 soldout: false
 rented: true
 currency: U$S
