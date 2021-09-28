@@ -1,5 +1,5 @@
 ---
-id: 159
+id: 160
 bedroom: '4'
 bathroom: '2'
 mts2: '-'
@@ -13,11 +13,11 @@ location: Maria E castellanos de Puchet casi Zorrilla
 title: 'Maria E castellanos de Puchet casi Zorrilla gran propiedad '
 longitud: 1
 latitud: 1
-price: '180000'
+price: '58000'
 destacada: false
 soldout: false
 rented: false
-currency: U$S
+currency: $
 images:
   - /assets/img_3386.jpg
   - /assets/img_3388.jpg
@@ -28,7 +28,7 @@ images:
   - /assets/img_3395.jpg
   - /assets/img_3397.jpg
 propertyType: casas
-listType: ventas
+listType: alquileres
 date: 'September 28, 2021 3:29 PM'
 ---
 
