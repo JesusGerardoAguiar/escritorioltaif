@@ -11,7 +11,7 @@ location: Sta. Bernardina Homero Andrade casi Dr. Eduardo Calleri Terreno
 title: Sta. Bernardina Homero Andrade casi Dr. Eduardo Calleri Terreno
 longitud: 1
 latitud: 1
-price: CONSULTE
+price: '55000'
 destacada: false
 soldout: false
 rented: false
