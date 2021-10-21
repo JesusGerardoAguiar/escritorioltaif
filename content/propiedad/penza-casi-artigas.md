@@ -12,7 +12,7 @@ location: Penza casi Artigas
 title: Penza casi Artigas
 longitud: 1
 latitud: 1
-price: '30000'
+price: '28000'
 destacada: false
 soldout: false
 rented: false
