@@ -11,7 +11,7 @@ location: Hermoso terreno frente al Parque dela Hispanidad con frente a Ruta 5
 title: Hermoso terreno frente al Parque dela Hispanidad con frente a Ruta 5
 longitud: 1
 latitud: 1
-price: '64000'
+price: '59000'
 destacada: false
 soldout: false
 rented: false
