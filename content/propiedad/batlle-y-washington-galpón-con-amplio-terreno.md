@@ -11,7 +11,7 @@ location: 'Batlle y Washington '
 title: 'Batlle y Washington, Galpón con amplio terreno'
 longitud: 1
 latitud: 1
-price: '35000'
+price: '25000'
 destacada: false
 soldout: false
 rented: false
