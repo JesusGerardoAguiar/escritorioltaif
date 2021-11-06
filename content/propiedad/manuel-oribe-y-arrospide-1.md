@@ -13,7 +13,7 @@ longitud: -33.3814601
 latitud: -57.5258322
 price: '135000'
 destacada: true
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
