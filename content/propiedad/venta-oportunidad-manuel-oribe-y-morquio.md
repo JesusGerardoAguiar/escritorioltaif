@@ -14,7 +14,7 @@ longitud: 1
 latitud: 1
 price: '140000'
 destacada: false
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
