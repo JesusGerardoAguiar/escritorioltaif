@@ -12,7 +12,8 @@ location: Basilio Muñoz casi Oribe
 title: Basilio Muñoz casi Oribe
 longitud: -33.3864835
 latitud: -57
-price: '120000'
+price: '140000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
