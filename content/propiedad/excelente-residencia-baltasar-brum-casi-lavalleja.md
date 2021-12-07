@@ -8,12 +8,12 @@ description: >-
   – Excelente residencia desarrollada en 2 plantas – Planta baja: living
   comedor, estar diario con estufa, cocina comedor, un baño, patio con
   parrillero techado y entrada de vehículos – Planta Alta: 3 o 4 dormitorios y
-  un baño. – Todo en muy buen estado Consulte
+  un baño. – Todo en muy buen estado Consulte. OFERTA ESPECIAL.
 location: Baltasar Brum casi Lavalleja
 title: Excelente residencia Baltasar Brum casi Lavalleja
 longitud: -33.3751075
-latitud: -56.526535
-price: '210000'
+latitud: -58.526535
+price: '195000'
 destacada: true
 soldout: false
 rented: true
