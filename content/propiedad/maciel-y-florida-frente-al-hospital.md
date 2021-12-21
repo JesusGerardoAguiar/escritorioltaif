@@ -10,9 +10,14 @@ title: Maciel y Florida - Frente al Hospital
 longitud: -33.3883591
 latitud: -56.5157632
 price: '60000'
+destacada: true
 soldout: false
 rented: false
 currency: U$S
+images:
+  - /assets/img_macielyflorida-1.jpg
+  - /assets/img_macielyflorida-2.jpg
+  - /assets/img_macielyflorida-3.jpg
 propertyType: terrenos
 listType: ventas
 date: 'July 30, 2020 12:00 AM'
