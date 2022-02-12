@@ -4,8 +4,8 @@ bedroom: '3'
 bathroom: '1'
 mts2: '-'
 garage: si
-description: ' J. B. De León y Etchegoyen, moderna casa con 3 dormitorios, living comedor con estufa, jardín y patio con parrillero techado y cochera. '
-location: J. B. De León y Etchegoyen
+description: ' J. B. De León y Yrigoyen, moderna casa con 3 dormitorios, living comedor con estufa, jardín y patio con parrillero techado y cochera. '
+location: J. B. De León y Yrigoyen
 title: J. B. De León y Etchegoyen
 longitud: 1
 latitud: 1
