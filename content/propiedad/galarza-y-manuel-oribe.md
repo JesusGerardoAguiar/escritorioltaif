@@ -11,7 +11,7 @@ location: Galarza y Manuel Oribe
 title: Galarza y Manuel Oribe
 longitud: 1
 latitud: 1
-price: '23000'
+price: '25000'
 destacada: false
 soldout: false
 rented: false
