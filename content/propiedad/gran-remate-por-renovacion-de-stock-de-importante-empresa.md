@@ -1,0 +1,119 @@
+---
+id: 201
+bedroom: '-'
+bathroom: '-'
+mts2: '-'
+garage: '-'
+description: GRAN REMATE POR RENOVACION DE STOCK DE IMPORTANTE EMPRESA
+location: GRAN REMATE POR RENOVACION DE STOCK DE IMPORTANTE EMPRESA
+title: GRAN REMATE POR RENOVACION DE STOCK DE IMPORTANTE EMPRESA
+longitud: 1
+latitud: 1
+price: CONSULTE
+destacada: false
+soldout: false
+rented: false
+currency: U$S
+images:
+  - /assets/remate-sabado-7-de-mayo-20221.jpg
+  - /assets/whatsapp-image-2022-04-11-at-1.00.05-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-1.01.12-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.31.54-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.32.31-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.33.38-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.35.34-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.38.00-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.40.41-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.40.41-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.42.39-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.44.07-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.46.22-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.46.53-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.49.06-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.52.00-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.53.24-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-3.54.00-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.43-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.43-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.43-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.44-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.44-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.44-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.45-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.45-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.45-am-3-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.45-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.20.46-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.51-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.51-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.51-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.52-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.52-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.24.54-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.25.02-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.17-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.18-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.18-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.19-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.19-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.19-am-3-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.19-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.49.20-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.50.23-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.39-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.39-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.40-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.40-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.40-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.41-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.41-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.41-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.42-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.42-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.42-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.43-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.43-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.44-am-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.44-am-2-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.44-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-11.54.45-am.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.04.06-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.05.33-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.05.33-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.29-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.30-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.31-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.31-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.33-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.21.33-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.28.40-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.35.07-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.35.17-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.35.21-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.45.48-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.45.49-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.45.49-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.45.50-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.48.17-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.48.18-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.50.01-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.50.11-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.50.11-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.56.26-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.56.47-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.56.47-pm.jpeg
+  - /assets/whatsapp-image-2022-04-11-at-12.57.48-pm.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.42.13-pm.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.42.14-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.42.14-pm.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.33-pm.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.34-pm-2-.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.34-pm.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.35-pm-1-.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.35-pm-2-.jpeg
+  - /assets/whatsapp-image-2022-04-18-at-5.43.35-pm.jpeg
+propertyType: remates
+listType: ventas
+date: 'April 27, 2022 4:51 PM'
+---
+
