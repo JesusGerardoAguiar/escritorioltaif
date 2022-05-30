@@ -18,7 +18,6 @@ soldout: false
 rented: false
 currency: U$S
 images:
-  - /assets/photo-2022-05-30-13-24-25.jpg
   - /assets/photo-2022-05-30-13-24-26.jpg
   - /assets/photo-2022-05-30-13-24-26_1.jpg
   - /assets/photo-2022-05-30-13-24-27.jpg
