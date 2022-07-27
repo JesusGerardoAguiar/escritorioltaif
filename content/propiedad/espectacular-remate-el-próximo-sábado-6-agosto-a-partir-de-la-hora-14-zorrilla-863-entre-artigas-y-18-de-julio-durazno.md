@@ -338,6 +338,23 @@ images:
   - /assets/img-6574.jpg
   - /assets/img-6575.jpg
   - /assets/img-6576.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-0.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-1.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-2.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-3.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-4.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-5.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-6.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-7.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-8.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-9.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-10.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-11.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-12.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-13.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-14.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-15.jpg
+  - /assets/07b3008f2eaa349884eb6b106396a5cf-16.jpg
 propertyType: remates
 listType: ventas
 date: 'July 27, 2022 11:24 AM'
