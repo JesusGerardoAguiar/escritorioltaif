@@ -1,5 +1,5 @@
 ---
-id: 217
+id: 218
 bedroom: '2'
 bathroom: '1'
 mts2: '1'
@@ -13,11 +13,11 @@ location: Tuboras esquina Varela.
 title: 'VENTA o ALQUILER: Tuboras esquina Varela. Buena casa esquina  '
 longitud: 1
 latitud: 1
-price: '135000'
+price: '27000'
 destacada: false
 soldout: false
 rented: false
-currency: U$S
+currency: $
 images:
   - /assets/img-7010.jpg
   - /assets/img-7011.jpg
@@ -30,7 +30,7 @@ images:
   - /assets/img-7008.jpg
   - /assets/img-7009.jpg
 propertyType: casas
-listType: ventas
+listType: alquileres
 date: 'September 14, 2022 11:45 AM'
 ---
 
