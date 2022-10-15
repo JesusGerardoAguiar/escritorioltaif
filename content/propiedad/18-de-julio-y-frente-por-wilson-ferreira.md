@@ -14,7 +14,7 @@ longitud: 0
 latitud: 1
 price: 'Consulte precio y condiciones '
 destacada: false
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
