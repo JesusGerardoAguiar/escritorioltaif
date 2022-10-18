@@ -14,7 +14,7 @@ latitud: 1
 price: '16000'
 destacada: false
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - /assets/img-4319.jpg
