@@ -13,7 +13,7 @@ title: José P Varela y Artigas casa de estilo totalmente reciclada
 longitud: 1
 latitud: 1
 price: CONSULTE
-destacada: false
+destacada: true
 soldout: false
 rented: false
 currency: U$S
