@@ -14,7 +14,7 @@ latitud: 1
 price: '25000'
 destacada: false
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - /assets/img-6708.jpg
