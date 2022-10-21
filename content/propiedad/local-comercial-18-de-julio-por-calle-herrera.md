@@ -14,6 +14,14 @@ destacada: false
 soldout: false
 rented: false
 currency: $
+images:
+  - /assets/img-6668.jpg
+  - /assets/img-6669.jpg
+  - /assets/img-6671.jpg
+  - /assets/img-6670.jpg
+  - /assets/img-6672.jpg
+  - /assets/img-6678.jpg
+  - /assets/img-6674.jpg
 propertyType: galponesylocalescomerciales
 listType: alquileres
 date: 'October 21, 2022 11:51 AM'
