@@ -5,7 +5,7 @@ bathroom: '3'
 mts2: '-'
 garage: '1'
 description: >-
-  OPORTUNIDAD. Muy buena construcción en excelente estado, 2 dormitorios, amplió
+  OPORTUNIDAD. Muy buena construcción en excelente estado, 2 dormitorios, amplio
   living comedor con estufa, baño y cocina nuevos, dormitorio y baño de
   huéspedes, hermoso fondo con piscina y barbacoa con baño. Garaje con entrada
   para varios vehículos.
