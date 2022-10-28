@@ -12,7 +12,7 @@ location: 'Gonzalo Gonchi Rodríguez frente a la escuela de Las Higueras '
 title: 'Gonzalo Gonchi Rodríguez frente a la escuela de Las Higueras '
 longitud: 1
 latitud: 1
-price: '34000'
+price: '28000'
 destacada: false
 soldout: false
 rented: false
