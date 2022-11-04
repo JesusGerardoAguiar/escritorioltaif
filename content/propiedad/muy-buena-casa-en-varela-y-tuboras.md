@@ -18,6 +18,8 @@ soldout: false
 rented: false
 currency: U$S
 images:
+  - /assets/img-7528.jpg
+  - /assets/img-7527.jpg
   - /assets/img-7526.jpg
   - /assets/img-7525.jpg
   - /assets/img-7524.jpg
