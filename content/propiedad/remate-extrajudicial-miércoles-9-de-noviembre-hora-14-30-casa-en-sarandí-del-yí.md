@@ -1,7 +1,7 @@
 ---
 id: 911
-bedroom: '3'
-bathroom: '2'
+bedroom: '2'
+bathroom: '1'
 mts2: '600'
 garage: si
 description: >-
