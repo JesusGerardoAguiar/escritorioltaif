@@ -12,7 +12,7 @@ location: Zona Terminal
 title: Moderna casa en Zona Terminal
 longitud: 1
 latitud: 1
-price: '145.000'
+price: '159.000'
 destacada: false
 soldout: false
 rented: false
