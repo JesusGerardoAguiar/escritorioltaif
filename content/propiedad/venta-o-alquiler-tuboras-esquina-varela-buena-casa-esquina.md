@@ -16,7 +16,7 @@ latitud: 1
 price: '27000'
 destacada: false
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - /assets/img-7010.jpg
