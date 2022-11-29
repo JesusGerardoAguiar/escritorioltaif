@@ -10,10 +10,10 @@ description: >-
   placares, escritorio, cochera, patio con galpon y amplia terraza azotea.
   Excelente oportunidad 
 location: Artigas y 25 de Agosto
-title: Artigas y 25 de Agosto
+title: OPORTUNIDAD Artigas y 25 de Agosto
 longitud: 1
 latitud: 1
-price: '220000'
+price: '175000'
 destacada: false
 soldout: false
 rented: false
