@@ -4,12 +4,12 @@ bedroom: "4"
 bathroom: "2"
 mts2: .
 garage: Si
-description: Apartamento de 3 dormitorios con placares, 2 baños, amplió living
+description: Apartamento de 3 dormitorios con placares, 2 baños, amplio living
   comedor, escritorio, cocina con comedor diario, dependencia de servicio,
   balcón al frente, terraza lavadero y garaje, totalmente equipado y reciclado a
   nuevo.
 location: "Frente a plaza Independencia "
-title: EXCEPCIONAL APARTAMENTO
+title: EXCEPCIONAL  APARTAMENTO
 longitud: 1
 latitud: 1
 price: CONSULTE
