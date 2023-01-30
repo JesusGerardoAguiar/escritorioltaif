@@ -1,17 +1,16 @@
 ---
-id: 511
-bedroom: '1'
-bathroom: '1'
-mts2: '-'
+id: 518
+bedroom: "1"
+bathroom: "1"
+mts2: "-"
 garage: si
-description: >-
-  Muy buena casa de un dormitorio con placares, living comedor con estufa,
-  cocina comedor con estufa, garaje, fondo con galpón y parrillero.
-location: ' Rubino y 25 de Agosto '
-title: 'Muy buena casa en Rubino y 25 de Agosto '
+description: Muy buena casa de un dormitorio con placares, living comedor con
+  estufa, cocina comedor con estufa, garaje, fondo con galpón y parrillero.
+location: " Rubino y 25 de Agosto "
+title: "Muy buena casa en Rubino y 25 de Agosto "
 longitud: 1
 latitud: 1
-price: '24000'
+price: "24000"
 destacada: false
 soldout: false
 rented: false
@@ -27,6 +26,5 @@ images:
   - /assets/img_0390.jpg
 propertyType: casas
 listType: alquileres
-date: 'November 17, 2022 11:40 AM'
+date: November 17, 2022 11:40 AM
 ---
-
