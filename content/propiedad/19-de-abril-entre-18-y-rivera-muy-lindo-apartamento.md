@@ -1,21 +1,20 @@
 ---
 id: 210
-bedroom: '3'
-bathroom: '1'
-mts2: '-'
-garage: '-'
-description: >-
-  ALQUILER: 19 de Abril entre 18 y Rivera Muy lindo apartamento de 3 dormitorios
-  amplio living comedor cocina con terraza lavadero estacionamiento y gran
-  vista. $ 28.000.-
+bedroom: "3"
+bathroom: "1"
+mts2: "-"
+garage: "-"
+description: "ALQUILER: 19 de Abril entre 18 y Rivera Muy lindo apartamento de 3
+  dormitorios amplio living comedor cocina con terraza lavadero estacionamiento
+  y gran vista. $ 28.000.-"
 location: 19 de Abril entre 18 y Rivera Muy lindo apartamento
 title: 19 de Abril entre 18 y Rivera Muy lindo apartamento
 longitud: 1
 latitud: 1
-price: '28000'
+price: "28000"
 destacada: false
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - /assets/img-6369.jpg
@@ -26,6 +25,5 @@ images:
   - /assets/img-6375.jpg
 propertyType: apartamentos
 listType: alquileres
-date: 'July 7, 2022 10:21 AM'
+date: July 7, 2022 10:21 AM
 ---
-
