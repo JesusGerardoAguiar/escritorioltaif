@@ -17,6 +17,13 @@ rented: false
 currency: $
 images:
   - assets/img-8042.jpg
+  - assets/img-8043.jpg
+  - assets/img-8044.jpg
+  - assets/img-8045.jpg
+  - assets/img-8046.jpg
+  - assets/img-8049.jpg
+  - assets/img-8048.jpg
+  - assets/img-8047.jpg
 propertyType: apartamentos
 listType: alquileres
 date: February 2, 2023 5:33 PM
