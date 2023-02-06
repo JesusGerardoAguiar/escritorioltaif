@@ -1,18 +1,17 @@
 ---
 id: 227
-bedroom: '3'
-bathroom: '2'
-mts2: '-'
-garage: '-'
-description: >-
-  José P Varela y Artigas casa de estilo totalmente reciclada, 3 dormitorios 2
-  baños, living comedor con estufa, cocina americana y espectacular fondo con
-  parrillero techado. 600 m2 de terreno. 
-location: 'José P Varela y Artigas '
+bedroom: "3"
+bathroom: "2"
+mts2: "-"
+garage: "-"
+description: "José P Varela y Artigas casa de estilo totalmente reciclada, 3
+  dormitorios 2 baños, living comedor con estufa, cocina americana y
+  espectacular fondo con parrillero techado. 600 m2 de terreno. "
+location: "José P Varela y Artigas "
 title: José P Varela y Artigas casa de estilo totalmente reciclada
 longitud: 1
 latitud: 1
-price: CONSULTE
+price: "240000"
 destacada: true
 soldout: false
 rented: false
@@ -35,6 +34,5 @@ images:
   - /assets/2f36f2ff-f204-476a-8875-2d2f2acdbfbd.jpg
 propertyType: casas
 listType: ventas
-date: 'October 3, 2022 5:18 PM'
+date: October 3, 2022 5:18 PM
 ---
-
