@@ -1,18 +1,18 @@
 ---
 id: 90
-bedroom: '2'
-bathroom: '1'
-mts2: '-'
-garage: '-'
-description: >-
-  moderna casa de 2 amplios dormitorios, living comedor, cocina comedor
-  americana, baño y patio con entrada lateral, parrillero y pieza lavadero. En
-  impecable estado todo al día
+bedroom: "2"
+bathroom: "1"
+mts2: "-"
+garage: "-"
+description: moderna casa de 2 amplios dormitorios, living comedor, cocina
+  comedor americana, baño y patio con entrada lateral, parrillero y pieza
+  lavadero. En impecable estado todo al día
 location: Latorre entre 25 de Agosto y Batlle Berres
 title: Latorre entre 25 de Agosto y Batlle Berres
 longitud: -33.3852686
 latitud: -56.5266739
-price: '120000'
+price: "110000"
+destacada: true
 soldout: false
 rented: false
 currency: U$S
@@ -27,7 +27,5 @@ images:
   - /assets/106630309_3100740633340851_5292979110307971557_o.jpg
 propertyType: casas
 listType: ventas
-date: 'July 30, 2020 12:00 AM'
-destacada: true
+date: July 30, 2020 12:00 AM
 ---
-
