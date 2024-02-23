@@ -14,7 +14,7 @@ latitud: 0
 price: "32000"
 destacada: false
 soldout: false
-rented: false
+rented: true
 currency: $
 images:
   - assets/img_1434.jpg
