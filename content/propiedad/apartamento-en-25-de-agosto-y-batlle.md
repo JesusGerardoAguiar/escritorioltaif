@@ -13,7 +13,7 @@ longitud: 1
 latitud: 1
 price: Entrega U$S 75.000 y saldo en cuotas de $ 16.000
 destacada: false
-soldout: false
+soldout: true
 rented: false
 currency: U$S
 images:
