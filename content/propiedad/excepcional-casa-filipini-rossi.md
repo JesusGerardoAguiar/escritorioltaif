@@ -12,7 +12,7 @@ location: Filipini Rossi
 title: EXCEPCIONAL CASA - Filipini Rossi
 longitud: 2
 latitud: 1
-price: "200000"
+price: "180000"
 destacada: false
 soldout: false
 rented: false
