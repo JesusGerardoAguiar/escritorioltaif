@@ -14,7 +14,7 @@ latitud: -56.5266739
 price: "110000"
 destacada: true
 soldout: false
-rented: false
+rented: true
 currency: U$S
 images:
   - /assets/74670695_3100741186674129_7054101291792424214_o.jpg
